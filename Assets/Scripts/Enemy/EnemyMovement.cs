@@ -53,7 +53,7 @@ public class EnemyMovement : MonoBehaviour
             var targetPosition = currentPoint.NextWaypoint.transform.position;
 
             var t = 0f;
-            var incrRate = enemy.EnemyReference.Speed * Time.deltaTime;
+            var incrRate = (enemy.EnemyReference.Speed * Time.deltaTime) / Vector3.Distance(originalPosition, targetPosition);
 
             while(t < 1f)
             {
