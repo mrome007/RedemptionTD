@@ -40,6 +40,51 @@ public class RedemptionEnemyObjectPool : MonoBehaviour
         CreateRedemptionObjectPool();
     }
 
+    public IEnumerable<EnemyLite> GetEnemies(RedemptionEnemyType enemyType, int numberOfEnemies)
+    {
+        for(int count = 0; count < numberOfEnemies; count++)
+        {
+            if(!enemyPool.ContainsKey(enemyType))
+            {
+                break;
+            }
+                
+            var enemyPoolList = enemyPool[enemyType];
+            var enemyIndex = enemyPoolIndex[enemyType];
+
+            if(enemyIndex < enemyPoolList.Count)
+            {
+                var enemy = enemyPoolList[enemyIndex];
+                enemyPoolIndex[enemyType]++;
+                enemy.gameObject.SetActive(true);
+                enemy.transform.parent = null;
+                yield return enemy;
+            }
+            else
+            {
+                break;
+            }
+        }
+    }
+
+    //TODO Rethink how to return enemies to pool.
+    public void ReturnEnemy(RedemptionEnemyType enemyType, EnemyLite enemy)
+    {
+        var enemyPoolList = enemyPool[enemyType];
+        var enemyIndex = enemyPoolIndex[enemyType];
+
+        if(enemyIndex > 0)
+        {
+            enemy.transform.parent = poolParent;
+            enemy.transform.position = Vector3.zero;
+
+            enemy.gameObject.SetActive(false);
+            enemyPoolIndex[enemyType]--;
+        }
+    }
+
+    #region Helpers
+
     private void CreateRedemptionObjectPool()
     {
         if(enemyPool != null)
@@ -114,6 +159,8 @@ public class RedemptionEnemyObjectPool : MonoBehaviour
             handler(this, null);
         }
     }
+
+    #endregion
 }
 
 [Serializable]
