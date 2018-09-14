@@ -4,41 +4,50 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(EnemyLite))]
-public class EnemyMovement : MonoBehaviour
+public class EnemyMovement : MonoBehaviour, IInitializable
 {
-    #region Inspector Data
-
-    [SerializeField]
-    private Waypoint initialPoint;
-
-    #endregion
-
-    #region Public
+    #region Public Data
 
     public event EventHandler MoveStarted;
     public event EventHandler MoveEnded;
 
     #endregion
 
-    #region Private
+    #region Private Data
 
     private EnemyLite enemy;
+
+    [SerializeField]
     private Waypoint currentPoint;
+
+    #endregion
+
+    #region Override IInitializable
+
+    /// <summary>
+    /// Initialize the initial Waypoint
+    /// </summary>
+    /// <param name="obj">Object.</param>
+    public void Initialize(object obj)
+    {
+        currentPoint = obj as Waypoint;
+
+        if(currentPoint == null)
+        {
+            return;
+        }
+
+        Move();
+    }
 
     #endregion
 
     private void Awake()
     {
-        currentPoint = initialPoint;
         enemy = GetComponent<EnemyLite>();
     }
-
-    private void Start()
-    {
-        Move();
-    }
-
-    public void Move()
+        
+    private void Move()
     {
         StartCoroutine(MoveEnemyRoutine());
     }
@@ -53,7 +62,7 @@ public class EnemyMovement : MonoBehaviour
             var targetPosition = currentPoint.NextWaypoint.transform.position;
 
             var t = 0f;
-            var incrRate = (enemy.EnemyReference.Speed * Time.deltaTime) / Vector3.Distance(originalPosition, targetPosition);
+            var incrRate = (enemy.HeavyEnemyReference.Speed * Time.deltaTime) / Vector3.Distance(originalPosition, targetPosition);
 
             while(t < 1f)
             {
