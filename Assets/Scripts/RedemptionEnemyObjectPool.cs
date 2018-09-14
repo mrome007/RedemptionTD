@@ -30,6 +30,7 @@ public class RedemptionEnemyObjectPool : MonoBehaviour
 
     private Dictionary<RedemptionEnemyType, EnemyLite> enemyDictionary;
     private Dictionary<RedemptionEnemyType, List<EnemyLite>> enemyPool;
+    private Dictionary<RedemptionEnemyType, int> enemyPoolIndex;
 
     #endregion
 
@@ -49,6 +50,7 @@ public class RedemptionEnemyObjectPool : MonoBehaviour
         RaiseObjectPoolBegin();
 
         enemyPool = new Dictionary<RedemptionEnemyType, List<EnemyLite>>();
+        enemyPoolIndex = new Dictionary<RedemptionEnemyType, int>();
         foreach(var enemy in enemyList)
         {
             if(enemyPool.ContainsKey(enemy.EnemyType))
@@ -57,6 +59,7 @@ public class RedemptionEnemyObjectPool : MonoBehaviour
             }
 
             enemyPool.Add(enemy.EnemyType, new List<EnemyLite>());
+            enemyPoolIndex.Add(enemy.EnemyType, 0);
 
             for(int count = 0; count < enemy.PoolAmount; count++)
             {
@@ -66,6 +69,7 @@ public class RedemptionEnemyObjectPool : MonoBehaviour
                 liteEnemy.transform.parent = poolParent;
                 liteEnemy.transform.position = Vector3.zero;
 
+                enemyPool[enemy.EnemyType].Add(liteEnemy);
                 liteEnemy.gameObject.SetActive(false);
             }
         }
