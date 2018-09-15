@@ -77,9 +77,9 @@ public class RedemptionEnemyObjectPool : MonoBehaviour
         {
             enemy.transform.parent = poolParent;
             enemy.transform.position = Vector3.zero;
-
-            enemy.gameObject.SetActive(false);
             enemyPoolIndex[enemyType]--;
+            enemyPoolList[enemyIndex] = enemy;
+            enemy.gameObject.SetActive(false);
         }
     }
 
