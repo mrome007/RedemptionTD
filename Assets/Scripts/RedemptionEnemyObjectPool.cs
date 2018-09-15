@@ -55,6 +55,7 @@ public class RedemptionEnemyObjectPool : MonoBehaviour
             if(enemyIndex < enemyPoolList.Count)
             {
                 var enemy = enemyPoolList[enemyIndex];
+                enemyPoolList[enemyIndex] = null;
                 enemyPoolIndex[enemyType]++;
                 enemy.gameObject.SetActive(true);
                 enemy.transform.parent = null;
