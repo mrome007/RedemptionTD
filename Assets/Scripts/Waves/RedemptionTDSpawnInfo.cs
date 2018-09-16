@@ -14,6 +14,9 @@ public class RedemptionTDSpawnInfo : MonoBehaviour
     public float TimeBetweenSpawns;
 
     [HideInInspector]
+    public int NumberToSpawn;
+
+    [HideInInspector]
     public RedemptionEnemyType EnemyType;
 
     [HideInInspector]
