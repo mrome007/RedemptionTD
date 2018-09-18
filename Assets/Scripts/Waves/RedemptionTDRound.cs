@@ -22,8 +22,11 @@ public class RedemptionTDRound : MonoBehaviour
     [SerializeField]
     private List<RedemptionTDWave> waves;
 
+    private int currentWaveIndex;
+
     private void Awake()
     {
+        currentWaveIndex = 0;
         objectPool.ObjectPoolComplete += HandleObjectPoolComplete;
     }
 
@@ -35,7 +38,34 @@ public class RedemptionTDRound : MonoBehaviour
 
     private void StartRound()
     {
+        currentWaveIndex = 0;
+        RaiseRoundStart();
+        InitiateWave();
+    }
 
+    private void InitiateWave()
+    {
+        var currentWave = waves[currentWaveIndex];
+        currentWave.WaveEnded += HandleWaveEnded;
+
+        currentWave.StartWave(objectPool);
+    }
+
+    private void HandleWaveEnded(object sender, EventArgs e)
+    {
+        var currentWave = waves[currentWaveIndex];
+        currentWave.WaveEnded -= HandleWaveEnded;
+
+        currentWaveIndex++;
+        if(currentWaveIndex < waves.Count)
+        {
+            InitiateWave();
+        }
+        else
+        {
+            currentWaveIndex = 0;
+            RaiseRoundEnd();
+        }
     }
 
     public void RaiseRoundStart()

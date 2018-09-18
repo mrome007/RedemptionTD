@@ -46,7 +46,7 @@ public class EnemyMovement : MonoBehaviour, IInitializable
     {
         enemy = GetComponent<EnemyLite>();
     }
-        
+
     public void Move()
     {
         StartCoroutine(MoveEnemyRoutine());
@@ -56,10 +56,12 @@ public class EnemyMovement : MonoBehaviour, IInitializable
     {
         RaiseMoveStarted();
 
-        while(currentPoint.NextWaypoint != null)
+        var curr = currentPoint;
+
+        while(curr.NextWaypoint != null)
         {
-            var originalPosition = currentPoint.transform.position;
-            var targetPosition = currentPoint.NextWaypoint.transform.position;
+            var originalPosition = curr.transform.position;
+            var targetPosition = curr.NextWaypoint.transform.position;
 
             var t = 0f;
             var incrRate = (enemy.HeavyEnemyReference.Speed * Time.deltaTime) / Vector3.Distance(originalPosition, targetPosition);
@@ -71,7 +73,7 @@ public class EnemyMovement : MonoBehaviour, IInitializable
                 yield return null;
             }
 
-            currentPoint = currentPoint.NextWaypoint;
+            curr = curr.NextWaypoint;
         }
 
         RaiseMoveEnded();
