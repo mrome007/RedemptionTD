@@ -23,5 +23,5 @@ public class RedemptionTDSpawnInfo : MonoBehaviour
     public bool IsBoss;
 
     [HideInInspector]
-    public Transform SpawnPosition;
+    public Waypoint SpawnPosition;
 }

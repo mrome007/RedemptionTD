@@ -61,7 +61,6 @@
      <Compile Include="Assets\Scripts\Waves\RedemptionTDRound.cs" />
      <Compile Include="Assets\Scripts\Waves\RedemptionTDSpawnInfo.cs" />
      <Compile Include="Assets\Scripts\Waves\RedemptionTDWave.cs" />
-     <Compile Include="Assets\Scripts\Waves\RedemptionTDWavesController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

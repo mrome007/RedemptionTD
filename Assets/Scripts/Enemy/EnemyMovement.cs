@@ -47,7 +47,7 @@ public class EnemyMovement : MonoBehaviour, IInitializable
         enemy = GetComponent<EnemyLite>();
     }
         
-    private void Move()
+    public void Move()
     {
         StartCoroutine(MoveEnemyRoutine());
     }

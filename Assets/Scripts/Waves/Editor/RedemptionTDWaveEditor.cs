@@ -21,6 +21,8 @@ public class RedemptionTDWaveEditor : Editor
             redemptionWave = target as RedemptionTDWave;
         }
 
+        redemptionWave.StaggeredSpawning = EditorGUILayout.Toggle("Staggered Spawn: ", redemptionWave.StaggeredSpawning);
+
         DrawnSpawnInfos();
         DrawAddSpawnButton();
 
@@ -45,7 +47,7 @@ public class RedemptionTDWaveEditor : Editor
         {
             return;
         }
-        
+
         EditorGUILayout.LabelField("Spawn Information:");
 
         var count = 0;
@@ -77,7 +79,7 @@ public class RedemptionTDWaveEditor : Editor
             spawn.EnemyType = (RedemptionEnemyType)EditorGUILayout.EnumPopup("Enemy Type: ", spawn.EnemyType);
             spawn.IsBoss = EditorGUILayout.Toggle("Is Boss", spawn.IsBoss);
 
-            spawn.SpawnPosition = EditorGUILayout.ObjectField("Position: ", spawn.SpawnPosition, typeof(Transform), true) as Transform;
+            spawn.SpawnPosition = EditorGUILayout.ObjectField("Position: ", spawn.SpawnPosition, typeof(Waypoint), true) as Waypoint;
 
             EditorGUI.indentLevel--;
 

@@ -150,6 +150,8 @@ public class RedemptionEnemyObjectPool : MonoBehaviour
         {
             handler(this, null);
         }
+
+        Debug.Log("Object Pool Begin");
     }
 
     private void RaiseObjectPoolComplete()
@@ -159,6 +161,8 @@ public class RedemptionEnemyObjectPool : MonoBehaviour
         {
             handler(this, null);
         }
+
+        Debug.Log("Object Pool Complete");
     }
 
     #endregion

@@ -1,9 +1,16 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyLite : MonoBehaviour, IInitializable
 {
+    #region Events
+
+    public event EventHandler EnemyReturned;
+
+    #endregion
+    
     [SerializeField]
     private Enemy enemy;
 
@@ -22,6 +29,21 @@ public class EnemyLite : MonoBehaviour, IInitializable
         if(enemy == null)
         {
             return;
+        }
+    }
+
+    public void ReturnEnemy()
+    {
+        HeavyEnemyReference.EnemyPool.ReturnEnemy(HeavyEnemyReference.EnemyType, this);
+        RaiseReturnEnemy();
+    }
+
+    private void RaiseReturnEnemy()
+    {
+        var handler = EnemyReturned;
+        if(handler != null)
+        {
+            handler(this, null);
         }
     }
 

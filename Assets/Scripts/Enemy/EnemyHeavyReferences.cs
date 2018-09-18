@@ -12,7 +12,7 @@ public class EnemyHeavyReferences : MonoBehaviour
     private Enemy lead;
     [SerializeField]
     private Enemy magnesium;
-    
+
     public Enemy Black { get { return black; } }
     public Enemy Iron { get { return iron; } }
     public Enemy Lead { get { return lead; } }
