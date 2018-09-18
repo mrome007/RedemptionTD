@@ -70,23 +70,23 @@ public class RedemptionTDRound : MonoBehaviour
 
     public void RaiseRoundStart()
     {
+        Debug.Log("Round Started");
+
         var handler = RoundStarted;
         if(handler != null)
         {
             handler(this, null);
         }
-
-        Debug.Log("Round Started");
     }
 
     public void RaiseRoundEnd()
     {
+        Debug.Log("Round Ended");
+
         var handler = RoundEnded;
         if(handler != null)
         {
             handler(this, null);
         }
-
-        Debug.Log("Round Ended");
     }
 }

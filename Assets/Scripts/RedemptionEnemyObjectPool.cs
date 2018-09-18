@@ -145,24 +145,24 @@ public class RedemptionEnemyObjectPool : MonoBehaviour
 
     private void RaiseObjectPoolBegin()
     {
+        Debug.Log("Object Pool Begin");
+
         var handler = ObjectPoolBegin;
         if(handler != null)
         {
             handler(this, null);
         }
-
-        Debug.Log("Object Pool Begin");
     }
 
     private void RaiseObjectPoolComplete()
     {
+        Debug.Log("Object Pool Complete");
+
         var handler = ObjectPoolComplete;
         if(handler != null)
         {
             handler(this, null);
         }
-
-        Debug.Log("Object Pool Complete");
     }
 
     #endregion

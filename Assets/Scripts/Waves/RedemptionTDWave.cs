@@ -86,23 +86,23 @@ public class RedemptionTDWave : MonoBehaviour
 
     public void RaiseWaveStart()
     {
+        Debug.Log("Wave Started");
+
         var handler = WaveStarted;
         if(handler != null)
         {
             handler(this, null);
         }
-
-        Debug.Log("Wave Started");
     }
 
     public void RaiseWaveEnd()
     {
+        Debug.Log("Wave Ended");
+
         var handler = WaveEnded;
         if(handler != null)
         {
             handler(this, null);
         }
-
-        Debug.Log("Wave Ended");
     }
 }
