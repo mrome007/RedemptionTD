@@ -60,11 +60,14 @@ public class RedemptionTDWaveEditor : Editor
 
             EditorGUILayout.LabelField("Spawn " + count.ToString());
             spawn.gameObject.name = "Spawn " + count.ToString();
-            if(GUILayout.Button("Remove"))
+            if(!Application.isPlaying)
             {
-                Object.DestroyImmediate(spawn.gameObject);
-                InitializeSpawnInfos();
-                return;
+                if(GUILayout.Button("Remove"))
+                {
+                    Object.DestroyImmediate(spawn.gameObject);
+                    InitializeSpawnInfos(true);
+                    return;
+                }
             }
 
             GUILayout.EndHorizontal();
@@ -99,12 +102,18 @@ public class RedemptionTDWaveEditor : Editor
         redemptionWave.SpawnInformation.Add(spawnObject.GetComponent<RedemptionTDSpawnInfo>());
     }
 
-    private void InitializeSpawnInfos()
+    private void InitializeSpawnInfos(bool clear = false)
     {
         if(redemptionWave.SpawnInformation != null)
         {
+            return;
+        }
+        
+        if(clear)
+        {
             redemptionWave.SpawnInformation.Clear();
         }
+
         var children = redemptionWave.GetComponentsInChildren<RedemptionTDSpawnInfo>();
         foreach(var child in children)
         {
