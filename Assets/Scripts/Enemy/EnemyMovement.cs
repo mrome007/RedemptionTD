@@ -76,6 +76,9 @@ public class EnemyMovement : MonoBehaviour, IInitializable
             curr = curr.NextWaypoint;
         }
 
+        //TEMPORARY FOR TESTING ENEMIES RETURNING TO OBJECT POOL(WHEN ENEMIES DIE).
+        enemy.ReturnEnemy();
+
         RaiseMoveEnded();
     }
 

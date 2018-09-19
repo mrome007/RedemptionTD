@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class RedemptionTDWave : MonoBehaviour 
@@ -20,9 +21,20 @@ public class RedemptionTDWave : MonoBehaviour
     public bool StaggeredSpawning;
 
     private RedemptionEnemyObjectPool objectPool;
+    private int currentSpawnCount;
+    private int totalSpawnCount;
+    private List<EnemyLite> currentSpawns;
 
     public void StartWave(RedemptionEnemyObjectPool pool)
     {
+        if(currentSpawns == null)
+        {
+            currentSpawns = new List<EnemyLite>();
+        }
+
+        currentSpawnCount = 0;
+        totalSpawnCount = SpawnInformation.Sum(spawnInfo => spawnInfo.NumberToSpawn);
+            
         if(objectPool == null)
         {
             objectPool = pool;
@@ -76,12 +88,39 @@ public class RedemptionTDWave : MonoBehaviour
         foreach(var enemy in enemies)
         {
             var movement = enemy.GetComponent<EnemyMovement>();
+
             movement.Initialize(spawnInfo.SpawnPosition);
             movement.Move();
+
+            if(currentSpawnCount < currentSpawns.Count)
+            {
+                currentSpawns[currentSpawnCount] = enemy;
+            }
+            else
+            {
+                currentSpawns.Add(enemy);
+            }
+
+            enemy.Index = currentSpawnCount;
+            enemy.EnemyReturned += HandleEnemyReturned;
+
+            currentSpawnCount++;
+
             yield return new WaitForSeconds(spawnInfo.TimeBetweenSpawns);
         }
-
+       
         yield return new WaitForSeconds(spawnInfo.StopSpawnDelay);
+    }
+
+    private void HandleEnemyReturned(object sender, EnemyReturnEventArgs e)
+    {
+        currentSpawns[e.SpawnIndex].EnemyReturned -= HandleEnemyReturned;
+        totalSpawnCount--;
+
+        if(totalSpawnCount <= 0)
+        {
+            RaiseWaveEnd();
+        }
     }
 
     public void RaiseWaveStart()

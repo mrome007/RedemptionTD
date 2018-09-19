@@ -7,7 +7,7 @@ public class EnemyLite : MonoBehaviour, IInitializable
 {
     #region Events
 
-    public event EventHandler EnemyReturned;
+    public event EventHandler<EnemyReturnEventArgs> EnemyReturned;
 
     #endregion
     
@@ -15,6 +15,10 @@ public class EnemyLite : MonoBehaviour, IInitializable
     private Enemy enemy;
 
     public Enemy HeavyEnemyReference { get { return enemy; } }
+
+    public int Index { get; set; }
+
+    private EnemyReturnEventArgs returnArgs;
 
     #region Override IInitializable
 
@@ -30,6 +34,12 @@ public class EnemyLite : MonoBehaviour, IInitializable
         {
             return;
         }
+
+        Index = 0;
+        if(returnArgs == null)
+        {
+            returnArgs = new EnemyReturnEventArgs(Index);
+        }
     }
 
     public void ReturnEnemy()
@@ -40,10 +50,12 @@ public class EnemyLite : MonoBehaviour, IInitializable
 
     private void RaiseReturnEnemy()
     {
+        returnArgs.SpawnIndex = Index;
+        
         var handler = EnemyReturned;
         if(handler != null)
         {
-            handler(this, null);
+            handler(this, returnArgs);
         }
     }
 
