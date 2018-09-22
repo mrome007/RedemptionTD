@@ -283,5 +283,5 @@ public enum RedemptionTDType
     BLACK,
     IRON,
     LEAD,
-    MAGNESIUM
+    MAGNESIUM,
 }
