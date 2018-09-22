@@ -20,12 +20,12 @@ public class RedemptionTDWave : MonoBehaviour
     [SerializeField]
     public bool StaggeredSpawning;
 
-    private RedemptionEnemyObjectPool objectPool;
+    private RedemptionTDObjectPool objectPool;
     private int currentSpawnCount;
     private int totalSpawnCount;
     private List<EnemyLite> currentSpawns;
 
-    public void StartWave(RedemptionEnemyObjectPool pool)
+    public void StartWave(RedemptionTDObjectPool pool)
     {
         if(currentSpawns == null)
         {
@@ -102,7 +102,7 @@ public class RedemptionTDWave : MonoBehaviour
             }
 
             enemy.Index = currentSpawnCount;
-            enemy.EnemyReturned += HandleEnemyReturned;
+            enemy.ObjectReturned += HandleEnemyReturned;
 
             currentSpawnCount++;
 
@@ -112,9 +112,9 @@ public class RedemptionTDWave : MonoBehaviour
         yield return new WaitForSeconds(spawnInfo.StopSpawnDelay);
     }
 
-    private void HandleEnemyReturned(object sender, EnemyReturnEventArgs e)
+    private void HandleEnemyReturned(object sender, ReturnToPoolEventArgs e)
     {
-        currentSpawns[e.SpawnIndex].EnemyReturned -= HandleEnemyReturned;
+        currentSpawns[e.SpawnIndex].ObjectReturned -= HandleEnemyReturned;
         totalSpawnCount--;
 
         if(totalSpawnCount <= 0)

@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyReturnEventArgs : EventArgs
+public class ReturnToPoolEventArgs : EventArgs
 {
     public int SpawnIndex { get; set; }
 
-    public EnemyReturnEventArgs(int index)
+    public ReturnToPoolEventArgs(int index)
     {
         SpawnIndex = index;
     }

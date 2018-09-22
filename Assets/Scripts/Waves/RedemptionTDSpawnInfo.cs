@@ -17,7 +17,7 @@ public class RedemptionTDSpawnInfo : MonoBehaviour
     public int NumberToSpawn;
 
     [HideInInspector]
-    public RedemptionEnemyType EnemyType;
+    public RedemptionTDType EnemyType;
 
     [HideInInspector]
     public bool IsBoss;

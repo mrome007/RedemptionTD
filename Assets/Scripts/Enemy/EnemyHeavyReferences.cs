@@ -18,24 +18,24 @@ public class EnemyHeavyReferences : MonoBehaviour
     public Enemy Lead { get { return lead; } }
     public Enemy Magnesium { get { return magnesium; } }
 
-    public Enemy GetEnemyHeavyReference(RedemptionEnemyType enemyType)
+    public Enemy GetEnemyHeavyReference(RedemptionTDType enemyType)
     {
         var enemy = Black;
         switch(enemyType)
         {
-            case RedemptionEnemyType.BLACK:
+            case RedemptionTDType.BLACK:
                 enemy = Black;
                 break;
 
-            case RedemptionEnemyType.IRON:
+            case RedemptionTDType.IRON:
                 enemy = Iron;
                 break;
 
-            case RedemptionEnemyType.LEAD:
+            case RedemptionTDType.LEAD:
                 enemy = Lead;
                 break;
 
-            case RedemptionEnemyType.MAGNESIUM:
+            case RedemptionTDType.MAGNESIUM:
                 enemy = Magnesium;
                 break;
 

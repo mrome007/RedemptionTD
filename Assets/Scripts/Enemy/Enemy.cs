@@ -7,17 +7,17 @@ public class Enemy : MonoBehaviour
     #region Inspector Data
 
     [SerializeField]
-    private RedemptionEnemyObjectPool objectPool;
+    private RedemptionTDObjectPool objectPool;
 
     [SerializeField]
-    private RedemptionEnemyType enemyType;
+    private RedemptionTDType enemyType;
 
     [SerializeField]
     private float speed;
 
     #endregion
 
-    public RedemptionEnemyObjectPool EnemyPool { get { return objectPool; } }
-    public RedemptionEnemyType EnemyType { get { return enemyType; } }
+    public RedemptionTDObjectPool EnemyPool { get { return objectPool; } }
+    public RedemptionTDType EnemyType { get { return enemyType; } }
     public float Speed { get { return speed; } }
 }

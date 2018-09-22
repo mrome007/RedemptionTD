@@ -79,7 +79,7 @@ public class RedemptionTDWaveEditor : Editor
             spawn.TimeBetweenSpawns = EditorGUILayout.FloatField("Time BetWeen Spawns: ", spawn.TimeBetweenSpawns);
             spawn.NumberToSpawn = EditorGUILayout.IntField("Number To Spawn: ", spawn.NumberToSpawn);
 
-            spawn.EnemyType = (RedemptionEnemyType)EditorGUILayout.EnumPopup("Enemy Type: ", spawn.EnemyType);
+            spawn.EnemyType = (RedemptionTDType)EditorGUILayout.EnumPopup("Enemy Type: ", spawn.EnemyType);
             spawn.IsBoss = EditorGUILayout.Toggle("Is Boss", spawn.IsBoss);
 
             spawn.SpawnPosition = EditorGUILayout.ObjectField("Position: ", spawn.SpawnPosition, typeof(Waypoint), true) as Waypoint;

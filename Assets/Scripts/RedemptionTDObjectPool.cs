@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RedemptionEnemyObjectPool : MonoBehaviour 
+public class RedemptionTDObjectPool : MonoBehaviour 
 {
     #region Public Data
 
@@ -19,18 +19,27 @@ public class RedemptionEnemyObjectPool : MonoBehaviour
     private List<RedemptionEnemy> enemyList;
 
     [SerializeField]
-    private EnemyHeavyReferences heavyReferences;
+    private EnemyHeavyReferences enemyHeavyReferences;
 
     [SerializeField]
-    private Transform poolParent;
+    private List<RedemptionWeapon> weaponList;
+
+    [SerializeField]
+    private WeaponHeavyReferences weaponHeavyReferences;
+
+    [SerializeField]
+    private Transform enemyPoolParent;
+
+    [SerializeField]
+    private Transform weaponPoolParent;
 
     #endregion
 
     #region Private Data
 
-    private Dictionary<RedemptionEnemyType, EnemyLite> enemyDictionary;
-    private Dictionary<RedemptionEnemyType, List<EnemyLite>> enemyPool;
-    private Dictionary<RedemptionEnemyType, int> enemyPoolIndex;
+    private Dictionary<RedemptionTDType, EnemyLite> enemyDictionary;
+    private Dictionary<RedemptionTDType, List<EnemyLite>> enemyPool;
+    private Dictionary<RedemptionTDType, int> enemyPoolIndex;
 
     #endregion
 
@@ -40,7 +49,7 @@ public class RedemptionEnemyObjectPool : MonoBehaviour
         CreateRedemptionObjectPool();
     }
 
-    public IEnumerable<EnemyLite> GetEnemies(RedemptionEnemyType enemyType, int numberOfEnemies)
+    public IEnumerable<EnemyLite> GetEnemies(RedemptionTDType enemyType, int numberOfEnemies)
     {
         for(int count = 0; count < numberOfEnemies; count++)
         {
@@ -68,20 +77,24 @@ public class RedemptionEnemyObjectPool : MonoBehaviour
         }
     }
 
-    //TODO Rethink how to return enemies to pool.
-    public void ReturnEnemy(RedemptionEnemyType enemyType, EnemyLite enemy)
+    public void ReturnEnemy(RedemptionTDType enemyType, EnemyLite enemy)
     {
         var enemyPoolList = enemyPool[enemyType];
         var enemyIndex = enemyPoolIndex[enemyType];
 
         if(enemyIndex > 0)
         {
-            enemy.transform.parent = poolParent;
+            enemy.transform.parent = enemyPoolParent;
             enemy.transform.position = Vector3.zero;
             enemyPoolIndex[enemyType]--;
             enemyPoolList[enemyIndex] = enemy;
             enemy.gameObject.SetActive(false);
         }
+    }
+
+    public void ReturnWeapon(RedemptionTDType weaponType, WeaponLite weapon)
+    {
+
     }
 
     #region Helpers
@@ -95,8 +108,8 @@ public class RedemptionEnemyObjectPool : MonoBehaviour
 
         RaiseObjectPoolBegin();
 
-        enemyPool = new Dictionary<RedemptionEnemyType, List<EnemyLite>>();
-        enemyPoolIndex = new Dictionary<RedemptionEnemyType, int>();
+        enemyPool = new Dictionary<RedemptionTDType, List<EnemyLite>>();
+        enemyPoolIndex = new Dictionary<RedemptionTDType, int>();
         foreach(var enemy in enemyList)
         {
             if(enemyPool.ContainsKey(enemy.EnemyType))
@@ -110,9 +123,9 @@ public class RedemptionEnemyObjectPool : MonoBehaviour
             for(int count = 0; count < enemy.PoolAmount; count++)
             {
                 var liteEnemy = (EnemyLite)Instantiate(enemyDictionary[enemy.EnemyType], transform.position, Quaternion.identity);
-                liteEnemy.Initialize(heavyReferences.GetEnemyHeavyReference(enemy.EnemyType));
+                liteEnemy.Initialize(enemyHeavyReferences.GetEnemyHeavyReference(enemy.EnemyType));
 
-                liteEnemy.transform.parent = poolParent;
+                liteEnemy.transform.parent = enemyPoolParent;
                 liteEnemy.transform.position = Vector3.zero;
 
                 enemyPool[enemy.EnemyType].Add(liteEnemy);
@@ -130,7 +143,7 @@ public class RedemptionEnemyObjectPool : MonoBehaviour
             return;
         }
         
-        enemyDictionary = new Dictionary<RedemptionEnemyType, EnemyLite>();
+        enemyDictionary = new Dictionary<RedemptionTDType, EnemyLite>();
 
         foreach(var enemy in enemyList)
         {
@@ -171,12 +184,20 @@ public class RedemptionEnemyObjectPool : MonoBehaviour
 [Serializable]
 public class RedemptionEnemy
 {
-    public RedemptionEnemyType EnemyType;
+    public RedemptionTDType EnemyType;
     public EnemyLite EnemyLite;
     public int PoolAmount;
 }
 
-public enum RedemptionEnemyType
+[Serializable]
+public class RedemptionWeapon
+{
+    public RedemptionTDType WeaponType;
+    public WeaponLite WeaponLite;
+    public int PoolAmount;
+}
+
+public enum RedemptionTDType
 {
     BLANK,
     BLACK,

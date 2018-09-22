@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyLite : MonoBehaviour, IInitializable, IReturnable
+public class WeaponLite : MonoBehaviour, IInitializable, IReturnable
 {
     #region Override IReturnable
 
@@ -14,25 +14,25 @@ public class EnemyLite : MonoBehaviour, IInitializable, IReturnable
     #endregion
 
     #region Inspector Data
-    
-    [SerializeField]
-    private Enemy enemy;
 
-    public Enemy HeavyEnemyReference { get { return enemy; } }
+    [SerializeField]
+    private Weapon weapon;
+
+    public Weapon HeavyWeaponReference { get { return weapon; } }
 
     #endregion
 
     #region Override IInitializable, IReturnable
 
     /// <summary>
-    /// Initialize the enemy's Heavy Reference.
+    /// Initialize the weapon's Heavy Reference.
     /// </summary>
     /// <param name="obj">Object.</param>
     public void Initialize(object obj)
     {
-        enemy = obj as Enemy;
+        weapon = obj as Weapon;
 
-        if(enemy == null)
+        if(weapon == null)
         {
             return;
         }
@@ -47,14 +47,14 @@ public class EnemyLite : MonoBehaviour, IInitializable, IReturnable
 
     public void ReturnObject()
     {
-        HeavyEnemyReference.EnemyPool.ReturnEnemy(HeavyEnemyReference.EnemyType, this);
+        HeavyWeaponReference.WeaponPool.ReturnWeapon(HeavyWeaponReference.WeaponType, this);
         RaiseOnReturn();
     }
 
     public void RaiseOnReturn()
     {
         ReturnArgs.SpawnIndex = Index;
-        
+
         var handler = ObjectReturned;
         if(handler != null)
         {

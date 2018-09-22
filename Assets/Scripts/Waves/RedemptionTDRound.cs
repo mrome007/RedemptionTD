@@ -14,7 +14,7 @@ public class RedemptionTDRound : MonoBehaviour
     #endregion
 
     [SerializeField]
-    private RedemptionEnemyObjectPool objectPool;
+    private RedemptionTDObjectPool objectPool;
 
     [SerializeField]
     private float timeBetweenWaves;

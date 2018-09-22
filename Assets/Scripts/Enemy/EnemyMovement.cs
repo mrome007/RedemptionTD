@@ -77,7 +77,7 @@ public class EnemyMovement : MonoBehaviour, IInitializable
         }
 
         //TEMPORARY FOR TESTING ENEMIES RETURNING TO OBJECT POOL(WHEN ENEMIES DIE).
-        enemy.ReturnEnemy();
+        enemy.ReturnObject();
 
         RaiseMoveEnded();
     }
