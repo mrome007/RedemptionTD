@@ -2578,7 +2578,23 @@ MonoBehaviour:
       type: 2}
     PoolAmount: 100
   enemyHeavyReferences: {fileID: 2047680604}
-  weaponList: []
+  weaponList:
+  - WeaponType: 1
+    WeaponLite: {fileID: 114432194301884824, guid: 012b6a52adaf94c21bd661b5052aa3df,
+      type: 2}
+    PoolAmount: 100
+  - WeaponType: 2
+    WeaponLite: {fileID: 114422166483630568, guid: c62a7c8b583424ce7b5437c756fbb49e,
+      type: 2}
+    PoolAmount: 100
+  - WeaponType: 3
+    WeaponLite: {fileID: 114277601551710224, guid: df7611a0bdd524cf2a0b33710d141eb3,
+      type: 2}
+    PoolAmount: 100
+  - WeaponType: 4
+    WeaponLite: {fileID: 114685423822574496, guid: 9005c05739ae548008830a713969ff35,
+      type: 2}
+    PoolAmount: 100
   weaponHeavyReferences: {fileID: 2047680605}
   enemyPoolParent: {fileID: 1033158249}
   weaponPoolParent: {fileID: 1191596533}
