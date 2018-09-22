@@ -68,8 +68,6 @@ public class RedemptionTDObjectPool : MonoBehaviour
             if(enemyIndex < enemyPoolList.Count)
             {
                 var enemy = enemyPoolList[enemyIndex];
-                enemy.Initialize(enemyHeavyReferences.GetEnemyHeavyReference(enemyType));
-
                 enemyPoolList[enemyIndex] = null;
                 enemyPoolIndex[enemyType]++;
                 enemy.gameObject.SetActive(true);
@@ -98,7 +96,6 @@ public class RedemptionTDObjectPool : MonoBehaviour
             if(weaponIndex < weaponPoolList.Count)
             {
                 var weapon = weaponPoolList[weaponIndex];
-                weapon.Initialize(weaponHeavyReferences.GetWeaponHeavyReference(weaponType, 1));
                 weaponPoolList[weaponIndex] = null;
                 weaponPoolIndex[weaponType]++;
                 weapon.gameObject.SetActive(true);
@@ -172,6 +169,7 @@ public class RedemptionTDObjectPool : MonoBehaviour
             for(int count = 0; count < enemy.PoolAmount; count++)
             {
                 var liteEnemy = (EnemyLite)Instantiate(enemyDictionary[enemy.EnemyType], transform.position, Quaternion.identity);
+                liteEnemy.Initialize(enemyHeavyReferences.GetEnemyHeavyReference(enemy.EnemyType));
 
                 liteEnemy.transform.parent = enemyPoolParent;
                 liteEnemy.transform.position = Vector3.zero;
@@ -194,6 +192,7 @@ public class RedemptionTDObjectPool : MonoBehaviour
             for(int count = 0; count < weapon.PoolAmount; count++)
             {
                 var liteWeapon = (WeaponLite)Instantiate(weaponDictionary[weapon.WeaponType], transform.position, Quaternion.identity);
+                liteWeapon.Initialize(weaponHeavyReferences.GetWeaponHeavyReference(weapon.WeaponType, 1));
 
                 liteWeapon.transform.parent = weaponPoolParent;
                 liteWeapon.transform.position = Vector3.zero;

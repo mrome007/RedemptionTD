@@ -2414,7 +2414,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1945012859}
-  - component: {fileID: 1945012860}
   m_Layer: 0
   m_Name: Weapon Heavy References
   m_TagString: Untagged
@@ -2455,41 +2454,6 @@ Transform:
   m_Father: {fileID: 428839353}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1945012860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1945012858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6cf929841f1a4c51a55672ef4917b79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  black:
-  - {fileID: 418548269}
-  - {fileID: 521898459}
-  - {fileID: 372605353}
-  - {fileID: 479483643}
-  - {fileID: 258433307}
-  iron:
-  - {fileID: 1165456416}
-  - {fileID: 622398566}
-  - {fileID: 673720775}
-  - {fileID: 684688722}
-  - {fileID: 309202584}
-  lead:
-  - {fileID: 918477600}
-  - {fileID: 1284928052}
-  - {fileID: 2082063893}
-  - {fileID: 1253521456}
-  - {fileID: 1820842106}
-  magnesium:
-  - {fileID: 1114048127}
-  - {fileID: 2114783936}
-  - {fileID: 253557144}
-  - {fileID: 413235036}
-  - {fileID: 656805611}
 --- !u!1 &1962761133
 GameObject:
   m_ObjectHideFlags: 0
@@ -2639,10 +2603,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6cf929841f1a4c51a55672ef4917b79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  black: []
-  iron: []
-  lead: []
-  magnesium: []
+  black1: {fileID: 418548269}
+  iron1: {fileID: 1165456416}
+  lead1: {fileID: 918477600}
+  magnesium1: {fileID: 1114048127}
+  black:
+  - {fileID: 418548269}
+  - {fileID: 521898459}
+  - {fileID: 372605353}
+  - {fileID: 479483643}
+  - {fileID: 258433307}
+  iron:
+  - {fileID: 1165456416}
+  - {fileID: 622398566}
+  - {fileID: 673720775}
+  - {fileID: 684688722}
+  - {fileID: 309202584}
+  lead:
+  - {fileID: 918477600}
+  - {fileID: 1284928052}
+  - {fileID: 2082063893}
+  - {fileID: 1253521456}
+  - {fileID: 1820842106}
+  magnesium:
+  - {fileID: 1114048127}
+  - {fileID: 2114783936}
+  - {fileID: 253557144}
+  - {fileID: 413235036}
+  - {fileID: 656805611}
 --- !u!1 &2053947436
 GameObject:
   m_ObjectHideFlags: 0

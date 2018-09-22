@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4069898084651278}
   - component: {fileID: 114422166483630568}
   m_Layer: 0
-  m_Name: ironLite
+  m_Name: iironLite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,6 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2a88b307d32b411eb90bc3ce7cdd162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapon: {fileID: 0}
 --- !u!212 &212162145936527426
 SpriteRenderer:
   m_ObjectHideFlags: 1
