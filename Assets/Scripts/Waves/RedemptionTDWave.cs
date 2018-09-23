@@ -23,13 +23,13 @@ public class RedemptionTDWave : MonoBehaviour
     private RedemptionTDObjectPool objectPool;
     private int currentSpawnCount;
     private int totalSpawnCount;
-    private List<EnemyLite> currentSpawns;
+    private List<LiteUnit> currentSpawns;
 
     public void StartWave(RedemptionTDObjectPool pool)
     {
         if(currentSpawns == null)
         {
-            currentSpawns = new List<EnemyLite>();
+            currentSpawns = new List<LiteUnit>();
         }
 
         currentSpawnCount = 0;
@@ -84,7 +84,7 @@ public class RedemptionTDWave : MonoBehaviour
     {
         yield return new WaitForSeconds(spawnInfo.StartSpawnDelay);
 
-        var enemies = objectPool.GetEnemies(spawnInfo.EnemyType, spawnInfo.NumberToSpawn);
+        var enemies = objectPool.GetUnits(spawnInfo.EnemyType, spawnInfo.NumberToSpawn);
         foreach(var enemy in enemies)
         {
             var movement = enemy.GetComponent<EnemyMovement>();

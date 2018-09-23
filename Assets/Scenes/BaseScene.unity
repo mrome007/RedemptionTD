@@ -154,7 +154,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114257544161815138, guid: c5934850425b54074929e84886e6e27f,
         type: 2}
-      propertyPath: objectPool
+      propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
     m_RemovedComponents: []
@@ -179,6 +179,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 159957678}
+  - component: {fileID: 159957679}
   m_Layer: 0
   m_Name: Enemy Heavy References
   m_TagString: Untagged
@@ -201,8 +202,23 @@ Transform:
   - {fileID: 51422520}
   - {fileID: 796915710}
   m_Father: {fileID: 1601138563}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &159957679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 159957677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d4e6b336f58d4c2bb6bdce1918a1199, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  black: {fileID: 165695056}
+  iron: {fileID: 1596230386}
+  lead: {fileID: 51422521}
+  magnesium: {fileID: 796915709}
 --- !u!114 &165695056 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114916171798248932, guid: c892e1e6ec8404f2f9115063e333b762,
@@ -320,7 +336,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114917774672543970, guid: 36fcbb1fea6114e0ba476f6f31df192a,
         type: 2}
-      propertyPath: weaponPool
+      propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
     m_RemovedComponents: []
@@ -378,7 +394,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114891925789919750, guid: b072b4f0e5210444ea3b5efde78872ea,
         type: 2}
-      propertyPath: weaponPool
+      propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
     m_RemovedComponents: []
@@ -436,7 +452,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114941311394497932, guid: 9b5f7be5969d14608b22bd4a8f729cab,
         type: 2}
-      propertyPath: weaponPool
+      propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
     m_RemovedComponents: []
@@ -541,7 +557,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114747306750008880, guid: d86fc4511d58647f4836cbe43cfcab78,
         type: 2}
-      propertyPath: weaponPool
+      propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
     m_RemovedComponents: []
@@ -672,7 +688,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114147384860899396, guid: 9b0749302244b4f05835883e0ad2f703,
         type: 2}
-      propertyPath: weaponPool
+      propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
     m_RemovedComponents: []
@@ -730,7 +746,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114542831629657808, guid: 38165e804c66e4ec293752dd83ba86af,
         type: 2}
-      propertyPath: weaponPool
+      propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
     m_RemovedComponents: []
@@ -772,7 +788,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1191596533}
   - {fileID: 1945012859}
   m_Father: {fileID: 2047680603}
   m_RootOrder: 1
@@ -859,7 +874,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114675063926872304, guid: 23b43d941fb3749afaaa3b8e6b3f9551,
         type: 2}
-      propertyPath: weaponPool
+      propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
     m_RemovedComponents: []
@@ -990,7 +1005,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114364661304934038, guid: 0a8eb12f207814f68b00534c479810a3,
         type: 2}
-      propertyPath: weaponPool
+      propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
     m_RemovedComponents: []
@@ -1136,7 +1151,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114510239721838056, guid: c1506a29c0a4344e3b5712e7dc6aa7e2,
         type: 2}
-      propertyPath: weaponPool
+      propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
     m_RemovedComponents: []
@@ -1194,7 +1209,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114187660474805334, guid: 634743f48fbff482a9734bc10efcca08,
         type: 2}
-      propertyPath: weaponPool
+      propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
     m_RemovedComponents: []
@@ -1252,7 +1267,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114869210959116370, guid: 7ad613e8c79e2481595fce75af1b6012,
         type: 2}
-      propertyPath: weaponPool
+      propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
     m_RemovedComponents: []
@@ -1310,7 +1325,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114364929483456576, guid: e549adb5d37be4befb3826abe0eb2feb,
         type: 2}
-      propertyPath: weaponPool
+      propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
     m_RemovedComponents: []
@@ -1450,7 +1465,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114068143281241186, guid: 7a5ed3a99a1704c0985538e8ddeed152,
         type: 2}
-      propertyPath: objectPool
+      propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
     m_RemovedComponents: []
@@ -1581,7 +1596,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114066741819348210, guid: 167b728d05afe4e0890e24922263e052,
         type: 2}
-      propertyPath: weaponPool
+      propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
     m_RemovedComponents: []
@@ -1598,34 +1613,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 918477598}
   m_Script: {fileID: 11500000, guid: 2111da4bdbb664e7a8ecc021c2a0c59b, type: 3}
---- !u!1 &1033158248
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1033158249}
-  m_Layer: 0
-  m_Name: Enemy Object Pool Parent
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1033158249
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1033158248}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1601138563}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1114048125
 Prefab:
   m_ObjectHideFlags: 0
@@ -1667,7 +1654,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114534290208503842, guid: 60d47f077eb224c2eb0070e14c8cb767,
         type: 2}
-      propertyPath: weaponPool
+      propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
     m_RemovedComponents: []
@@ -1725,7 +1712,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114669909359458218, guid: 74c2f073374d94c8e948748c02281a64,
         type: 2}
-      propertyPath: weaponPool
+      propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
     m_RemovedComponents: []
@@ -1742,34 +1729,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1165456414}
   m_Script: {fileID: 11500000, guid: 2111da4bdbb664e7a8ecc021c2a0c59b, type: 3}
---- !u!1 &1191596532
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1191596533}
-  m_Layer: 0
-  m_Name: Weapon Object Pool Parent
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1191596533
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1191596532}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 428839353}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1208861588
 Prefab:
   m_ObjectHideFlags: 0
@@ -1811,7 +1770,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114916171798248932, guid: c892e1e6ec8404f2f9115063e333b762,
         type: 2}
-      propertyPath: objectPool
+      propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
     m_RemovedComponents: []
@@ -1858,7 +1817,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114729651554756072, guid: bd98b519884bb4ffa94fb79b9825cb63,
         type: 2}
-      propertyPath: weaponPool
+      propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
     m_RemovedComponents: []
@@ -1916,7 +1875,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114807014980325598, guid: 2217c165500dc41a78dc2dbf1db9a31a,
         type: 2}
-      propertyPath: weaponPool
+      propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
     m_RemovedComponents: []
@@ -2066,7 +2025,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114535837180249154, guid: db719cbcec38a4d6eba380aa161d9d40,
         type: 2}
-      propertyPath: objectPool
+      propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
     m_RemovedComponents: []
@@ -2108,7 +2067,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1033158249}
   - {fileID: 159957678}
   m_Father: {fileID: 2047680603}
   m_RootOrder: 0
@@ -2275,7 +2233,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114862637592573994, guid: 25e4cb54718444331a77151b4e07f025,
         type: 2}
-      propertyPath: weaponPool
+      propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
     m_RemovedComponents: []
@@ -2414,6 +2372,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1945012859}
+  - component: {fileID: 1945012860}
   m_Layer: 0
   m_Name: Weapon Heavy References
   m_TagString: Untagged
@@ -2452,8 +2411,43 @@ Transform:
   - {fileID: 1820842105}
   - {fileID: 656805610}
   m_Father: {fileID: 428839353}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1945012860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1945012858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6cf929841f1a4c51a55672ef4917b79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  black:
+  - {fileID: 418548269}
+  - {fileID: 521898459}
+  - {fileID: 372605353}
+  - {fileID: 479483643}
+  - {fileID: 258433307}
+  iron:
+  - {fileID: 1165456416}
+  - {fileID: 622398566}
+  - {fileID: 673720775}
+  - {fileID: 684688722}
+  - {fileID: 309202584}
+  lead:
+  - {fileID: 918477600}
+  - {fileID: 1284928052}
+  - {fileID: 2082063893}
+  - {fileID: 1253521456}
+  - {fileID: 1820842106}
+  magnesium:
+  - {fileID: 1114048127}
+  - {fileID: 2114783936}
+  - {fileID: 253557144}
+  - {fileID: 413235036}
+  - {fileID: 656805611}
 --- !u!1 &1962761133
 GameObject:
   m_ObjectHideFlags: 0
@@ -2504,8 +2498,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2047680603}
   - component: {fileID: 2047680602}
-  - component: {fileID: 2047680604}
-  - component: {fileID: 2047680605}
   m_Layer: 0
   m_Name: Object Pool
   m_TagString: Untagged
@@ -2524,44 +2516,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc7fcf420c13438f8d2b020c421b697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyList:
-  - EnemyType: 1
-    EnemyLite: {fileID: 114459633666693126, guid: 58dd075b0bf044317b501ebddd3370a4,
+  unitsList:
+  - Type: 1
+    LiteObject: {fileID: 114459633666693126, guid: 58dd075b0bf044317b501ebddd3370a4,
       type: 2}
     PoolAmount: 100
-  - EnemyType: 2
-    EnemyLite: {fileID: 114639051968191248, guid: 76120be2125544cb3a787bd622b610c0,
+  - Type: 2
+    LiteObject: {fileID: 114639051968191248, guid: 76120be2125544cb3a787bd622b610c0,
       type: 2}
     PoolAmount: 100
-  - EnemyType: 3
-    EnemyLite: {fileID: 114349839914323816, guid: 32de6d1bd185845e88142f10ed25bd7e,
+  - Type: 3
+    LiteObject: {fileID: 114349839914323816, guid: 32de6d1bd185845e88142f10ed25bd7e,
       type: 2}
     PoolAmount: 100
-  - EnemyType: 4
-    EnemyLite: {fileID: 114578472589538830, guid: 50cffea036ec144d2bd450a57ed8d116,
+  - Type: 4
+    LiteObject: {fileID: 114578472589538830, guid: 50cffea036ec144d2bd450a57ed8d116,
       type: 2}
     PoolAmount: 100
-  enemyHeavyReferences: {fileID: 2047680604}
-  weaponList:
-  - WeaponType: 1
-    WeaponLite: {fileID: 114432194301884824, guid: 012b6a52adaf94c21bd661b5052aa3df,
+  - Type: 5
+    LiteObject: {fileID: 114432194301884824, guid: 012b6a52adaf94c21bd661b5052aa3df,
       type: 2}
     PoolAmount: 100
-  - WeaponType: 2
-    WeaponLite: {fileID: 114422166483630568, guid: c62a7c8b583424ce7b5437c756fbb49e,
+  - Type: 6
+    LiteObject: {fileID: 114422166483630568, guid: c62a7c8b583424ce7b5437c756fbb49e,
       type: 2}
     PoolAmount: 100
-  - WeaponType: 3
-    WeaponLite: {fileID: 114277601551710224, guid: df7611a0bdd524cf2a0b33710d141eb3,
+  - Type: 7
+    LiteObject: {fileID: 114277601551710224, guid: df7611a0bdd524cf2a0b33710d141eb3,
       type: 2}
     PoolAmount: 100
-  - WeaponType: 4
-    WeaponLite: {fileID: 114685423822574496, guid: 9005c05739ae548008830a713969ff35,
+  - Type: 8
+    LiteObject: {fileID: 114685423822574496, guid: 9005c05739ae548008830a713969ff35,
       type: 2}
     PoolAmount: 100
-  weaponHeavyReferences: {fileID: 2047680605}
-  enemyPoolParent: {fileID: 1033158249}
-  weaponPoolParent: {fileID: 1191596533}
+  heavyList:
+  - HeavyType: 1
+    HeavyReference: {fileID: 159957679}
+  - HeavyType: 2
+    HeavyReference: {fileID: 1945012860}
+  unitsPoolParent: {fileID: 2115398972}
 --- !u!4 &2047680603
 Transform:
   m_ObjectHideFlags: 0
@@ -2574,63 +2567,10 @@ Transform:
   m_Children:
   - {fileID: 1601138563}
   - {fileID: 428839353}
+  - {fileID: 2115398972}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2047680604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2047680601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d4e6b336f58d4c2bb6bdce1918a1199, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  black: {fileID: 165695056}
-  iron: {fileID: 1596230386}
-  lead: {fileID: 51422521}
-  magnesium: {fileID: 796915709}
---- !u!114 &2047680605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2047680601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6cf929841f1a4c51a55672ef4917b79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  black1: {fileID: 418548269}
-  iron1: {fileID: 1165456416}
-  lead1: {fileID: 918477600}
-  magnesium1: {fileID: 1114048127}
-  black:
-  - {fileID: 418548269}
-  - {fileID: 521898459}
-  - {fileID: 372605353}
-  - {fileID: 479483643}
-  - {fileID: 258433307}
-  iron:
-  - {fileID: 1165456416}
-  - {fileID: 622398566}
-  - {fileID: 673720775}
-  - {fileID: 684688722}
-  - {fileID: 309202584}
-  lead:
-  - {fileID: 918477600}
-  - {fileID: 1284928052}
-  - {fileID: 2082063893}
-  - {fileID: 1253521456}
-  - {fileID: 1820842106}
-  magnesium:
-  - {fileID: 1114048127}
-  - {fileID: 2114783936}
-  - {fileID: 253557144}
-  - {fileID: 413235036}
-  - {fileID: 656805611}
 --- !u!1 &2053947436
 GameObject:
   m_ObjectHideFlags: 0
@@ -2745,7 +2685,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114724839015104688, guid: 769ded7739e0e400eaf8841d9bdc94f7,
         type: 2}
-      propertyPath: weaponPool
+      propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
     m_RemovedComponents: []
@@ -2803,7 +2743,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114395049102055920, guid: 35aa1dc509a024d3282fb98ac1fd8505,
         type: 2}
-      propertyPath: weaponPool
+      propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
     m_RemovedComponents: []
@@ -2820,3 +2760,31 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 2114783934}
   m_Script: {fileID: 11500000, guid: 2111da4bdbb664e7a8ecc021c2a0c59b, type: 3}
+--- !u!1 &2115398971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2115398972}
+  m_Layer: 0
+  m_Name: Unit Pool Parent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2115398972
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2115398971}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2047680603}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class LiteUnit : MonoBehaviour, IInitializable, IReturnable
+public class LiteUnit : MonoBehaviour, IInitializable, IReturnable
 {
+    public virtual HeavyUnit HeavyReference { get; }
+    
     #region Override IReturnable
 
     public event EventHandler<ReturnToPoolEventArgs> ObjectReturned;
@@ -24,7 +26,7 @@ public abstract class LiteUnit : MonoBehaviour, IInitializable, IReturnable
 
     public virtual void ReturnObject()
     {
-        //return lite object here.
+        HeavyReference.Pool.ReturnUnit(HeavyReference.Type, this);
         RaiseOnReturn();
     }
 
@@ -32,7 +34,9 @@ public abstract class LiteUnit : MonoBehaviour, IInitializable, IReturnable
 
     #region Override IInitializable
 
-    public abstract void Initialize(object obj);
+    public virtual void Initialize(object obj)
+    {
+    }
 
     #endregion
 }

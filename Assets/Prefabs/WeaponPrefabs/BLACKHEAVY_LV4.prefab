@@ -51,6 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2111da4bdbb664e7a8ecc021c2a0c59b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponPool: {fileID: 0}
+  pool: {fileID: 0}
+  type: 5
   level: 4
-  weaponType: 1

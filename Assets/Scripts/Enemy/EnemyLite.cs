@@ -3,32 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyLite : MonoBehaviour, IInitializable, IReturnable
+public class EnemyLite : LiteUnit
 {
-    #region Override IReturnable
-
-    public event EventHandler<ReturnToPoolEventArgs> ObjectReturned;
-    public int Index { get; set; }
-    public ReturnToPoolEventArgs ReturnArgs { get; private set; }
-
-    #endregion
-
     #region Inspector Data
     
     [SerializeField]
     private Enemy enemy;
 
-    public Enemy HeavyEnemyReference { get { return enemy; } }
-
     #endregion
 
-    #region Override IInitializable, IReturnable
+    #region Override
+
+    public override HeavyUnit HeavyReference { get { return enemy; } } 
 
     /// <summary>
     /// Initialize the enemy's Heavy Reference.
     /// </summary>
     /// <param name="obj">Object.</param>
-    public void Initialize(object obj)
+    public override void Initialize(object obj)
     {
         enemy = obj as Enemy;
 
@@ -42,23 +34,6 @@ public class EnemyLite : MonoBehaviour, IInitializable, IReturnable
         if(ReturnArgs == null)
         {
             ReturnArgs = new ReturnToPoolEventArgs(Index);
-        }
-    }
-
-    public void ReturnObject()
-    {
-        HeavyEnemyReference.EnemyPool.ReturnEnemy(HeavyEnemyReference.EnemyType, this);
-        RaiseOnReturn();
-    }
-
-    public void RaiseOnReturn()
-    {
-        ReturnArgs.SpawnIndex = Index;
-        
-        var handler = ObjectReturned;
-        if(handler != null)
-        {
-            handler(this, ReturnArgs);
         }
     }
 

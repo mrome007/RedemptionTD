@@ -16,63 +16,53 @@ public class RedemptionTDObjectPool : MonoBehaviour
     #region Inspector Data
 
     [SerializeField]
-    private List<RedemptionEnemy> enemyList;
+    private List<RedemptionTDUnit> unitsList;
 
     [SerializeField]
-    private EnemyHeavyReferences enemyHeavyReferences;
+    private List<RedemptionTDHeavyReferences> heavyList;
 
     [SerializeField]
-    private List<RedemptionWeapon> weaponList;
-
-    [SerializeField]
-    private WeaponHeavyReferences weaponHeavyReferences;
-
-    [SerializeField]
-    private Transform enemyPoolParent;
-
-    [SerializeField]
-    private Transform weaponPoolParent;
+    private Transform unitsPoolParent;
 
     #endregion
 
     #region Private Data
 
-    private Dictionary<RedemptionTDType, EnemyLite> enemyDictionary;
-    private Dictionary<RedemptionTDType, List<EnemyLite>> enemyPool;
-    private Dictionary<RedemptionTDType, int> enemyPoolIndex;
+    private Dictionary<RedemptionTDType, LiteUnit> unitsDictionary;
+    private Dictionary<RedemptionTDType, List<LiteUnit>> unitsPool;
+    private Dictionary<RedemptionTDType, int> unitsPoolIndex;
 
-    private Dictionary<RedemptionTDType, WeaponLite> weaponDictionary;
-    private Dictionary<RedemptionTDType, List<WeaponLite>> weaponPool;
-    private Dictionary<RedemptionTDType, int> weaponPoolIndex;
+    private Dictionary<RedemptionTDHeavyType, HeavyReferences> heavyDictionary;
 
     #endregion
 
     private void Awake()
     {
         InitializeObjectPoolDictionary();
+        InitializeHeavyDictionary();
         CreateRedemptionObjectPool();
     }
 
-    public IEnumerable<EnemyLite> GetEnemies(RedemptionTDType enemyType, int numberOfEnemies)
+    public IEnumerable<LiteUnit> GetUnits(RedemptionTDType type, int numberToSpawn)
     {
-        for(int count = 0; count < numberOfEnemies; count++)
+        for(int count = 0; count < numberToSpawn; count++)
         {
-            if(!enemyPool.ContainsKey(enemyType))
+            if(!unitsPool.ContainsKey(type))
             {
                 break;
             }
                 
-            var enemyPoolList = enemyPool[enemyType];
-            var enemyIndex = enemyPoolIndex[enemyType];
+            var unitsPoolList = unitsPool[type];
+            var unitIndex = unitsPoolIndex[type];
 
-            if(enemyIndex < enemyPoolList.Count)
+            if(unitIndex < unitsPoolList.Count)
             {
-                var enemy = enemyPoolList[enemyIndex];
-                enemyPoolList[enemyIndex] = null;
-                enemyPoolIndex[enemyType]++;
-                enemy.gameObject.SetActive(true);
-                enemy.transform.parent = null;
-                yield return enemy;
+                var unit = unitsPoolList[unitIndex];
+                unitsPoolList[unitIndex] = null;
+                unitsPoolIndex[type]++;
+                unit.gameObject.SetActive(true);
+                unit.transform.parent = null;
+                yield return unit;
             }
             else
             {
@@ -81,61 +71,18 @@ public class RedemptionTDObjectPool : MonoBehaviour
         }
     }
 
-    public IEnumerable<WeaponLite> GetWeapons(RedemptionTDType weaponType, int numberOfWeapons)
+    public void ReturnUnit(RedemptionTDType type, LiteUnit unit)
     {
-        for(int count = 0; count < numberOfWeapons; count++)
+        var unitsPoolList = unitsPool[type];
+        var unitsIndex = unitsPoolIndex[type];
+
+        if(unitsIndex > 0)
         {
-            if(!weaponPool.ContainsKey(weaponType))
-            {
-                break;
-            }
-
-            var weaponPoolList = weaponPool[weaponType];
-            var weaponIndex = weaponPoolIndex[weaponType];
-
-            if(weaponIndex < weaponPoolList.Count)
-            {
-                var weapon = weaponPoolList[weaponIndex];
-                weaponPoolList[weaponIndex] = null;
-                weaponPoolIndex[weaponType]++;
-                weapon.gameObject.SetActive(true);
-                weapon.transform.parent = null;
-                yield return weapon;
-            }
-            else
-            {
-                break;
-            }
-        }
-    }
-
-    public void ReturnEnemy(RedemptionTDType enemyType, EnemyLite enemy)
-    {
-        var enemyPoolList = enemyPool[enemyType];
-        var enemyIndex = enemyPoolIndex[enemyType];
-
-        if(enemyIndex > 0)
-        {
-            enemy.transform.parent = enemyPoolParent;
-            enemy.transform.position = Vector3.zero;
-            enemyPoolIndex[enemyType]--;
-            enemyPoolList[enemyIndex] = enemy;
-            enemy.gameObject.SetActive(false);
-        }
-    }
-
-    public void ReturnWeapon(RedemptionTDType weaponType, WeaponLite weapon)
-    {
-        var weaponPoolList = weaponPool[weaponType];
-        var weaponIndex = weaponPoolIndex[weaponType];
-
-        if(weaponIndex > 0)
-        {
-            weapon.transform.parent = weaponPoolParent;
-            weapon.transform.position = Vector3.zero;
-            weaponPoolIndex[weaponType]--;
-            weaponPoolList[weaponIndex] = weapon;
-            weapon.gameObject.SetActive(false);
+            unit.transform.parent = unitsPoolParent;
+            unit.transform.position = Vector3.zero;
+            unitsPoolIndex[type]--;
+            unitsPoolList[unitsIndex] = unit;
+            unit.gameObject.SetActive(false);
         }
     }
 
@@ -143,97 +90,106 @@ public class RedemptionTDObjectPool : MonoBehaviour
 
     private void CreateRedemptionObjectPool()
     {
-        if(enemyPool != null || weaponPool != null)
+        if(unitsPool != null)
         {
             return;
         }
 
         RaiseObjectPoolBegin();
 
-        enemyPool = new Dictionary<RedemptionTDType, List<EnemyLite>>();
-        enemyPoolIndex = new Dictionary<RedemptionTDType, int>();
+        unitsPool = new Dictionary<RedemptionTDType, List<LiteUnit>>();
+        unitsPoolIndex = new Dictionary<RedemptionTDType, int>();
 
-        weaponPool = new Dictionary<RedemptionTDType, List<WeaponLite>>();
-        weaponPoolIndex = new Dictionary<RedemptionTDType, int>();
-
-        foreach(var enemy in enemyList)
+        foreach(var unit in unitsList)
         {
-            if(enemyPool.ContainsKey(enemy.EnemyType))
+            if(unitsPool.ContainsKey(unit.Type))
             {
                 continue;
             }
 
-            enemyPool.Add(enemy.EnemyType, new List<EnemyLite>());
-            enemyPoolIndex.Add(enemy.EnemyType, 0);
+            unitsPool.Add(unit.Type, new List<LiteUnit>());
+            unitsPoolIndex.Add(unit.Type, 0);
 
-            for(int count = 0; count < enemy.PoolAmount; count++)
+            for(int count = 0; count < unit.PoolAmount; count++)
             {
-                var liteEnemy = (EnemyLite)Instantiate(enemyDictionary[enemy.EnemyType], transform.position, Quaternion.identity);
-                liteEnemy.Initialize(enemyHeavyReferences.GetEnemyHeavyReference(enemy.EnemyType));
+                var liteUnit = (LiteUnit)Instantiate(unitsDictionary[unit.Type], transform.position, Quaternion.identity);
+                var heavyReference = GetHeavyReference(unit.Type);
+                liteUnit.Initialize(heavyReference.GetHeavyReference(unit.Type));
 
-                liteEnemy.transform.parent = enemyPoolParent;
-                liteEnemy.transform.position = Vector3.zero;
+                liteUnit.transform.parent = unitsPoolParent;
+                liteUnit.transform.position = Vector3.zero;
 
-                enemyPool[enemy.EnemyType].Add(liteEnemy);
-                liteEnemy.gameObject.SetActive(false);
+                unitsPool[unit.Type].Add(liteUnit);
+                liteUnit.gameObject.SetActive(false);
             }
         }
-
-        foreach(var weapon in weaponList)
-        {
-            if(weaponPool.ContainsKey(weapon.WeaponType))
-            {
-                continue;
-            }
-
-            weaponPool.Add(weapon.WeaponType, new List<WeaponLite>());
-            weaponPoolIndex.Add(weapon.WeaponType, 0);
-
-            for(int count = 0; count < weapon.PoolAmount; count++)
-            {
-                var liteWeapon = (WeaponLite)Instantiate(weaponDictionary[weapon.WeaponType], transform.position, Quaternion.identity);
-                liteWeapon.Initialize(weaponHeavyReferences.GetWeaponHeavyReference(weapon.WeaponType, 1));
-
-                liteWeapon.transform.parent = weaponPoolParent;
-                liteWeapon.transform.position = Vector3.zero;
-
-                weaponPool[weapon.WeaponType].Add(liteWeapon);
-                liteWeapon.gameObject.SetActive(false);
-            }
-        }
-       
+            
         RaiseObjectPoolComplete();
     }
 
     private void InitializeObjectPoolDictionary()
     {
-        if(enemyDictionary != null || weaponDictionary != null)
+        if(unitsDictionary != null)
         {
             return;
         }
         
-        enemyDictionary = new Dictionary<RedemptionTDType, EnemyLite>();
-        weaponDictionary = new Dictionary<RedemptionTDType, WeaponLite>();
+        unitsDictionary = new Dictionary<RedemptionTDType, LiteUnit>();
 
-        foreach(var enemy in enemyList)
+        foreach(var unit in unitsList)
         {
-            if(enemyDictionary.ContainsKey(enemy.EnemyType))
+            if(unitsDictionary.ContainsKey(unit.Type))
             {
                 continue;
             }
 
-            enemyDictionary.Add(enemy.EnemyType, enemy.EnemyLite);
+            unitsDictionary.Add(unit.Type, unit.LiteObject);
+        }
+    }
+
+    private void InitializeHeavyDictionary()
+    {
+        if(heavyDictionary != null)
+        {
+            return;
         }
 
-        foreach(var weapon in weaponList)
+        heavyDictionary = new Dictionary<RedemptionTDHeavyType, HeavyReferences>();
+
+        foreach(var heavy in heavyList)
         {
-            if(weaponDictionary.ContainsKey(weapon.WeaponType))
+            if(heavyDictionary.ContainsKey(heavy.HeavyType))
             {
                 continue;
             }
 
-            weaponDictionary.Add(weapon.WeaponType, weapon.WeaponLite);
+            heavyDictionary.Add(heavy.HeavyType, heavy.HeavyReference);
         }
+    }
+
+    private HeavyReferences GetHeavyReference(RedemptionTDType type)
+    {
+        HeavyReferences result = null;
+        switch(type)
+        {
+            case RedemptionTDType.BLACK_ENEMY:
+            case RedemptionTDType.IRON_ENEMY:
+            case RedemptionTDType.LEAD_ENEMY:
+            case RedemptionTDType.MAGNESIUM_ENEMY:
+                result = heavyDictionary[RedemptionTDHeavyType.ENEMY];
+                break;
+
+            case RedemptionTDType.BLACK_WEAPON:
+            case RedemptionTDType.IRON_WEAPON:
+            case RedemptionTDType.LEAD_WEAPON:
+            case RedemptionTDType.MAGNESIUM_WEAPON:
+                result = heavyDictionary[RedemptionTDHeavyType.WEAPON];
+                break;
+            default:
+                break;
+        }
+
+        return result;
     }
 
     private void RaiseObjectPoolBegin()
@@ -262,26 +218,37 @@ public class RedemptionTDObjectPool : MonoBehaviour
 }
 
 [Serializable]
-public class RedemptionEnemy
+public class RedemptionTDUnit
 {
-    public RedemptionTDType EnemyType;
-    public EnemyLite EnemyLite;
+    public RedemptionTDType Type;
+    public LiteUnit LiteObject;
     public int PoolAmount;
 }
 
 [Serializable]
-public class RedemptionWeapon
+public class RedemptionTDHeavyReferences
 {
-    public RedemptionTDType WeaponType;
-    public WeaponLite WeaponLite;
-    public int PoolAmount;
+    public RedemptionTDHeavyType HeavyType;
+    public HeavyReferences HeavyReference;
 }
 
 public enum RedemptionTDType
 {
     BLANK,
-    BLACK,
-    IRON,
-    LEAD,
-    MAGNESIUM,
+    BLACK_ENEMY,
+    IRON_ENEMY,
+    LEAD_ENEMY,
+    MAGNESIUM_ENEMY,
+
+    BLACK_WEAPON,
+    IRON_WEAPON,
+    LEAD_WEAPON,
+    MAGNESIUM_WEAPON
+}
+
+public enum RedemptionTDHeavyType
+{
+    NONE,
+    ENEMY,
+    WEAPON
 }

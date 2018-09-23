@@ -56,6 +56,8 @@
      <Compile Include="Assets\Scripts\Enemy\EnemyLite.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\Environment\Waypoint.cs" />
+     <Compile Include="Assets\Scripts\HeavyReferences.cs" />
+     <Compile Include="Assets\Scripts\HeavyUnit.cs" />
      <Compile Include="Assets\Scripts\IInitializable.cs" />
      <Compile Include="Assets\Scripts\IReturnable.cs" />
      <Compile Include="Assets\Scripts\LiteUnit.cs" />

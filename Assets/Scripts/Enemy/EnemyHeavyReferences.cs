@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHeavyReferences : MonoBehaviour 
+public class EnemyHeavyReferences : HeavyReferences
 {
     [SerializeField]
     private Enemy black;
@@ -18,24 +18,24 @@ public class EnemyHeavyReferences : MonoBehaviour
     public Enemy Lead { get { return lead; } }
     public Enemy Magnesium { get { return magnesium; } }
 
-    public Enemy GetEnemyHeavyReference(RedemptionTDType enemyType)
+    public override HeavyUnit GetHeavyReference(RedemptionTDType type)
     {
         var enemy = Black;
-        switch(enemyType)
+        switch(type)
         {
-            case RedemptionTDType.BLACK:
+            case RedemptionTDType.BLACK_ENEMY:
                 enemy = Black;
                 break;
 
-            case RedemptionTDType.IRON:
+            case RedemptionTDType.IRON_ENEMY:
                 enemy = Iron;
                 break;
 
-            case RedemptionTDType.LEAD:
+            case RedemptionTDType.LEAD_ENEMY:
                 enemy = Lead;
                 break;
 
-            case RedemptionTDType.MAGNESIUM:
+            case RedemptionTDType.MAGNESIUM_ENEMY:
                 enemy = Magnesium;
                 break;
 
