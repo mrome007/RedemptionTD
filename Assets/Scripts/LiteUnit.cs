@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LiteUnit : MonoBehaviour, IInitializable, IReturnable
+public abstract class LiteUnit : MonoBehaviour, IInitializable, IReturnable
 {
     public virtual HeavyUnit HeavyReference { get; }
     
@@ -34,9 +34,7 @@ public class LiteUnit : MonoBehaviour, IInitializable, IReturnable
 
     #region Override IInitializable
 
-    public virtual void Initialize(object obj)
-    {
-    }
+    public abstract void Initialize(object obj);
 
     #endregion
 }
