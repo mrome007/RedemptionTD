@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\IInitializable.cs" />
      <Compile Include="Assets\Scripts\IReturnable.cs" />
      <Compile Include="Assets\Scripts\LiteUnit.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerInput.cs" />
      <Compile Include="Assets\Scripts\RedemptionTDObjectPool.cs" />
      <Compile Include="Assets\Scripts\ReturnToPoolEventArgs.cs" />
      <Compile Include="Assets\Scripts\Waves\RedemptionTDRound.cs" />
