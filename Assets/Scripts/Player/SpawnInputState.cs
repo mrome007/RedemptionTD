@@ -6,6 +6,9 @@ using UnityEngine;
 public class SpawnInputState : InputState
 {
     [SerializeField]
+    private List<SpawnButton> spawnButtons;
+    
+    [SerializeField]
     private SpriteRenderer okSpawn;
 
     [SerializeField]
@@ -25,6 +28,7 @@ public class SpawnInputState : InputState
     private Dictionary<RedemptionTDType, Sprite> spawnObjectsDictionary;
     private int spawnIntLayer;
     private Vector2 spawnPosition;
+
     private void Awake()
     {
         spawnIntLayer = LayerMask.NameToLayer("Spawn");
@@ -34,6 +38,7 @@ public class SpawnInputState : InputState
     public override void EnterInputState(RedemptionTDType type = RedemptionTDType.BLANK)
     {
         currentType = type;
+        //SetOkSpawnSprite();
     }
     
     public override void UpdateInputState(Vector2 position)
@@ -41,9 +46,21 @@ public class SpawnInputState : InputState
         var screenPoint = Camera.main.ScreenToWorldPoint(position);
         spawnPosition = screenPoint;
         transform.position = spawnPosition;
-        var hit = Physics2D.Raycast(screenPoint, Vector2.zero, 0);
 
-        ToggleOkSpawn(hit.collider.gameObject.layer == spawnIntLayer);
+        var hit = Physics2D.Raycast(screenPoint, Vector2.zero, 0);
+        var okToSpawn = hit.collider.gameObject.layer == spawnIntLayer;
+        ToggleOkSpawn(okToSpawn);
+
+        if(Input.GetMouseButtonDown(0))
+        {
+            ExitState();
+        }
+    }
+
+    public override void ExitState(RedemptionTDType type = RedemptionTDType.BLANK)
+    {
+        UnRegisterSpawnButtonsClick();
+        base.ExitState(type);
     }
 
     private void ToggleOkSpawn(bool ok)
@@ -74,5 +91,27 @@ public class SpawnInputState : InputState
             }
             spawnObjectsDictionary.Add(spawn.SpawnType, spawn.SpawnSprite);
         }
+    }
+
+    private void RegisterSpawnButtonsClick()
+    {
+        foreach(var spawn in spawnButtons)
+        {
+            spawn.SpawnButtonClicked += HandleSpawnButtonClicked;
+        }
+    }
+
+    private void UnRegisterSpawnButtonsClick()
+    {
+        foreach(var spawn in spawnButtons)
+        {
+            spawn.SpawnButtonClicked -= HandleSpawnButtonClicked;
+        }
+    }
+
+    private void HandleSpawnButtonClicked(object sender, RedemptionTDTypeEventArgs e)
+    {
+        currentType = e.Type;
+        //SetOkSpawnSprite();
     }
 }

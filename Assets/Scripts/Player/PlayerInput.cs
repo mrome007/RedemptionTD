@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,7 +15,27 @@ public class PlayerInput : MonoBehaviour
 
     private void Awake()
     {
-        currentState = spawnState;
+        currentState = normalState;
+        currentState.StateChange += HandleStateChange;
+    }
+
+    private void Start()
+    {
+        currentState.EnterInputState();
+    }
+
+    private void OnDestroy()
+    {
+        normalState.StateChange -= HandleStateChange;
+        spawnState.StateChange -= HandleStateChange;
+    }
+
+    private void HandleStateChange(object sender, RedemptionTDTypeEventArgs e)
+    {
+        currentState.StateChange -= HandleStateChange;
+        currentState = currentState.NextState;
+        currentState.EnterInputState(e == null ? RedemptionTDType.BLANK : e.Type);
+        currentState.StateChange += HandleStateChange;
     }
 
     private void Update()

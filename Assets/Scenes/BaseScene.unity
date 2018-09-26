@@ -664,6 +664,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c46352cb5dea41c5b8a1a02989fc346, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NextState: {fileID: 597925680}
+  spawnButtons:
+  - {fileID: 2090813243}
+  - {fileID: 664001933}
+  - {fileID: 847329494}
+  - {fileID: 1179221199}
 --- !u!1001 &372605351
 Prefab:
   m_ObjectHideFlags: 0
@@ -1237,6 +1243,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8311f9696109c4433b0ce4843cad6b80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NextState: {fileID: 344944202}
+  spawnButtons:
+  - {fileID: 2090813243}
+  - {fileID: 664001933}
+  - {fileID: 847329494}
+  - {fileID: 1179221199}
   okSpawn: {fileID: 1223890465}
   notOkSpawn: {fileID: 1306947182}
   spawnObjects: []
