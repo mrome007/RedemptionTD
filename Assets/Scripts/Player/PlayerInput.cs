@@ -4,30 +4,21 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour 
 {
-    private Vector2 mousePosition;
+    [SerializeField]
+    private InputState normalState;
 
-    protected virtual void Awake()
+    [SerializeField]
+    private InputState spawnState;
+
+    private InputState currentState;
+
+    private void Awake()
     {
-        mousePosition = Vector2.zero;
+        currentState = spawnState;
     }
 
-    protected virtual void Update()
+    private void Update()
     {
-        if(Input.GetMouseButtonDown(0))
-        {
-            var screenPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePosition = screenPoint;
-
-            var hit = Physics2D.Raycast(mousePosition, Vector2.zero, 0);
-
-            if(hit.collider.gameObject.layer == 8)
-            {
-                Debug.Log("Can Spawn" + hit.collider.gameObject.name);
-            }
-            else
-            {
-                Debug.Log("Cannot Spawn");
-            }
-        }
+        currentState.UpdateInputState(Input.mousePosition);
     }
 }
