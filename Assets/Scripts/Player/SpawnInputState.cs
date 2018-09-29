@@ -30,11 +30,13 @@ public class SpawnInputState : InputState
     private RedemptionTDType currentType;
     private Dictionary<RedemptionTDType, Sprite> spawnObjectsDictionary;
     private int spawnIntLayer;
+    private int blockIntLayer;
     private Vector2 spawnPosition;
 
     private void Awake()
     {
         spawnIntLayer = LayerMask.NameToLayer("Spawn");
+        blockIntLayer = LayerMask.NameToLayer("Out");
         InitializeSpawnObjectsDictionary();
     }
     
@@ -52,6 +54,13 @@ public class SpawnInputState : InputState
         transform.position = spawnPosition;
 
         var hit = Physics2D.Raycast(screenPoint, Vector2.zero, 0);
+
+        if(hit.collider.gameObject.layer == blockIntLayer)
+        {
+            ShowOkSpawn(false);
+            return;
+        }
+
         var okToSpawn = hit.collider.gameObject.layer == spawnIntLayer;
         ToggleOkSpawn(okToSpawn);
 
