@@ -6,6 +6,9 @@ using UnityEngine;
 public class SpawnInputState : InputState
 {
     [SerializeField]
+    private RedemptionTDObjectPool objectPool;
+    
+    [SerializeField]
     private List<SpawnButton> spawnButtons;
     
     [SerializeField]
@@ -38,6 +41,7 @@ public class SpawnInputState : InputState
     public override void EnterInputState(RedemptionTDType type = RedemptionTDType.BLANK)
     {
         currentType = type;
+        RegisterSpawnButtonsClick();
         //SetOkSpawnSprite();
     }
     
@@ -51,8 +55,14 @@ public class SpawnInputState : InputState
         var okToSpawn = hit.collider.gameObject.layer == spawnIntLayer;
         ToggleOkSpawn(okToSpawn);
 
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && okToSpawn)
         {
+            SpawnWeapon(spawnPosition);
+        }
+
+        if(Input.GetMouseButtonDown(1))
+        {
+            ShowOkSpawn(false);
             ExitState();
         }
     }
@@ -63,10 +73,25 @@ public class SpawnInputState : InputState
         base.ExitState(type);
     }
 
+    public void SpawnWeapon(Vector2 position)
+    {
+        var weapons = objectPool.GetUnits(currentType, 1);
+        foreach(var weapon in weapons)
+        {
+            weapon.transform.position = position;
+        }
+    }
+
     private void ToggleOkSpawn(bool ok)
     {
         okSpawn.gameObject.SetActive(ok);
         notOkSpawn.gameObject.SetActive(!ok);
+    }
+
+    private void ShowOkSpawn(bool show)
+    {
+        okSpawn.gameObject.SetActive(show);
+        notOkSpawn.gameObject.SetActive(show);
     }
 
     private void SetOkSpawnSprite()

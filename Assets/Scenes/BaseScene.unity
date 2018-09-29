@@ -504,7 +504,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.35}
+  m_Size: {x: 1.25, y: 0.5}
   m_EdgeRadius: 0
 --- !u!4 &304542128
 Transform:
@@ -1244,6 +1244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NextState: {fileID: 344944202}
+  objectPool: {fileID: 2047680602}
   spawnButtons:
   - {fileID: 2090813243}
   - {fileID: 664001933}
