@@ -36,6 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4518474497956900}
   - component: {fileID: 61187738037710716}
+  - component: {fileID: 114566864262930704}
   m_Layer: 0
   m_Name: MagSmallResource
   m_TagString: Untagged
@@ -245,6 +246,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.25, y: 0.2}
   m_EdgeRadius: 0
+--- !u!114 &114566864262930704
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1519169925506394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ea569a2fd627420e9f5e9b31e00a6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resource: {fileID: 0}
 --- !u!212 &212338993836246078
 SpriteRenderer:
   m_ObjectHideFlags: 1

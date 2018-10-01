@@ -156,6 +156,11 @@ Prefab:
       propertyPath: m_Name
       value: BlackSmallResource
       objectReference: {fileID: 0}
+    - target: {fileID: 114720325398815534, guid: 83655764374ee4cd6a9ca795f0334d5f,
+        type: 2}
+      propertyPath: resource
+      value: 
+      objectReference: {fileID: 628816377}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 83655764374ee4cd6a9ca795f0334d5f, type: 2}
   m_IsPrefabParent: 0
@@ -371,6 +376,11 @@ Prefab:
       propertyPath: m_Name
       value: BlackSmallResource
       objectReference: {fileID: 0}
+    - target: {fileID: 114720325398815534, guid: 83655764374ee4cd6a9ca795f0334d5f,
+        type: 2}
+      propertyPath: resource
+      value: 
+      objectReference: {fileID: 628816377}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 83655764374ee4cd6a9ca795f0334d5f, type: 2}
   m_IsPrefabParent: 0
@@ -754,6 +764,11 @@ Prefab:
       propertyPath: m_Name
       value: BlackSmallResource
       objectReference: {fileID: 0}
+    - target: {fileID: 114720325398815534, guid: 83655764374ee4cd6a9ca795f0334d5f,
+        type: 2}
+      propertyPath: resource
+      value: 
+      objectReference: {fileID: 628816377}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 83655764374ee4cd6a9ca795f0334d5f, type: 2}
   m_IsPrefabParent: 0
@@ -879,6 +894,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4603182833246506, guid: 74cd929dba44f44d7aecae4bedcac4eb,
     type: 2}
   m_PrefabInternal: {fileID: 2009765327}
+--- !u!114 &311955667 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114852053232430274, guid: 74cd929dba44f44d7aecae4bedcac4eb,
+    type: 2}
+  m_PrefabInternal: {fileID: 2009765327}
+  m_Script: {fileID: 11500000, guid: f1016f2fdad98493eb3538af35cad761, type: 3}
 --- !u!1 &323860235
 GameObject:
   m_ObjectHideFlags: 0
@@ -1058,6 +1079,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114706232678945344, guid: 4699e2e05fe8a402d9e856104e08309f,
+        type: 2}
+      propertyPath: resource
+      value: 
+      objectReference: {fileID: 1808379520}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4699e2e05fe8a402d9e856104e08309f, type: 2}
   m_IsPrefabParent: 0
@@ -1396,6 +1422,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114720325398815534, guid: 83655764374ee4cd6a9ca795f0334d5f,
+        type: 2}
+      propertyPath: resource
+      value: 
+      objectReference: {fileID: 628816377}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 83655764374ee4cd6a9ca795f0334d5f, type: 2}
   m_IsPrefabParent: 0
@@ -1708,6 +1739,11 @@ Prefab:
       propertyPath: m_Name
       value: BlackSmallResource
       objectReference: {fileID: 0}
+    - target: {fileID: 114720325398815534, guid: 83655764374ee4cd6a9ca795f0334d5f,
+        type: 2}
+      propertyPath: resource
+      value: 
+      objectReference: {fileID: 628816377}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 83655764374ee4cd6a9ca795f0334d5f, type: 2}
   m_IsPrefabParent: 0
@@ -1800,6 +1836,11 @@ Prefab:
       propertyPath: m_Name
       value: BlackSmallResource
       objectReference: {fileID: 0}
+    - target: {fileID: 114720325398815534, guid: 83655764374ee4cd6a9ca795f0334d5f,
+        type: 2}
+      propertyPath: resource
+      value: 
+      objectReference: {fileID: 628816377}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 83655764374ee4cd6a9ca795f0334d5f, type: 2}
   m_IsPrefabParent: 0
@@ -1970,6 +2011,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4007277835022044, guid: 6822145cef4b646278e096fdfd19e1aa,
     type: 2}
   m_PrefabInternal: {fileID: 2119839743}
+--- !u!114 &628816377 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114696706153759584, guid: 6822145cef4b646278e096fdfd19e1aa,
+    type: 2}
+  m_PrefabInternal: {fileID: 2119839743}
+  m_Script: {fileID: 11500000, guid: f1016f2fdad98493eb3538af35cad761, type: 3}
 --- !u!1001 &656805609
 Prefab:
   m_ObjectHideFlags: 0
@@ -2390,6 +2437,11 @@ Prefab:
       propertyPath: m_Name
       value: BlackMediumResource
       objectReference: {fileID: 0}
+    - target: {fileID: 114706232678945344, guid: 4699e2e05fe8a402d9e856104e08309f,
+        type: 2}
+      propertyPath: resource
+      value: 
+      objectReference: {fileID: 1808379520}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4699e2e05fe8a402d9e856104e08309f, type: 2}
   m_IsPrefabParent: 0
@@ -2567,6 +2619,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114424678644921732, guid: 74a7261fb2a394689b85d3552016d778,
+        type: 2}
+      propertyPath: resource
+      value: 
+      objectReference: {fileID: 311955667}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74a7261fb2a394689b85d3552016d778, type: 2}
   m_IsPrefabParent: 0
@@ -2758,6 +2815,11 @@ Prefab:
       propertyPath: m_Name
       value: BlackLargeResource
       objectReference: {fileID: 0}
+    - target: {fileID: 114424678644921732, guid: 74a7261fb2a394689b85d3552016d778,
+        type: 2}
+      propertyPath: resource
+      value: 
+      objectReference: {fileID: 311955667}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74a7261fb2a394689b85d3552016d778, type: 2}
   m_IsPrefabParent: 0
@@ -2809,6 +2871,11 @@ Prefab:
       propertyPath: m_Name
       value: BlackMediumResource
       objectReference: {fileID: 0}
+    - target: {fileID: 114706232678945344, guid: 4699e2e05fe8a402d9e856104e08309f,
+        type: 2}
+      propertyPath: resource
+      value: 
+      objectReference: {fileID: 1808379520}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4699e2e05fe8a402d9e856104e08309f, type: 2}
   m_IsPrefabParent: 0
@@ -2908,6 +2975,11 @@ Prefab:
       propertyPath: m_Name
       value: BlackLargeResource
       objectReference: {fileID: 0}
+    - target: {fileID: 114424678644921732, guid: 74a7261fb2a394689b85d3552016d778,
+        type: 2}
+      propertyPath: resource
+      value: 
+      objectReference: {fileID: 311955667}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74a7261fb2a394689b85d3552016d778, type: 2}
   m_IsPrefabParent: 0
@@ -2959,6 +3031,11 @@ Prefab:
       propertyPath: m_Name
       value: BlackSmallResource
       objectReference: {fileID: 0}
+    - target: {fileID: 114720325398815534, guid: 83655764374ee4cd6a9ca795f0334d5f,
+        type: 2}
+      propertyPath: resource
+      value: 
+      objectReference: {fileID: 628816377}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 83655764374ee4cd6a9ca795f0334d5f, type: 2}
   m_IsPrefabParent: 0
@@ -3349,6 +3426,11 @@ Prefab:
       propertyPath: m_Name
       value: BlackSmallResource
       objectReference: {fileID: 0}
+    - target: {fileID: 114720325398815534, guid: 83655764374ee4cd6a9ca795f0334d5f,
+        type: 2}
+      propertyPath: resource
+      value: 
+      objectReference: {fileID: 628816377}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 83655764374ee4cd6a9ca795f0334d5f, type: 2}
   m_IsPrefabParent: 0
@@ -3400,6 +3482,11 @@ Prefab:
       propertyPath: m_Name
       value: BlackMediumResource
       objectReference: {fileID: 0}
+    - target: {fileID: 114706232678945344, guid: 4699e2e05fe8a402d9e856104e08309f,
+        type: 2}
+      propertyPath: resource
+      value: 
+      objectReference: {fileID: 1808379520}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4699e2e05fe8a402d9e856104e08309f, type: 2}
   m_IsPrefabParent: 0
@@ -3509,6 +3596,11 @@ Prefab:
       propertyPath: m_Name
       value: BlackMediumResource
       objectReference: {fileID: 0}
+    - target: {fileID: 114706232678945344, guid: 4699e2e05fe8a402d9e856104e08309f,
+        type: 2}
+      propertyPath: resource
+      value: 
+      objectReference: {fileID: 1808379520}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4699e2e05fe8a402d9e856104e08309f, type: 2}
   m_IsPrefabParent: 0
@@ -4763,6 +4855,11 @@ Prefab:
       propertyPath: m_Name
       value: BlackMediumResource
       objectReference: {fileID: 0}
+    - target: {fileID: 114706232678945344, guid: 4699e2e05fe8a402d9e856104e08309f,
+        type: 2}
+      propertyPath: resource
+      value: 
+      objectReference: {fileID: 1808379520}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4699e2e05fe8a402d9e856104e08309f, type: 2}
   m_IsPrefabParent: 0
@@ -4881,6 +4978,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4095106756877520, guid: c87cd76361cd141898cfd8f98704467e,
     type: 2}
   m_PrefabInternal: {fileID: 1874614328}
+--- !u!114 &1808379520 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114705534483055060, guid: c87cd76361cd141898cfd8f98704467e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1874614328}
+  m_Script: {fileID: 11500000, guid: f1016f2fdad98493eb3538af35cad761, type: 3}
 --- !u!1001 &1820842104
 Prefab:
   m_ObjectHideFlags: 0
@@ -4982,6 +5085,11 @@ Prefab:
       propertyPath: m_Name
       value: BlackSmallResource
       objectReference: {fileID: 0}
+    - target: {fileID: 114720325398815534, guid: 83655764374ee4cd6a9ca795f0334d5f,
+        type: 2}
+      propertyPath: resource
+      value: 
+      objectReference: {fileID: 628816377}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 83655764374ee4cd6a9ca795f0334d5f, type: 2}
   m_IsPrefabParent: 0
@@ -5441,6 +5549,11 @@ Prefab:
       propertyPath: m_Name
       value: BlackSmallResource
       objectReference: {fileID: 0}
+    - target: {fileID: 114720325398815534, guid: 83655764374ee4cd6a9ca795f0334d5f,
+        type: 2}
+      propertyPath: resource
+      value: 
+      objectReference: {fileID: 628816377}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 83655764374ee4cd6a9ca795f0334d5f, type: 2}
   m_IsPrefabParent: 0
@@ -5648,6 +5761,11 @@ Prefab:
       propertyPath: m_Name
       value: BlackSmallResource
       objectReference: {fileID: 0}
+    - target: {fileID: 114720325398815534, guid: 83655764374ee4cd6a9ca795f0334d5f,
+        type: 2}
+      propertyPath: resource
+      value: 
+      objectReference: {fileID: 628816377}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 83655764374ee4cd6a9ca795f0334d5f, type: 2}
   m_IsPrefabParent: 0

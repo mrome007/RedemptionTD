@@ -484,6 +484,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4775820853079844}
   - component: {fileID: 61783494642929476}
+  - component: {fileID: 114710289677691902}
   m_Layer: 0
   m_Name: MagMediumResource
   m_TagString: Untagged
@@ -1055,6 +1056,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.4}
   m_EdgeRadius: 0
+--- !u!114 &114710289677691902
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1882715543199654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ea569a2fd627420e9f5e9b31e00a6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resource: {fileID: 0}
 --- !u!212 &212050408402321290
 SpriteRenderer:
   m_ObjectHideFlags: 1

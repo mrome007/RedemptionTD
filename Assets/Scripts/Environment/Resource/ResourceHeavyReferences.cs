@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class WeaponHeavyReferences : HeavyReferences
+public class ResourceHeavyReferences : HeavyReferences
 {
     [SerializeField]
-    private List<Weapon> black;
+    private List<Resource> black;
 
     [SerializeField]
-    private List<Weapon> iron;
+    private List<Resource> iron;
 
     [SerializeField]
-    private List<Weapon> lead;
+    private List<Resource> lead;
 
     [SerializeField]
-    private List<Weapon> magnesium;
+    private List<Resource> magnesium;
 
     public override HeavyUnit GetHeavyReference(RedemptionTDType type)
     {
-        Weapon result = null;
+        Resource result = null;
         switch(type)
         {
             case RedemptionTDType.BLACK_WEAPON:
@@ -47,7 +47,7 @@ public class WeaponHeavyReferences : HeavyReferences
 
     public HeavyUnit GetHeavyReference(RedemptionTDType type, int level)
     {
-        if(level < 1 || level > 5)
+        if(level < 1 || level > 3)
         {
             level = 0;
         }
@@ -56,7 +56,7 @@ public class WeaponHeavyReferences : HeavyReferences
             level = level - 1;
         }
 
-        Weapon result = null;
+        Resource result = null;
         switch(type)
         {
             case RedemptionTDType.BLACK_WEAPON:

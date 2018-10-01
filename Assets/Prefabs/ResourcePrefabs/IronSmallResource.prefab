@@ -52,6 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4661177714846106}
   - component: {fileID: 61101189057962344}
+  - component: {fileID: 114191035146341538}
   m_Layer: 0
   m_Name: IronSmallResource
   m_TagString: Untagged
@@ -245,6 +246,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.25, y: 0.2}
   m_EdgeRadius: 0
+--- !u!114 &114191035146341538
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1215242446707256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ea569a2fd627420e9f5e9b31e00a6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resource: {fileID: 0}
 --- !u!212 &212325705610252196
 SpriteRenderer:
   m_ObjectHideFlags: 1
