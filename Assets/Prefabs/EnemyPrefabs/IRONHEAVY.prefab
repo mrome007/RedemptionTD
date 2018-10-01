@@ -54,3 +54,4 @@ MonoBehaviour:
   pool: {fileID: 0}
   type: 2
   speed: 0.2
+  health: 50

@@ -9,7 +9,11 @@ public class Enemy : HeavyUnit
     [SerializeField]
     private float speed;
 
+    [SerializeField]
+    private float health;
+
     #endregion
 
     public float Speed { get { return speed; } }
+    public float Health { get { return health; } }
 }
