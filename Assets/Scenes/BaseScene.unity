@@ -3053,6 +3053,7 @@ GameObject:
   m_Component:
   - component: {fileID: 597925681}
   - component: {fileID: 597925680}
+  - component: {fileID: 597925682}
   m_Layer: 0
   m_Name: SpawnState
   m_TagString: Untagged
@@ -3078,9 +3079,7 @@ MonoBehaviour:
   - {fileID: 664001933}
   - {fileID: 847329494}
   - {fileID: 1179221199}
-  okSpawn: {fileID: 1223890465}
-  notOkSpawn: {fileID: 1306947182}
-  spawnObjects: []
+  spawnCursor: {fileID: 597925682}
 --- !u!4 &597925681
 Transform:
   m_ObjectHideFlags: 0
@@ -3096,6 +3095,20 @@ Transform:
   m_Father: {fileID: 1940843177}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &597925682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 597925679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 527fe8134c7bf4de0bbcaa805f592bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  okSpawn: {fileID: 1223890465}
+  notOkSpawn: {fileID: 1306947182}
+  spawnObjects: []
 --- !u!1001 &603642902
 Prefab:
   m_ObjectHideFlags: 0

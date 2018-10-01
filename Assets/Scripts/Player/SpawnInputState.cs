@@ -10,25 +10,11 @@ public class SpawnInputState : InputState
     
     [SerializeField]
     private List<SpawnButton> spawnButtons;
-    
-    [SerializeField]
-    private SpriteRenderer okSpawn;
 
     [SerializeField]
-    private SpriteRenderer notOkSpawn;
-
-    [SerializeField]
-    private List<SpawnObject> spawnObjects;
-    
-    [Serializable]
-    private class SpawnObject
-    {
-        public RedemptionTDType SpawnType;
-        public Sprite SpawnSprite;
-    }
+    private SpawnCursor spawnCursor;
 
     private RedemptionTDType currentType;
-    private Dictionary<RedemptionTDType, Sprite> spawnObjectsDictionary;
     private int spawnIntLayer;
     private int blockIntLayer;
     private Vector2 spawnPosition;
@@ -37,7 +23,6 @@ public class SpawnInputState : InputState
     {
         spawnIntLayer = LayerMask.NameToLayer("Spawn");
         blockIntLayer = LayerMask.NameToLayer("Out");
-        InitializeSpawnObjectsDictionary();
     }
     
     public override void EnterInputState(RedemptionTDType type = RedemptionTDType.BLANK)
@@ -57,12 +42,12 @@ public class SpawnInputState : InputState
 
         if(hit.collider.gameObject.layer == blockIntLayer)
         {
-            ShowOkSpawn(false);
+            spawnCursor.ShowOkSpawn(false);
             return;
         }
 
         var okToSpawn = hit.collider.gameObject.layer == spawnIntLayer;
-        ToggleOkSpawn(okToSpawn);
+        spawnCursor.ToggleOkSpawn(okToSpawn);
 
         if(Input.GetMouseButtonDown(0) && okToSpawn)
         {
@@ -71,7 +56,7 @@ public class SpawnInputState : InputState
 
         if(Input.GetMouseButtonDown(1))
         {
-            ShowOkSpawn(false);
+            spawnCursor.ShowOkSpawn(false);
             ExitState();
         }
     }
@@ -82,48 +67,12 @@ public class SpawnInputState : InputState
         base.ExitState(type);
     }
 
-    public void SpawnWeapon(Vector2 position)
+    private void SpawnWeapon(Vector2 position)
     {
         var weapons = objectPool.GetUnits(currentType, 1);
         foreach(var weapon in weapons)
         {
             weapon.transform.position = position;
-        }
-    }
-
-    private void ToggleOkSpawn(bool ok)
-    {
-        okSpawn.gameObject.SetActive(ok);
-        notOkSpawn.gameObject.SetActive(!ok);
-    }
-
-    private void ShowOkSpawn(bool show)
-    {
-        okSpawn.gameObject.SetActive(show);
-        notOkSpawn.gameObject.SetActive(show);
-    }
-
-    private void SetOkSpawnSprite()
-    {
-        var ok = spawnObjectsDictionary[currentType];
-        okSpawn.sprite = ok;
-        notOkSpawn.sprite = ok;
-    }
-
-    private void InitializeSpawnObjectsDictionary()
-    {
-        if(spawnObjectsDictionary != null)
-        {
-            return;
-        }
-        spawnObjectsDictionary = new Dictionary<RedemptionTDType, Sprite>();
-        foreach(var spawn in spawnObjects)
-        {
-            if(spawnObjectsDictionary.ContainsKey(spawn.SpawnType))
-            {
-                continue;
-            }
-            spawnObjectsDictionary.Add(spawn.SpawnType, spawn.SpawnSprite);
         }
     }
 
