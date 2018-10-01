@@ -243,7 +243,12 @@ public enum RedemptionTDType
     BLACK_WEAPON,
     IRON_WEAPON,
     LEAD_WEAPON,
-    MAGNESIUM_WEAPON
+    MAGNESIUM_WEAPON,
+
+    BLACK_RESOURCE,
+    IRON_RESOURCE,
+    LEAD_RESOURCE,
+    MAGNESIUM_RESOURCE
 }
 
 public enum RedemptionTDHeavyType
