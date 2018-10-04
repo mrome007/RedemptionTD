@@ -58,6 +58,9 @@
      <Compile Include="Assets\Scripts\Environment\Resource\Resource.cs" />
      <Compile Include="Assets\Scripts\Environment\Resource\ResourceHeavyReferences.cs" />
      <Compile Include="Assets\Scripts\Environment\Resource\ResourceLite.cs" />
+     <Compile Include="Assets\Scripts\Environment\Resource\ResourcesEventArgs.cs" />
+     <Compile Include="Assets\Scripts\Environment\Resource\ResourcesOverseer.cs" />
+     <Compile Include="Assets\Scripts\Environment\Resource\ResourceUIController.cs" />
      <Compile Include="Assets\Scripts\Environment\Waypoint.cs" />
      <Compile Include="Assets\Scripts\HeavyReferences.cs" />
      <Compile Include="Assets\Scripts\HeavyUnit.cs" />
