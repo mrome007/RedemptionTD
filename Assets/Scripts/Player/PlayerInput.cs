@@ -30,11 +30,11 @@ public class PlayerInput : MonoBehaviour
         spawnState.StateChange -= HandleStateChange;
     }
 
-    private void HandleStateChange(object sender, RedemptionTDTypeEventArgs e)
+    private void HandleStateChange(object sender, InputStateChangeArgs e)
     {
         currentState.StateChange -= HandleStateChange;
         currentState = currentState.NextState;
-        currentState.EnterInputState(e == null ? RedemptionTDType.BLANK : e.Type);
+        currentState.EnterInputState(e);
         currentState.StateChange += HandleStateChange;
     }
 

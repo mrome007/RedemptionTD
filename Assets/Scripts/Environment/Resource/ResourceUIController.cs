@@ -10,14 +10,12 @@ public class ResourceUIController : MonoBehaviour
 
     private void Awake()
     {
-        ResourcesOverseer.DecreaseResourceCount += HandleResourceCountChange;
-        ResourcesOverseer.IncreaseResourceCount += HandleResourceCountChange;
+        ResourcesOverseer.ResourceCountChanged += HandleResourceCountChange;
     }
         
     private void OnDestroy()
     {
-        ResourcesOverseer.DecreaseResourceCount -= HandleResourceCountChange;
-        ResourcesOverseer.IncreaseResourceCount -= HandleResourceCountChange;
+        ResourcesOverseer.ResourceCountChanged -= HandleResourceCountChange;
     }
 
     private void HandleResourceCountChange(object sender, ResourcesEventArgs e)

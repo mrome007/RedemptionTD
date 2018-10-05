@@ -6,21 +6,21 @@ using UnityEngine;
 public abstract class InputState : MonoBehaviour
 {
     public InputState NextState;
-    public abstract void EnterInputState(RedemptionTDType type = RedemptionTDType.BLANK);
+    public abstract void EnterInputState(InputStateChangeArgs args = null);
     public abstract void UpdateInputState(Vector2 position);
-    public virtual void ExitState(RedemptionTDType type = RedemptionTDType.BLANK)
+    public virtual void ExitState(InputStateChangeArgs args = null)
     {
-        PostStateChange(type);
+        PostStateChange(args);
     }
 
-    public event EventHandler<RedemptionTDTypeEventArgs> StateChange;
+    public event EventHandler<InputStateChangeArgs> StateChange;
 
-    protected virtual void PostStateChange(RedemptionTDType type)
+    protected virtual void PostStateChange(InputStateChangeArgs args)
     {
         var handler = StateChange;
         if(handler != null)
         {
-            handler(this, type == RedemptionTDType.BLANK ? null : new RedemptionTDTypeEventArgs(type));
+            handler(this, args);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ public class NormalInputState : InputState
     [SerializeField]
     private List<SpawnButton> spawnButtons;
 
-    public override void EnterInputState(RedemptionTDType type = RedemptionTDType.BLANK)
+    public override void EnterInputState(InputStateChangeArgs args = null)
     {
         RegisterSpawnButtonsClick();
     }
@@ -33,9 +34,9 @@ public class NormalInputState : InputState
         }
     }
 
-    private void HandleSpawnButtonClicked(object sender, RedemptionTDTypeEventArgs e)
+    private void HandleSpawnButtonClicked(object sender, SpawnWeaponInputArgs e)
     {
         UnRegisterSpawnButtonsClick();
-        ExitState(e.Type);
+        ExitState(e);
     }
 }

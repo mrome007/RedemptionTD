@@ -54,3 +54,6 @@ MonoBehaviour:
   pool: {fileID: 0}
   type: 6
   level: 4
+  baseDamage: 0
+  damageMultiplier: 0
+  cost: 150

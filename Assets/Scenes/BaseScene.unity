@@ -3619,7 +3619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e00a9118d54543bba4499ad6ee6a2fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnType: 7
+  spawnWeapon: {fileID: 918477600}
 --- !u!1001 &673720773
 Prefab:
   m_ObjectHideFlags: 0
@@ -5074,7 +5074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e00a9118d54543bba4499ad6ee6a2fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnType: 6
+  spawnWeapon: {fileID: 1165456416}
 --- !u!1001 &866537713
 Prefab:
   m_ObjectHideFlags: 0
@@ -6637,7 +6637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e00a9118d54543bba4499ad6ee6a2fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnType: 8
+  spawnWeapon: {fileID: 1114048127}
 --- !u!4 &1197473137 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4451886040350014, guid: 1e7b55b434a2749bdab6fda2926c55fe,
@@ -11002,7 +11002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e00a9118d54543bba4499ad6ee6a2fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnType: 5
+  spawnWeapon: {fileID: 418548269}
 --- !u!1001 &2093208267
 Prefab:
   m_ObjectHideFlags: 0

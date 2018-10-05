@@ -15,9 +15,13 @@ public class Weapon : HeavyUnit
     [SerializeField]
     private float damageMultiplier;
 
+    [SerializeField]
+    private int cost;
+
     #endregion
 
     public int Level { get { return level; } }
     public float BaseDamage { get { return baseDamage; } }
     public float DamageMultiplier { get { return damageMultiplier; } } 
+    public int Cost { get { return cost; } }
 }

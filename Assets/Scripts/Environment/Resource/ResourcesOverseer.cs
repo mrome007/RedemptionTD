@@ -16,8 +16,8 @@ public class ResourcesOverseer : MonoBehaviour
     private static ResourcesOverseer instance;
     private static int resourceCountStatic;
     private static int maxResourceCountStatic;
-    public static event EventHandler<ResourcesEventArgs> IncreaseResourceCount;
-    public static event EventHandler<ResourcesEventArgs> DecreaseResourceCount;
+    public static event EventHandler<ResourcesEventArgs> ResourceCountChanged;
+    public static event EventHandler<ResourcesEventArgs> ResourceChangeFailed;
 
     private void Awake()
     {
@@ -37,44 +37,57 @@ public class ResourcesOverseer : MonoBehaviour
 
     private void Start()
     {
-        ChangeIncreaseResourceEvent(0);
+        IncreaseResourceEvent(0);
     }
 
-    public static void ChangeIncreaseResourceEvent(int count)
+    public static bool IncreaseResourceEvent(int count)
     {
         if(!CanChangeResourceCount(true, count))
         {
-            return;
+            PostResourceChangeFailed();
+            return false;
         }
 
         resourceCountStatic += count;
-        
-        var handler = IncreaseResourceCount;
-        if(handler != null)
-        {
-            handler(null, new ResourcesEventArgs(resourceCountStatic));
-        }
+        PostResourceChanged();
+        return true;
     }
 
-    public static void ChangeDecreaseResourceEvent(int count)
+    public static bool DecreaseResourceEvent(int count)
     {
         if(!CanChangeResourceCount(false, count))
         {
-            return;
+            PostResourceChangeFailed();
+            return false;
         }
 
         resourceCountStatic -= count;
+        PostResourceChanged();
+        return true;
+    }
 
-        var handler = DecreaseResourceCount;
+    private static void PostResourceChanged()
+    {
+        var handler = ResourceCountChanged;
         if(handler != null)
         {
-            handler(null, new ResourcesEventArgs(resourceCountStatic));
+            handler(instance, new ResourcesEventArgs(resourceCountStatic));
+        }
+    }
+
+    private static void PostResourceChangeFailed()
+    {
+        var handler = ResourceChangeFailed;
+        if(handler != null)
+        {
+            handler(instance, null);
         }
     }
 
     private static bool CanChangeResourceCount(bool increase, int count)
     {
-        var result = resourceCountStatic + (count * (increase ? 1 : -1));
+        count *= increase ? 1 : -1;
+        var result = resourceCountStatic + count;
         if(increase)
         {
             return result <= maxResourceCountStatic;

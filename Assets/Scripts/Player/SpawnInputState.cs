@@ -14,7 +14,7 @@ public class SpawnInputState : InputState
     [SerializeField]
     private SpawnCursor spawnCursor;
 
-    private RedemptionTDType currentType;
+    private Weapon currentWeapon;
     private int spawnIntLayer;
     private int blockIntLayer;
     private Vector2 spawnPosition;
@@ -25,15 +25,14 @@ public class SpawnInputState : InputState
         blockIntLayer = LayerMask.NameToLayer("Out");
     }
     
-    public override void EnterInputState(RedemptionTDType type = RedemptionTDType.BLANK)
+    public override void EnterInputState(InputStateChangeArgs args = null)
     {
-        currentType = type;
+        currentWeapon = (args as SpawnWeaponInputArgs).Weapon;
         RegisterSpawnButtonsClick();
-        //SetOkSpawnSprite();
     }
     
     public override void UpdateInputState(Vector2 position)
-    {
+    {        
         var screenPoint = Camera.main.ScreenToWorldPoint(position);
         spawnPosition = screenPoint;
         transform.position = spawnPosition;
@@ -61,15 +60,20 @@ public class SpawnInputState : InputState
         }
     }
 
-    public override void ExitState(RedemptionTDType type = RedemptionTDType.BLANK)
+    public override void ExitState(InputStateChangeArgs args = null)
     {
         UnRegisterSpawnButtonsClick();
-        base.ExitState(type);
+        base.ExitState(args);
     }
 
     private void SpawnWeapon(Vector2 position)
     {
-        var weapons = objectPool.GetUnits(currentType, 1);
+        if(!ResourcesOverseer.DecreaseResourceEvent(currentWeapon.Cost))
+        {
+            return;
+        }
+
+        var weapons = objectPool.GetUnits(currentWeapon.Type, 1);
         foreach(var weapon in weapons)
         {
             weapon.transform.position = position;
@@ -92,9 +96,8 @@ public class SpawnInputState : InputState
         }
     }
 
-    private void HandleSpawnButtonClicked(object sender, RedemptionTDTypeEventArgs e)
+    private void HandleSpawnButtonClicked(object sender, SpawnWeaponInputArgs e)
     {
-        currentType = e.Type;
-        //SetOkSpawnSprite();
+        currentWeapon = e.Weapon;
     }
 }

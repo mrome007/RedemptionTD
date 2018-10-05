@@ -6,9 +6,9 @@ using UnityEngine;
 public class SpawnButton : MonoBehaviour 
 {
     [SerializeField]
-    private RedemptionTDType spawnType;
+    private Weapon spawnWeapon;
 
-    public event EventHandler<RedemptionTDTypeEventArgs> SpawnButtonClicked;
+    public event EventHandler<SpawnWeaponInputArgs> SpawnButtonClicked;
 
     public void OnButtonClicked()
     {
@@ -20,7 +20,7 @@ public class SpawnButton : MonoBehaviour
         var handler = SpawnButtonClicked;
         if(handler != null)
         {
-            handler(this, new RedemptionTDTypeEventArgs(spawnType));
+            handler(this, new SpawnWeaponInputArgs(spawnWeapon));
         }
     }
 }

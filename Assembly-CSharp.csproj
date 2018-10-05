@@ -69,11 +69,13 @@
      <Compile Include="Assets\Scripts\LiteUnit.cs" />
      <Compile Include="Assets\Scripts\Player\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\Player\InputState.cs" />
+     <Compile Include="Assets\Scripts\Player\InputStateChangeArgs.cs" />
      <Compile Include="Assets\Scripts\Player\NormalInputState.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerInput.cs" />
      <Compile Include="Assets\Scripts\Player\SpawnButton.cs" />
      <Compile Include="Assets\Scripts\Player\SpawnCursor.cs" />
      <Compile Include="Assets\Scripts\Player\SpawnInputState.cs" />
+     <Compile Include="Assets\Scripts\Player\SpawnWeaponArgs.cs" />
      <Compile Include="Assets\Scripts\RedemptionTDObjectPool.cs" />
      <Compile Include="Assets\Scripts\RedemptionTDTypeEventArgs.cs" />
      <Compile Include="Assets\Scripts\ReturnToPoolEventArgs.cs" />
