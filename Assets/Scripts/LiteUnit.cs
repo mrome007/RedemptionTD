@@ -3,24 +3,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class LiteUnit : MonoBehaviour, IInitializable, IReturnable
+public abstract class LiteUnit : MonoBehaviour, IInitializable, IPoolable
 {
     public virtual HeavyUnit HeavyReference { get; }
     
     #region Override IReturnable
 
-    public event EventHandler<ReturnToPoolEventArgs> ObjectReturned;
-    public ReturnToPoolEventArgs ReturnArgs { get; protected set; }
+    public event EventHandler<ToOrFromPoolEventArgs> ObjectReturned;
+    public event EventHandler<ToOrFromPoolEventArgs> ObjectSpawned;
+    public ToOrFromPoolEventArgs PoolArgs { get; protected set; }
     public int Index { get; set; }
 
     public virtual void RaiseOnReturn()
     {
-        ReturnArgs.SpawnIndex = Index;
+        PoolArgs.SpawnIndex = Index;
 
         var handler = ObjectReturned;
         if(handler != null)
         {
-            handler(this, ReturnArgs);
+            handler(this, PoolArgs);
         }
     }
 
@@ -28,6 +29,24 @@ public abstract class LiteUnit : MonoBehaviour, IInitializable, IReturnable
     {
         HeavyReference.Pool.ReturnUnit(HeavyReference.Type, this);
         RaiseOnReturn();
+    }
+
+    public virtual void RaiseOnSpawn()
+    {
+        PoolArgs.SpawnIndex = Index;
+
+        var handler = ObjectSpawned;
+        if(handler != null)
+        {
+            handler(this, PoolArgs);
+        }
+    }
+
+    public virtual void SpawnObject(int index, Vector3 position)
+    {
+        Index = index;
+        transform.position = position;
+        RaiseOnSpawn();
     }
 
     #endregion

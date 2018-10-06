@@ -76,7 +76,7 @@ public class SpawnInputState : InputState
         var weapons = objectPool.GetUnits(currentWeapon.Type, 1);
         foreach(var weapon in weapons)
         {
-            weapon.transform.position = position;
+            weapon.SpawnObject(0, position);
         }
     }
 

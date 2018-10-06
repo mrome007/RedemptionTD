@@ -31,9 +31,9 @@ public class WeaponLite : LiteUnit
 
         Index = 0;
 
-        if(ReturnArgs == null)
+        if(PoolArgs == null)
         {
-            ReturnArgs = new ReturnToPoolEventArgs(Index);
+            PoolArgs = new ToOrFromPoolEventArgs(Index);
         }
     }
 
