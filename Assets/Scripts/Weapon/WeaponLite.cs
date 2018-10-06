@@ -46,9 +46,17 @@ public class WeaponLite : LiteUnit
     public override void SpawnObject(int index, Vector3 position)
     {
         base.SpawnObject(index, position);
+        InitializeWeaponState();
+    }
 
+    #endregion
+
+    #region Helpers
+
+    protected void InitializeWeaponState()
+    {
         var resourceLayer = 1 << LayerMask.NameToLayer("Resource");
-        var hit = Physics2D.OverlapCircle(position, weapon.GatherRadius, resourceLayer);
+        var hit = Physics2D.OverlapCircle(transform.position, weapon.GatherRadius, resourceLayer);
         if(hit != null)
         {
             gatherState.enabled = true;
