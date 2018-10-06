@@ -57,3 +57,4 @@ MonoBehaviour:
   baseDamage: 0
   damageMultiplier: 0
   cost: 75
+  gatherRadius: 0.05

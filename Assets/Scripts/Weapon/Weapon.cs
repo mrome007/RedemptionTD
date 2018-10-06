@@ -18,10 +18,14 @@ public class Weapon : HeavyUnit
     [SerializeField]
     private int cost;
 
+    [SerializeField]
+    private float gatherRadius;
+
     #endregion
 
     public int Level { get { return level; } }
     public float BaseDamage { get { return baseDamage; } }
     public float DamageMultiplier { get { return damageMultiplier; } } 
     public int Cost { get { return cost; } }
+    public float GatherRadius { get { return gatherRadius; } }
 }

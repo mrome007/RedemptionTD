@@ -82,9 +82,12 @@
      <Compile Include="Assets\Scripts\Waves\RedemptionTDRound.cs" />
      <Compile Include="Assets\Scripts\Waves\RedemptionTDSpawnInfo.cs" />
      <Compile Include="Assets\Scripts\Waves\RedemptionTDWave.cs" />
+     <Compile Include="Assets\Scripts\Weapon\BlastWeaponState.cs" />
+     <Compile Include="Assets\Scripts\Weapon\GatherWeaponState.cs" />
      <Compile Include="Assets\Scripts\Weapon\Weapon.cs" />
      <Compile Include="Assets\Scripts\Weapon\WeaponHeavyReferences.cs" />
      <Compile Include="Assets\Scripts\Weapon\WeaponLite.cs" />
+     <Compile Include="Assets\Scripts\Weapon\WeaponState.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

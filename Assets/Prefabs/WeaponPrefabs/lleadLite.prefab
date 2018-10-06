@@ -37,6 +37,8 @@ GameObject:
   - component: {fileID: 4424520222131064}
   - component: {fileID: 114277601551710224}
   - component: {fileID: 58142990126770198}
+  - component: {fileID: 114293921959104838}
+  - component: {fileID: 114826598158039340}
   m_Layer: 0
   m_Name: lleadLite
   m_TagString: Untagged
@@ -97,7 +99,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2a88b307d32b411eb90bc3ce7cdd162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 0}
+  blastState: {fileID: 114293921959104838}
+  gatherState: {fileID: 114826598158039340}
+--- !u!114 &114293921959104838
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1964860289412750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ba55a58e3d62470684a8fa902f8e030, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114826598158039340
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1964860289412750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc9b9d14032aa4ed0be39b8ce387e75b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212120781539223428
 SpriteRenderer:
   m_ObjectHideFlags: 1
