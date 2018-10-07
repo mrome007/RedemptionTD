@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 58290142429879318}
   - component: {fileID: 114397341792068726}
   - component: {fileID: 114296232254986214}
+  - component: {fileID: 114295840147396542}
   m_Layer: 0
   m_Name: iironLite
   m_TagString: Untagged
@@ -88,6 +89,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!114 &114295840147396542
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1482661899334604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6024168825daa48f6a102f93748ccbab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114296232254986214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -123,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastState: {fileID: 114397341792068726}
   gatherState: {fileID: 114296232254986214}
+  nullState: {fileID: 114295840147396542}
 --- !u!212 &212162145936527426
 SpriteRenderer:
   m_ObjectHideFlags: 1

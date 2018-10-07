@@ -8,4 +8,9 @@ public class BlastWeaponState : WeaponState
     {
         
     }
+
+    public override void EnterWeaponState(object obj = null)
+    {
+        
+    }
 }

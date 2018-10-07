@@ -7,7 +7,7 @@ public interface IPoolable
 {
     event EventHandler<ToOrFromPoolEventArgs> ObjectReturned;
     ToOrFromPoolEventArgs PoolArgs { get; }
-    int Index { get; set; }
+    int Index { get; }
     void RaiseOnReturn();
     void ReturnObject();
     void RaiseOnSpawn();

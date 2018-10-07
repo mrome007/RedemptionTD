@@ -11,9 +11,11 @@ public class ResourceLite : LiteUnit
 
     #endregion
 
+    private int currentResourceCount;
+
     #region Overrides
 
-    public override HeavyUnit HeavyReference { get { return resource; } }
+    protected override HeavyUnit HeavyReference { get { return resource; } }
 
     public override void Initialize(object obj)
     {
@@ -32,5 +34,44 @@ public class ResourceLite : LiteUnit
         }
     }
 
+    protected override void ReturnObject()
+    {
+        gameObject.SetActive(false);
+        RaiseOnReturn();
+    }
+
     #endregion
+
+    #region Monobehavior
+
+    protected virtual void Start()
+    {
+        currentResourceCount = resource.TotalResource;
+    }
+
+    #endregion
+
+    public void GetResource()
+    {
+        var miss = Random.Range(0, 100);
+        if(miss < resource.BustRate)
+        {
+            return;
+        }
+        
+        if(currentResourceCount > 0)
+        {
+            currentResourceCount -= resource.GivenResource;
+            ResourcesOverseer.IncreaseResourceEvent(resource.GivenResource);
+        }
+        else
+        {
+            ReturnObject();
+        }
+    }
+
+    public float GetTimeToGather()
+    {
+        return resource.TimeToGiveResource;
+    }
 }

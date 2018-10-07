@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 58142990126770198}
   - component: {fileID: 114293921959104838}
   - component: {fileID: 114826598158039340}
+  - component: {fileID: 114616900875786522}
   m_Layer: 0
   m_Name: lleadLite
   m_TagString: Untagged
@@ -101,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastState: {fileID: 114293921959104838}
   gatherState: {fileID: 114826598158039340}
+  nullState: {fileID: 114616900875786522}
 --- !u!114 &114293921959104838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -110,6 +112,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ba55a58e3d62470684a8fa902f8e030, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114616900875786522
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1964860289412750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6024168825daa48f6a102f93748ccbab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114826598158039340

@@ -5,9 +5,5 @@ using UnityEngine;
 public abstract class WeaponState : MonoBehaviour 
 {
     public abstract void UpdateWeapon();
-
-    protected virtual void Start()
-    {
-
-    }
+    public abstract void EnterWeaponState(object obj = null);
 }

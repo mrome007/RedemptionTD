@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 58995477469489530}
   - component: {fileID: 114536089327745536}
   - component: {fileID: 114647882343891964}
+  - component: {fileID: 114447472254509312}
   m_Layer: 0
   m_Name: mmagnesiumLite
   m_TagString: Untagged
@@ -88,6 +89,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!114 &114447472254509312
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1265510936279246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6024168825daa48f6a102f93748ccbab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114536089327745536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -123,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastState: {fileID: 114536089327745536}
   gatherState: {fileID: 114647882343891964}
+  nullState: {fileID: 114447472254509312}
 --- !u!212 &212627185484070568
 SpriteRenderer:
   m_ObjectHideFlags: 1

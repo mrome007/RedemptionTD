@@ -6,6 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(EnemyLite))]
 public class EnemyMovement : MonoBehaviour, IInitializable
 {
+    public float Speed { get; set; }
+    
     #region Public Data
 
     public event EventHandler MoveStarted;
@@ -14,8 +16,6 @@ public class EnemyMovement : MonoBehaviour, IInitializable
     #endregion
 
     #region Private Data
-
-    private EnemyLite enemy;
 
     [SerializeField]
     private Waypoint currentPoint;
@@ -42,11 +42,6 @@ public class EnemyMovement : MonoBehaviour, IInitializable
 
     #endregion
 
-    private void Awake()
-    {
-        enemy = GetComponent<EnemyLite>();
-    }
-
     public void Move()
     {
         StartCoroutine(MoveEnemyRoutine());
@@ -64,7 +59,7 @@ public class EnemyMovement : MonoBehaviour, IInitializable
             var targetPosition = curr.NextWaypoint.transform.position;
 
             var t = 0f;
-            var incrRate = (((Enemy)enemy.HeavyReference).Speed * Time.deltaTime) / Vector3.Distance(originalPosition, targetPosition);
+            var incrRate = (Speed * Time.deltaTime) / Vector3.Distance(originalPosition, targetPosition);
 
             while(t < 1f)
             {
@@ -75,9 +70,6 @@ public class EnemyMovement : MonoBehaviour, IInitializable
 
             curr = curr.NextWaypoint;
         }
-
-        //TEMPORARY FOR TESTING ENEMIES RETURNING TO OBJECT POOL(WHEN ENEMIES DIE).
-        enemy.ReturnObject();
 
         RaiseMoveEnded();
     }

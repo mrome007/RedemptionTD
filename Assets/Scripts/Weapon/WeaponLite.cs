@@ -13,6 +13,9 @@ public class WeaponLite : LiteUnit
     [SerializeField]
     private GatherWeaponState gatherState;
 
+    [SerializeField]
+    private NullWeaponState nullState;
+
     #endregion
 
     private Weapon weapon;
@@ -20,7 +23,7 @@ public class WeaponLite : LiteUnit
 
     #region Overrides
 
-    public override HeavyUnit HeavyReference { get { return weapon; } } 
+    protected override HeavyUnit HeavyReference { get { return weapon; } } 
 
     /// <summary>
     /// Initialize the weapon's Heavy Reference.
@@ -62,13 +65,30 @@ public class WeaponLite : LiteUnit
             gatherState.enabled = true;
             blastState.enabled = false;
             currentWeaponState = gatherState;
+            currentWeaponState.EnterWeaponState(hit.GetComponent<ResourceLite>());
         }
         else
         {
             gatherState.enabled = false;
             blastState.enabled = true;
             currentWeaponState = blastState;
+            currentWeaponState.EnterWeaponState();
         }
+    }
+
+    #endregion
+
+    #region Monobehavior
+
+    protected virtual void OnEnable()
+    {
+        currentWeaponState = nullState;
+        currentWeaponState.EnterWeaponState();
+    }
+
+    protected virtual void Update()
+    {
+        currentWeaponState.UpdateWeapon();
     }
 
     #endregion

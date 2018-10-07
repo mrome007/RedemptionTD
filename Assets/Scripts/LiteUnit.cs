@@ -3,16 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class LiteUnit : MonoBehaviour, IInitializable, IPoolable
+public abstract class LiteUnit : MonoBehaviour, IInitializable
 {
-    public virtual HeavyUnit HeavyReference { get; }
+    protected virtual HeavyUnit HeavyReference { get; }
     
     #region Override IReturnable
 
     public event EventHandler<ToOrFromPoolEventArgs> ObjectReturned;
     public event EventHandler<ToOrFromPoolEventArgs> ObjectSpawned;
-    public ToOrFromPoolEventArgs PoolArgs { get; protected set; }
-    public int Index { get; set; }
+    protected ToOrFromPoolEventArgs PoolArgs { get; set; }
+    protected int Index { get; set; }
 
     public virtual void RaiseOnReturn()
     {
@@ -25,13 +25,13 @@ public abstract class LiteUnit : MonoBehaviour, IInitializable, IPoolable
         }
     }
 
-    public virtual void ReturnObject()
+    protected virtual void ReturnObject()
     {
         HeavyReference.Pool.ReturnUnit(HeavyReference.Type, this);
         RaiseOnReturn();
     }
 
-    public virtual void RaiseOnSpawn()
+    protected virtual void RaiseOnSpawn()
     {
         PoolArgs.SpawnIndex = Index;
 
