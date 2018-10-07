@@ -19,13 +19,6 @@ public class ResourceLite : LiteUnit
 
     public override void Initialize(object obj)
     {
-        resource = obj as Resource;
-
-        if(resource == null)
-        {
-            return;
-        }
-
         Index = 0;
 
         if(PoolArgs == null)
@@ -47,6 +40,7 @@ public class ResourceLite : LiteUnit
     protected virtual void Start()
     {
         currentResourceCount = resource.TotalResource;
+        Initialize(null);
     }
 
     #endregion
