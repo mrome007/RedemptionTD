@@ -21,6 +21,12 @@ public class Weapon : HeavyUnit
     [SerializeField]
     private float gatherRadius;
 
+    [SerializeField]
+    private Sprite weaponSprite;
+
+    [SerializeField]
+    private Sprite gatherSprite;
+
     #endregion
 
     public int Level { get { return level; } }
@@ -28,4 +34,6 @@ public class Weapon : HeavyUnit
     public float DamageMultiplier { get { return damageMultiplier; } } 
     public int Cost { get { return cost; } }
     public float GatherRadius { get { return gatherRadius; } }
+    public Sprite WeaponSprite { get { return weaponSprite; } }
+    public Sprite GatherSprite { get { return gatherSprite; } }
 }

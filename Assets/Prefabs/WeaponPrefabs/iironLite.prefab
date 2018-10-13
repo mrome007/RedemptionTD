@@ -136,6 +136,7 @@ MonoBehaviour:
   blastState: {fileID: 114397341792068726}
   gatherState: {fileID: 114296232254986214}
   nullState: {fileID: 114295840147396542}
+  weaponSpriteRenderer: {fileID: 212162145936527426}
 --- !u!212 &212162145936527426
 SpriteRenderer:
   m_ObjectHideFlags: 1
