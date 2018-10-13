@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pool: {fileID: 0}
+  color: 3
   type: 11
   totalResource: 2000
   givenResource: 20

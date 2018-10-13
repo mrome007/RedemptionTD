@@ -10,10 +10,14 @@ public class HeavyUnit : MonoBehaviour
     private RedemptionTDObjectPool pool;
 
     [SerializeField]
+    private RedemptionTDColor color;
+
+    [SerializeField]
     private RedemptionTDType type;
 
     #endregion
 
     public RedemptionTDObjectPool Pool { get { return pool; } }
     public RedemptionTDType Type { get { return type; } }
+    public RedemptionTDColor Color { get { return color; } }
 }

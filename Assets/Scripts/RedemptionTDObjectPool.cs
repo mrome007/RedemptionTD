@@ -255,5 +255,15 @@ public enum RedemptionTDHeavyType
 {
     NONE,
     ENEMY,
-    WEAPON
+    WEAPON,
+    RESOURCE
+}
+
+public enum RedemptionTDColor
+{
+    NONE,
+    BLACK,
+    IRON,
+    LEAD,
+    MAGNESIUM
 }
