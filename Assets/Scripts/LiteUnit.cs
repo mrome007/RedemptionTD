@@ -11,6 +11,7 @@ public abstract class LiteUnit : MonoBehaviour, IInitializable
 
     public event EventHandler<ToOrFromPoolEventArgs> ObjectReturned;
     public event EventHandler<ToOrFromPoolEventArgs> ObjectSpawned;
+    public RedemptionTDColor Color { get { return HeavyReference.Color; } }
     protected ToOrFromPoolEventArgs PoolArgs { get; set; }
     protected int Index { get; set; }
 

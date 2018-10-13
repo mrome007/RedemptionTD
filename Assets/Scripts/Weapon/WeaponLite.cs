@@ -63,7 +63,7 @@ public class WeaponLite : LiteUnit
     {
         var resourceLayer = 1 << LayerMask.NameToLayer("Resource");
         var hit = Physics2D.OverlapCircle(transform.position, weapon.GatherRadius, resourceLayer);
-        if(hit != null)
+        if(hit != null && hit.GetComponent<LiteUnit>().Color == HeavyReference.Color)
         {
             gatherState.enabled = true;
             blastState.enabled = false;
