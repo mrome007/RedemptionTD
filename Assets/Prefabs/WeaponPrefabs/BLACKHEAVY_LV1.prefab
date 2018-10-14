@@ -58,6 +58,4 @@ MonoBehaviour:
   baseDamage: 0
   damageMultiplier: 0
   cost: 10
-  gatherRadius: 0.05
-  weaponSprite: {fileID: 21300000, guid: e095c96742a0e440d924f97be1b06d9c, type: 3}
-  gatherSprite: {fileID: 21300000, guid: 9813ef697d4384877985d978097a404a, type: 3}
+  gatherRadius: 0.065
