@@ -17,7 +17,7 @@ public class WeaponLite : LiteUnit
     private NullWeaponState nullState;
 
     [SerializeField]
-    private SpriteRenderer weaponSpriteRenderer;
+    private GameObject gatherObject;
 
     #endregion
 
@@ -69,7 +69,7 @@ public class WeaponLite : LiteUnit
             blastState.enabled = false;
             currentWeaponState = gatherState;
             currentWeaponState.EnterWeaponState(hit.GetComponent<ResourceLite>());
-            weaponSpriteRenderer.sprite = weapon.GatherSprite;
+            gatherObject.SetActive(true);
         }
         else
         {
@@ -77,7 +77,7 @@ public class WeaponLite : LiteUnit
             blastState.enabled = true;
             currentWeaponState = blastState;
             currentWeaponState.EnterWeaponState();
-            weaponSpriteRenderer.sprite = weapon.WeaponSprite;
+            gatherObject.SetActive(false);
         }
     }
 
