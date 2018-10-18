@@ -91,13 +91,14 @@ GameObject:
   - component: {fileID: 212980052307156906}
   - component: {fileID: 95888771609949238}
   - component: {fileID: 58981202464872814}
+  - component: {fileID: 114503990344622590}
   m_Layer: 0
   m_Name: Behavior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1939194472092522
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,6 +319,18 @@ MonoBehaviour:
   gatherState: {fileID: 114635148033230756}
   nullState: {fileID: 114268396846814552}
   gatherObject: {fileID: 1939194472092522}
+--- !u!114 &114503990344622590
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1820933384987252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b3eb41f01ab345bebde9828cc82486f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponLite: {fileID: 114432194301884824}
 --- !u!114 &114624160267348300
 MonoBehaviour:
   m_ObjectHideFlags: 1

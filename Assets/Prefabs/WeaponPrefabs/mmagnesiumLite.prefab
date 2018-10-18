@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212970538298766706}
   - component: {fileID: 95399709482806382}
   - component: {fileID: 58135980728255266}
+  - component: {fileID: 114957445758827174}
   m_Layer: 0
   m_Name: Behavior
   m_TagString: Untagged
@@ -340,6 +341,18 @@ MonoBehaviour:
   gatherState: {fileID: 114647882343891964}
   nullState: {fileID: 114447472254509312}
   gatherObject: {fileID: 1676138600399640}
+--- !u!114 &114957445758827174
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1240569968736630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b3eb41f01ab345bebde9828cc82486f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponLite: {fileID: 114685423822574496}
 --- !u!212 &212090218217709794
 SpriteRenderer:
   m_ObjectHideFlags: 1

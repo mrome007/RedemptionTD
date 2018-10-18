@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class LiteUnit : MonoBehaviour, IInitializable
 {
-    protected virtual HeavyUnit HeavyReference { get; }
+    public virtual HeavyUnit HeavyReference { get; }
     
     #region Override IReturnable
 

@@ -26,7 +26,7 @@ public class WeaponLite : LiteUnit
 
     #region Overrides
 
-    protected override HeavyUnit HeavyReference { get { return weapon; } } 
+    public override HeavyUnit HeavyReference { get { return weapon; } } 
 
     /// <summary>
     /// Initialize the weapon's Heavy Reference.

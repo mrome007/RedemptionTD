@@ -86,6 +86,7 @@
      <Compile Include="Assets\Scripts\Weapon\GatherWeaponState.cs" />
      <Compile Include="Assets\Scripts\Weapon\NullWeaponState.cs" />
      <Compile Include="Assets\Scripts\Weapon\Weapon.cs" />
+     <Compile Include="Assets\Scripts\Weapon\WeaponBehavior.cs" />
      <Compile Include="Assets\Scripts\Weapon\WeaponCycler.cs" />
      <Compile Include="Assets\Scripts\Weapon\WeaponHeavyReferences.cs" />
      <Compile Include="Assets\Scripts\Weapon\WeaponLite.cs" />

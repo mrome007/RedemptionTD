@@ -10,7 +10,7 @@ public class EnemyLite : LiteUnit
 
     #region Override
 
-    protected override HeavyUnit HeavyReference { get { return enemy; } } 
+    public override HeavyUnit HeavyReference { get { return enemy; } } 
 
     /// <summary>
     /// Initialize the enemy's Heavy Reference.
@@ -57,5 +57,14 @@ public class EnemyLite : LiteUnit
     {
         enemyMovement.MoveEnded -= HandleMoveEnded;
         ReturnObject();
+    }
+
+    protected virtual void OnTriggerEnter2D(Collider2D col)
+    {
+        var weaponBehavior = col.GetComponent<WeaponBehavior>();
+        if(weaponBehavior != null)
+        {
+            var damage = weaponBehavior.DamageEnemy(enemy.Color);
+        }
     }
 }

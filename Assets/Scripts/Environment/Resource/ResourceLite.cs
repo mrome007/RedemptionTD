@@ -15,7 +15,7 @@ public class ResourceLite : LiteUnit
 
     #region Overrides
 
-    protected override HeavyUnit HeavyReference { get { return resource; } }
+    public override HeavyUnit HeavyReference { get { return resource; } }
 
     public override void Initialize(object obj)
     {
