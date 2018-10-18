@@ -92,6 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4356368254641444}
   - component: {fileID: 58477787357086004}
+  - component: {fileID: 114476087713551582}
   m_Layer: 0
   m_Name: Range
   m_TagString: Untagged
@@ -328,6 +329,19 @@ MonoBehaviour:
   gatherState: {fileID: 114296232254986214}
   nullState: {fileID: 114295840147396542}
   gatherObject: {fileID: 1839665551468850}
+--- !u!114 &114476087713551582
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1735556111614762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a596cd6b249924e64b74709f740de411, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponLite: {fileID: 114422166483630568}
+  weaponBehavior: {fileID: 114662858397403460}
 --- !u!114 &114586828558601266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -353,6 +367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponLite: {fileID: 114422166483630568}
+  activeTime: 0
 --- !u!212 &212046649758803674
 SpriteRenderer:
   m_ObjectHideFlags: 1
