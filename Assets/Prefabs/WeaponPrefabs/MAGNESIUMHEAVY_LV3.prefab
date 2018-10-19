@@ -59,3 +59,4 @@ MonoBehaviour:
   damageMultiplier: 0
   cost: 75
   gatherRadius: 0.065
+  waveActiveTime: 0.5

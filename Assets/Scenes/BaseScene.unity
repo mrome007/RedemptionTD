@@ -2499,11 +2499,6 @@ Prefab:
       propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
-    - target: {fileID: 114917774672543970, guid: 36fcbb1fea6114e0ba476f6f31df192a,
-        type: 2}
-      propertyPath: gatherRadius
-      value: 0.065
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 36fcbb1fea6114e0ba476f6f31df192a, type: 2}
   m_IsPrefabParent: 0
@@ -2562,11 +2557,6 @@ Prefab:
       propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
-    - target: {fileID: 114891925789919750, guid: b072b4f0e5210444ea3b5efde78872ea,
-        type: 2}
-      propertyPath: gatherRadius
-      value: 0.065
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b072b4f0e5210444ea3b5efde78872ea, type: 2}
   m_IsPrefabParent: 0
@@ -2910,11 +2900,6 @@ Prefab:
       propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
-    - target: {fileID: 114941311394497932, guid: 9b5f7be5969d14608b22bd4a8f729cab,
-        type: 2}
-      propertyPath: gatherRadius
-      value: 0.065
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b5f7be5969d14608b22bd4a8f729cab, type: 2}
   m_IsPrefabParent: 0
@@ -3747,11 +3732,6 @@ Prefab:
       propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
-    - target: {fileID: 114747306750008880, guid: d86fc4511d58647f4836cbe43cfcab78,
-        type: 2}
-      propertyPath: gatherRadius
-      value: 0.065
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d86fc4511d58647f4836cbe43cfcab78, type: 2}
   m_IsPrefabParent: 0
@@ -3955,11 +3935,6 @@ Prefab:
       propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
-    - target: {fileID: 114147384860899396, guid: 9b0749302244b4f05835883e0ad2f703,
-        type: 2}
-      propertyPath: gatherRadius
-      value: 0.065
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b0749302244b4f05835883e0ad2f703, type: 2}
   m_IsPrefabParent: 0
@@ -4018,11 +3993,6 @@ Prefab:
       propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
-    - target: {fileID: 114542831629657808, guid: 38165e804c66e4ec293752dd83ba86af,
-        type: 2}
-      propertyPath: gatherRadius
-      value: 0.065
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 38165e804c66e4ec293752dd83ba86af, type: 2}
   m_IsPrefabParent: 0
@@ -4522,11 +4492,6 @@ Prefab:
       propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
-    - target: {fileID: 114675063926872304, guid: 23b43d941fb3749afaaa3b8e6b3f9551,
-        type: 2}
-      propertyPath: gatherRadius
-      value: 0.065
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 23b43d941fb3749afaaa3b8e6b3f9551, type: 2}
   m_IsPrefabParent: 0
@@ -4733,11 +4698,6 @@ Prefab:
       propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
-    - target: {fileID: 114364661304934038, guid: 0a8eb12f207814f68b00534c479810a3,
-        type: 2}
-      propertyPath: gatherRadius
-      value: 0.065
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0a8eb12f207814f68b00534c479810a3, type: 2}
   m_IsPrefabParent: 0
@@ -5389,11 +5349,6 @@ Prefab:
       propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
-    - target: {fileID: 114510239721838056, guid: c1506a29c0a4344e3b5712e7dc6aa7e2,
-        type: 2}
-      propertyPath: gatherRadius
-      value: 0.065
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1506a29c0a4344e3b5712e7dc6aa7e2, type: 2}
   m_IsPrefabParent: 0
@@ -5463,11 +5418,6 @@ Prefab:
       propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
-    - target: {fileID: 114187660474805334, guid: 634743f48fbff482a9734bc10efcca08,
-        type: 2}
-      propertyPath: gatherRadius
-      value: 0.065
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 634743f48fbff482a9734bc10efcca08, type: 2}
   m_IsPrefabParent: 0
@@ -5729,11 +5679,6 @@ Prefab:
       propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
-    - target: {fileID: 114869210959116370, guid: 7ad613e8c79e2481595fce75af1b6012,
-        type: 2}
-      propertyPath: gatherRadius
-      value: 0.065
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ad613e8c79e2481595fce75af1b6012, type: 2}
   m_IsPrefabParent: 0
@@ -5792,11 +5737,6 @@ Prefab:
       propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
-    - target: {fileID: 114364929483456576, guid: e549adb5d37be4befb3826abe0eb2feb,
-        type: 2}
-      propertyPath: gatherRadius
-      value: 0.065
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e549adb5d37be4befb3826abe0eb2feb, type: 2}
   m_IsPrefabParent: 0
@@ -8875,16 +8815,6 @@ Prefab:
       propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
-    - target: {fileID: 114066741819348210, guid: 167b728d05afe4e0890e24922263e052,
-        type: 2}
-      propertyPath: color
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114066741819348210, guid: 167b728d05afe4e0890e24922263e052,
-        type: 2}
-      propertyPath: gatherRadius
-      value: 0.065
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 167b728d05afe4e0890e24922263e052, type: 2}
   m_IsPrefabParent: 0
@@ -9655,11 +9585,6 @@ Prefab:
       propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
-    - target: {fileID: 114534290208503842, guid: 60d47f077eb224c2eb0070e14c8cb767,
-        type: 2}
-      propertyPath: gatherRadius
-      value: 0.065
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60d47f077eb224c2eb0070e14c8cb767, type: 2}
   m_IsPrefabParent: 0
@@ -10094,11 +10019,6 @@ Prefab:
       propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
-    - target: {fileID: 114669909359458218, guid: 74c2f073374d94c8e948748c02281a64,
-        type: 2}
-      propertyPath: gatherRadius
-      value: 0.065
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74c2f073374d94c8e948748c02281a64, type: 2}
   m_IsPrefabParent: 0
@@ -10706,16 +10626,6 @@ Prefab:
       propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
-    - target: {fileID: 114729651554756072, guid: bd98b519884bb4ffa94fb79b9825cb63,
-        type: 2}
-      propertyPath: color
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114729651554756072, guid: bd98b519884bb4ffa94fb79b9825cb63,
-        type: 2}
-      propertyPath: gatherRadius
-      value: 0.065
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd98b519884bb4ffa94fb79b9825cb63, type: 2}
   m_IsPrefabParent: 0
@@ -10830,16 +10740,6 @@ Prefab:
       propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
-    - target: {fileID: 114807014980325598, guid: 2217c165500dc41a78dc2dbf1db9a31a,
-        type: 2}
-      propertyPath: color
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114807014980325598, guid: 2217c165500dc41a78dc2dbf1db9a31a,
-        type: 2}
-      propertyPath: gatherRadius
-      value: 0.065
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2217c165500dc41a78dc2dbf1db9a31a, type: 2}
   m_IsPrefabParent: 0
@@ -14535,16 +14435,6 @@ Prefab:
       propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
-    - target: {fileID: 114862637592573994, guid: 25e4cb54718444331a77151b4e07f025,
-        type: 2}
-      propertyPath: color
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114862637592573994, guid: 25e4cb54718444331a77151b4e07f025,
-        type: 2}
-      propertyPath: gatherRadius
-      value: 0.065
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 25e4cb54718444331a77151b4e07f025, type: 2}
   m_IsPrefabParent: 0
@@ -16675,16 +16565,6 @@ Prefab:
       propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
-    - target: {fileID: 114724839015104688, guid: 769ded7739e0e400eaf8841d9bdc94f7,
-        type: 2}
-      propertyPath: color
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114724839015104688, guid: 769ded7739e0e400eaf8841d9bdc94f7,
-        type: 2}
-      propertyPath: gatherRadius
-      value: 0.065
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 769ded7739e0e400eaf8841d9bdc94f7, type: 2}
   m_IsPrefabParent: 0
@@ -16934,11 +16814,6 @@ Prefab:
       propertyPath: pool
       value: 
       objectReference: {fileID: 2047680602}
-    - target: {fileID: 114395049102055920, guid: 35aa1dc509a024d3282fb98ac1fd8505,
-        type: 2}
-      propertyPath: gatherRadius
-      value: 0.065
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35aa1dc509a024d3282fb98ac1fd8505, type: 2}
   m_IsPrefabParent: 0

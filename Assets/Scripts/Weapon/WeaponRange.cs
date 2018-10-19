@@ -11,12 +11,7 @@ public class WeaponRange : MonoBehaviour
     private WeaponBehavior weaponBehavior;
 
     private bool weaponActive = false;
-    private WaitForSeconds activeTimeWait;
-
-    private void Awake()
-    {
-        activeTimeWait = new WaitForSeconds(weaponBehavior.ActiveTime);
-    }
+    private WaitForSeconds activeTimeWait = null;
 
     protected virtual void OnTriggerEnter2D(Collider2D col)
     {
@@ -29,6 +24,11 @@ public class WeaponRange : MonoBehaviour
 
     private IEnumerator ActivateWeaponBehavior()
     {
+        if(activeTimeWait == null)
+        {
+            activeTimeWait = new WaitForSeconds((weaponLite.HeavyReference as Weapon).WaveActiveTime);
+        }
+        
         weaponActive = true;
         weaponBehavior.gameObject.SetActive(weaponActive);
 

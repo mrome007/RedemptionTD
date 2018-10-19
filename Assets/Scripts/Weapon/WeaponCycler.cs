@@ -9,7 +9,7 @@ public class WeaponCycler : MonoBehaviour
     
     private int currentWeaponIndex = 0;
 
-    private void Start()
+    private void OnEnable()
     {
         weapons.ForEach(weapon => weapon.SetActive(false));
         weapons[currentWeaponIndex].SetActive(true);

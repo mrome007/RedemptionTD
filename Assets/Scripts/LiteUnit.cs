@@ -15,7 +15,7 @@ public abstract class LiteUnit : MonoBehaviour, IInitializable
     protected ToOrFromPoolEventArgs PoolArgs { get; set; }
     protected int Index { get; set; }
 
-    public virtual void RaiseOnReturn()
+    protected virtual void RaiseOnReturn()
     {
         PoolArgs.SpawnIndex = Index;
 

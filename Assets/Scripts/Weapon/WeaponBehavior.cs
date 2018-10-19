@@ -7,11 +7,17 @@ public class WeaponBehavior : MonoBehaviour
     [SerializeField]
     private WeaponLite weaponLite;
 
-    [SerializeField]
-    private float activeTime;
-
     public float DamageMultiplier { get; private set; }
-    public float ActiveTime { get { return activeTime; } }
+
+    private void OnEnable()
+    {
+        weaponLite.ObjectReturned += HandleObjectReturned;
+    }
+
+    private void OnDisable()
+    {
+        weaponLite.ObjectReturned -= HandleObjectReturned;
+    }
 
     public float DamageEnemy(RedemptionTDColor enemyColor)
     {
@@ -23,5 +29,11 @@ public class WeaponBehavior : MonoBehaviour
         var weapon = weaponLite.HeavyReference as Weapon;
         var currentDamage = weapon.BaseDamage * weapon.DamageMultiplier;
         return currentDamage * DamageMultiplier;
+    }
+
+    private void HandleObjectReturned(object sender, ToOrFromPoolEventArgs e)
+    {
+        weaponLite.ObjectReturned -= HandleObjectReturned;
+        gameObject.SetActive(false);
     }
 }
