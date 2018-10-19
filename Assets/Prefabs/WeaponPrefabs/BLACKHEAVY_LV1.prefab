@@ -55,8 +55,8 @@ MonoBehaviour:
   color: 1
   type: 5
   level: 1
-  baseDamage: 0
-  damageMultiplier: 0
+  baseDamage: 10
+  damageMultiplier: 1
   cost: 10
   gatherRadius: 0.065
   waveActiveTime: 0.5

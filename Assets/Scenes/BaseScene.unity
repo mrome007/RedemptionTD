@@ -8162,7 +8162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 422101aefa0634e829aed3c6db0ed4fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceCount: 100
+  resourceCount: 200
   maxResourceCount: 99999
 --- !u!1001 &824025017
 Prefab:

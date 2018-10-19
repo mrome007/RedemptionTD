@@ -8,6 +8,10 @@ public class EnemyLite : LiteUnit
     private Enemy enemy;
     private EnemyMovement enemyMovement;
 
+    //TEMPORARY just so I can see it in the editor.
+    [SerializeField]
+    private float currentHealth;
+
     #region Override
 
     public override HeavyUnit HeavyReference { get { return enemy; } } 
@@ -38,6 +42,7 @@ public class EnemyLite : LiteUnit
         base.SpawnObject(index, position);
         enemyMovement.Speed = enemy.Speed;
         enemyMovement.MoveEnded += HandleMoveEnded;
+        currentHealth = enemy.Health;
     }
 
     protected override void ReturnObject()
@@ -65,6 +70,11 @@ public class EnemyLite : LiteUnit
         if(weaponBehavior != null)
         {
             var damage = weaponBehavior.DamageEnemy(enemy.Color);
+            currentHealth -= damage;
+            if(currentHealth <= 0f)
+            {
+                ReturnObject();
+            }
         }
     }
 }
