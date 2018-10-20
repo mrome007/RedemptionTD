@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class LiteUnit : MonoBehaviour, IInitializable
+public abstract class LiteUnit : MonoBehaviour
 {
     public virtual HeavyUnit HeavyReference { get; }
     
@@ -14,6 +14,7 @@ public abstract class LiteUnit : MonoBehaviour, IInitializable
     public RedemptionTDColor Color { get { return HeavyReference.Color; } }
     protected ToOrFromPoolEventArgs PoolArgs { get; set; }
     protected int Index { get; set; }
+    protected RedemptionTDObjectPool objectPool;
 
     protected virtual void RaiseOnReturn()
     {
@@ -28,7 +29,7 @@ public abstract class LiteUnit : MonoBehaviour, IInitializable
 
     protected virtual void ReturnObject()
     {
-        HeavyReference.Pool.ReturnUnit(HeavyReference.Type, this);
+        //HeavyReference.Pool.ReturnUnit(HeavyReference.Type, this);
         RaiseOnReturn();
     }
 
@@ -54,7 +55,10 @@ public abstract class LiteUnit : MonoBehaviour, IInitializable
 
     #region Override IInitializable
 
-    public abstract void Initialize(object obj);
+    public virtual void Initialize(object obj, RedemptionTDObjectPool pool)
+    {
+        objectPool = pool;
+    }
 
     #endregion
 }

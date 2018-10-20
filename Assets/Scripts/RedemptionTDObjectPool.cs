@@ -114,7 +114,7 @@ public class RedemptionTDObjectPool : MonoBehaviour
             {
                 var liteUnit = (LiteUnit)Instantiate(unitsDictionary[unit.Type], transform.position, Quaternion.identity);
                 var heavyReference = GetHeavyReference(unit.Type);
-                liteUnit.Initialize(heavyReference.GetHeavyReference(unit.Type));
+                liteUnit.Initialize(heavyReference.GetHeavyReference(unit.Type), this);
 
                 liteUnit.transform.parent = unitsPoolParent;
                 liteUnit.transform.position = Vector3.zero;
@@ -248,7 +248,12 @@ public enum RedemptionTDType
     BLACK_RESOURCE,
     IRON_RESOURCE,
     LEAD_RESOURCE,
-    MAGNESIUM_RESOURCE
+    MAGNESIUM_RESOURCE,
+
+    BLACK_RESOURCE_DROP,
+    IRON_RESOURCE_DROP,
+    LEAD_RESOURCE_DROP,
+    MAGNESIUM_RESOURCE_DROP
 }
 
 public enum RedemptionTDHeavyType
@@ -256,7 +261,8 @@ public enum RedemptionTDHeavyType
     NONE,
     ENEMY,
     WEAPON,
-    RESOURCE
+    RESOURCE,
+    RESOURCEDROP
 }
 
 public enum RedemptionTDColor

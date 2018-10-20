@@ -17,8 +17,10 @@ public class ResourceLite : LiteUnit
 
     public override HeavyUnit HeavyReference { get { return resource; } }
 
-    public override void Initialize(object obj)
+    public override void Initialize(object obj, RedemptionTDObjectPool pool)
     {
+        base.Initialize(obj, pool);
+
         Index = 0;
 
         if(PoolArgs == null)
@@ -40,7 +42,7 @@ public class ResourceLite : LiteUnit
     protected virtual void Start()
     {
         currentResourceCount = resource.TotalResource;
-        Initialize(null);
+        Initialize(null, null);
     }
 
     #endregion

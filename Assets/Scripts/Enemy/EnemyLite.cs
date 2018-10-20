@@ -20,8 +20,10 @@ public class EnemyLite : LiteUnit
     /// Initialize the enemy's Heavy Reference.
     /// </summary>
     /// <param name="obj">Object.</param>
-    public override void Initialize(object obj)
+    public override void Initialize(object obj, RedemptionTDObjectPool pool)
     {
+        base.Initialize(obj, pool);
+
         enemy = obj as Enemy;
 
         if(enemy == null)

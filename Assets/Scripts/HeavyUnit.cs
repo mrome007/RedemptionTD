@@ -7,9 +7,6 @@ public class HeavyUnit : MonoBehaviour
     #region Inspector Data
 
     [SerializeField]
-    private RedemptionTDObjectPool pool;
-
-    [SerializeField]
     private RedemptionTDColor color;
 
     [SerializeField]
@@ -17,7 +14,6 @@ public class HeavyUnit : MonoBehaviour
 
     #endregion
 
-    public RedemptionTDObjectPool Pool { get { return pool; } }
     public RedemptionTDType Type { get { return type; } }
     public RedemptionTDColor Color { get { return color; } }
 }

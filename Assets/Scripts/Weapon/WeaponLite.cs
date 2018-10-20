@@ -32,8 +32,10 @@ public class WeaponLite : LiteUnit
     /// Initialize the weapon's Heavy Reference.
     /// </summary>
     /// <param name="obj">Object.</param>
-    public override void Initialize(object obj)
+    public override void Initialize(object obj, RedemptionTDObjectPool pool)
     {
+        base.Initialize(obj, pool);
+
         weapon = obj as Weapon;
 
         if(weapon == null)
