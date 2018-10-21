@@ -15,7 +15,10 @@ public class NormalInputState : InputState
     
     public override void UpdateInputState(Vector2 position)
     {
-        
+        if(Input.GetMouseButtonDown(0))
+        {
+            ClickedResourceDrop(position);
+        }
     }
 
     private void RegisterSpawnButtonsClick()
@@ -38,5 +41,17 @@ public class NormalInputState : InputState
     {
         UnRegisterSpawnButtonsClick();
         ExitState(e);
+    }
+
+    private void ClickedResourceDrop(Vector2 mousePos)
+    {
+        var screenPoint = Camera.main.ScreenToWorldPoint(mousePos);
+        var hit = Physics2D.Raycast(screenPoint, Vector2.zero, 0);
+
+        var resourceDrop = hit.collider.gameObject.GetComponent<ResourceDropLite>();
+        if(resourceDrop != null)
+        {
+            resourceDrop.GiveDroppedResource();
+        }
     }
 }

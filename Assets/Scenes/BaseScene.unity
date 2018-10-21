@@ -1220,7 +1220,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 117764478}
+    m_TransformParent: {fileID: 1104196283}
     m_Modifications:
     - target: {fileID: 4453928962269102, guid: 6d754abce97de43de9ebbbe9d5ff5bf4, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1252,13 +1252,8 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4453928962269102, guid: 6d754abce97de43de9ebbbe9d5ff5bf4, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114245340390307702, guid: 6d754abce97de43de9ebbbe9d5ff5bf4,
-        type: 2}
-      propertyPath: pool
-      value: 
-      objectReference: {fileID: 2047680602}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6d754abce97de43de9ebbbe9d5ff5bf4, type: 2}
   m_IsPrefabParent: 0
@@ -1612,7 +1607,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 117764478}
-  - component: {fileID: 117764479}
   m_Layer: 0
   m_Name: Resource Heavy References
   m_TagString: Untagged
@@ -1642,34 +1636,15 @@ Transform:
   - {fileID: 1852118970}
   - {fileID: 2005931563}
   - {fileID: 1197473137}
-  - {fileID: 1708145121}
-  - {fileID: 1082125698}
-  - {fileID: 383840257}
-  - {fileID: 1941587571}
   m_Father: {fileID: 1439201237}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &117764479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 117764477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 903f080430dd54ce8afc24eeca35aa8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  black: {fileID: 1708145122}
-  iron: {fileID: 383840258}
-  lead: {fileID: 1082125699}
-  magnesium: {fileID: 1941587572}
 --- !u!1001 &120715576
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 117764478}
+    m_TransformParent: {fileID: 1104196283}
     m_Modifications:
     - target: {fileID: 4796236224499982, guid: fffb7b6affb894f029bb71f656519bc5, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1701,13 +1676,8 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4796236224499982, guid: fffb7b6affb894f029bb71f656519bc5, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114137157136949420, guid: fffb7b6affb894f029bb71f656519bc5,
-        type: 2}
-      propertyPath: pool
-      value: 
-      objectReference: {fileID: 2047680602}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fffb7b6affb894f029bb71f656519bc5, type: 2}
   m_IsPrefabParent: 0
@@ -8901,7 +8871,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 117764478}
+    m_TransformParent: {fileID: 1104196283}
     m_Modifications:
     - target: {fileID: 4283248642900428, guid: 3e137a414ef1f48b2a802ce8a57cc01e, type: 2}
       propertyPath: m_LocalPosition.x
@@ -8933,13 +8903,8 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4283248642900428, guid: 3e137a414ef1f48b2a802ce8a57cc01e, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114551563725845236, guid: 3e137a414ef1f48b2a802ce8a57cc01e,
-        type: 2}
-      propertyPath: pool
-      value: 
-      objectReference: {fileID: 2047680602}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3e137a414ef1f48b2a802ce8a57cc01e, type: 2}
   m_IsPrefabParent: 0
@@ -9668,6 +9633,54 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 915443478}
   m_Script: {fileID: 11500000, guid: 2d0df667a59b14692b00cd2c22959b9e, type: 3}
+--- !u!1 &1104196281
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1104196283}
+  - component: {fileID: 1104196282}
+  m_Layer: 0
+  m_Name: Resource Drop Heavy References
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1104196282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1104196281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 903f080430dd54ce8afc24eeca35aa8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  black: {fileID: 1708145122}
+  iron: {fileID: 383840258}
+  lead: {fileID: 1082125699}
+  magnesium: {fileID: 1941587572}
+--- !u!4 &1104196283
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1104196281}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1708145121}
+  - {fileID: 1082125698}
+  - {fileID: 383840257}
+  - {fileID: 1941587571}
+  m_Father: {fileID: 1439201237}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1109798773
 Prefab:
   m_ObjectHideFlags: 0
@@ -12279,6 +12292,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 117764478}
+  - {fileID: 1104196283}
   m_Father: {fileID: 2047680603}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13745,7 +13759,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 117764478}
+    m_TransformParent: {fileID: 1104196283}
     m_Modifications:
     - target: {fileID: 4223425117270834, guid: fdc0274725f034e329f89683d323474c, type: 2}
       propertyPath: m_LocalPosition.x
@@ -13777,13 +13791,8 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4223425117270834, guid: fdc0274725f034e329f89683d323474c, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114963638850867652, guid: fdc0274725f034e329f89683d323474c,
-        type: 2}
-      propertyPath: pool
-      value: 
-      objectReference: {fileID: 2047680602}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fdc0274725f034e329f89683d323474c, type: 2}
   m_IsPrefabParent: 0
@@ -15771,13 +15780,29 @@ MonoBehaviour:
     LiteObject: {fileID: 114685423822574496, guid: 9005c05739ae548008830a713969ff35,
       type: 2}
     PoolAmount: 100
+  - Type: 13
+    LiteObject: {fileID: 114965534121397064, guid: 35350874b9d344255ac9574579c9a972,
+      type: 2}
+    PoolAmount: 100
+  - Type: 14
+    LiteObject: {fileID: 114665921277747568, guid: b1b17d50682e1493687c13b001f63601,
+      type: 2}
+    PoolAmount: 100
+  - Type: 15
+    LiteObject: {fileID: 114037446894899482, guid: fc3f5dce0b4564f7d912202e10e9f679,
+      type: 2}
+    PoolAmount: 100
+  - Type: 16
+    LiteObject: {fileID: 114497977476859536, guid: 6a9dd690ad76f4afe8dd96ffa5fa3031,
+      type: 2}
+    PoolAmount: 100
   heavyList:
   - HeavyType: 1
     HeavyReference: {fileID: 159957679}
   - HeavyType: 2
     HeavyReference: {fileID: 1945012860}
   - HeavyType: 4
-    HeavyReference: {fileID: 117764479}
+    HeavyReference: {fileID: 1104196282}
   unitsPoolParent: {fileID: 2115398972}
 --- !u!4 &2047680603
 Transform:

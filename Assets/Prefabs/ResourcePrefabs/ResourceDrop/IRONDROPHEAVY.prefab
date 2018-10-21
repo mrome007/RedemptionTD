@@ -52,5 +52,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: 2
-  type: 0
+  type: 14
   resourceCount: 5

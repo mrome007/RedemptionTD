@@ -81,6 +81,7 @@ public class RedemptionTDObjectPool : MonoBehaviour
             unit.transform.parent = unitsPoolParent;
             unit.transform.position = Vector3.zero;
             unitsPoolIndex[type]--;
+            unitsIndex = unitsPoolIndex[type];
             unitsPoolList[unitsIndex] = unit;
             unit.gameObject.SetActive(false);
         }
@@ -185,6 +186,14 @@ public class RedemptionTDObjectPool : MonoBehaviour
             case RedemptionTDType.MAGNESIUM_WEAPON:
                 result = heavyDictionary[RedemptionTDHeavyType.WEAPON];
                 break;
+
+            case RedemptionTDType.BLACK_RESOURCE_DROP:
+            case RedemptionTDType.IRON_RESOURCE_DROP:
+            case RedemptionTDType.LEAD_RESOURCE_DROP:
+            case RedemptionTDType.MAGNESIUM_RESOURCE_DROP:
+                result = heavyDictionary[RedemptionTDHeavyType.RESOURCEDROP];
+                break;
+
             default:
                 break;
         }

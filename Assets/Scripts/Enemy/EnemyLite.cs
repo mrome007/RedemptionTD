@@ -68,8 +68,51 @@ public class EnemyLite : LiteUnit
             currentHealth -= damage;
             if(currentHealth <= 0f)
             {
+                SpawnResourceDrops();
                 ReturnObject();
             }
         }
+    }
+
+    public void SpawnResourceDrops()
+    {
+        var numToSpawn = UnityEngine.Random.Range(0, enemy.MaxResourceDrops);
+        var units = objectPool.GetUnits(GetResourceDropType(), numToSpawn);
+        var count = 0;
+        foreach(var resourceDrop in units)
+        {
+            var position = new Vector3(transform.position.x + UnityEngine.Random.Range(-0.1f, 0.1f), 
+                                       transform.position.y + UnityEngine.Random.Range(-0.1f, 0.1f), 
+                                       -0.1f);
+            resourceDrop.SpawnObject(count, position);
+            count++;
+        }
+    }
+
+    private RedemptionTDType GetResourceDropType()
+    {
+        var result = RedemptionTDType.BLACK_RESOURCE_DROP;
+        switch(enemy.Color)
+        {
+            case RedemptionTDColor.BLACK:
+                result = RedemptionTDType.BLACK_RESOURCE_DROP;
+                break;
+
+            case RedemptionTDColor.IRON:
+                result = RedemptionTDType.IRON_RESOURCE_DROP;
+                break;
+
+            case RedemptionTDColor.LEAD:
+                result = RedemptionTDType.LEAD_RESOURCE_DROP;
+                break;
+
+            case RedemptionTDColor.MAGNESIUM:
+                result = RedemptionTDType.MAGNESIUM_RESOURCE_DROP;
+                break;
+            default:
+                break;
+        }
+
+        return result;
     }
 }

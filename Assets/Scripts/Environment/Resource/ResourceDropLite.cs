@@ -23,4 +23,10 @@ public class ResourceDropLite : LiteUnit
     }
 
     #endregion
+
+    public void GiveDroppedResource()
+    {
+        ResourcesOverseer.IncreaseResourceEvent(drop.ResourceCount);
+        ReturnObject();
+    }
 }

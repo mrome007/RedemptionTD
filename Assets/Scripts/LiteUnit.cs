@@ -29,7 +29,7 @@ public abstract class LiteUnit : MonoBehaviour
 
     protected virtual void ReturnObject()
     {
-        //HeavyReference.Pool.ReturnUnit(HeavyReference.Type, this);
+        objectPool.ReturnUnit(HeavyReference.Type, this);
         RaiseOnReturn();
     }
 
