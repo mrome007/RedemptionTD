@@ -58,6 +58,13 @@ public abstract class LiteUnit : MonoBehaviour
     public virtual void Initialize(object obj, RedemptionTDObjectPool pool)
     {
         objectPool = pool;
+
+        Index = 0;
+
+        if(PoolArgs == null)
+        {
+            PoolArgs = new ToOrFromPoolEventArgs(Index);
+        }
     }
 
     #endregion

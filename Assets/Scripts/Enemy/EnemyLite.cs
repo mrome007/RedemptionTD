@@ -28,14 +28,7 @@ public class EnemyLite : LiteUnit
 
         if(enemy == null)
         {
-            return;
-        }
-
-        Index = 0;
-
-        if(PoolArgs == null)
-        {
-            PoolArgs = new ToOrFromPoolEventArgs(Index);
+            Debug.LogError("No Enemy Reference");
         }
     }
 

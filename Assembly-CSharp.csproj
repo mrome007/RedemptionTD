@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\Environment\Resource\Resource.cs" />
      <Compile Include="Assets\Scripts\Environment\Resource\ResourceDrop.cs" />
      <Compile Include="Assets\Scripts\Environment\Resource\ResourceDropHeavyReferences.cs" />
+     <Compile Include="Assets\Scripts\Environment\Resource\ResourceDropLite.cs" />
      <Compile Include="Assets\Scripts\Environment\Resource\ResourceHeavyReferences.cs" />
      <Compile Include="Assets\Scripts\Environment\Resource\ResourceLite.cs" />
      <Compile Include="Assets\Scripts\Environment\Resource\ResourcesEventArgs.cs" />

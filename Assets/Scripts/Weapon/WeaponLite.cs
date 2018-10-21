@@ -40,14 +40,7 @@ public class WeaponLite : LiteUnit
 
         if(weapon == null)
         {
-            return;
-        }
-
-        Index = 0;
-
-        if(PoolArgs == null)
-        {
-            PoolArgs = new ToOrFromPoolEventArgs(Index);
+            Debug.LogError("No Weapon Reference");
         }
     }
 

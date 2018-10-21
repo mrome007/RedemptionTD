@@ -17,18 +17,6 @@ public class ResourceLite : LiteUnit
 
     public override HeavyUnit HeavyReference { get { return resource; } }
 
-    public override void Initialize(object obj, RedemptionTDObjectPool pool)
-    {
-        base.Initialize(obj, pool);
-
-        Index = 0;
-
-        if(PoolArgs == null)
-        {
-            PoolArgs = new ToOrFromPoolEventArgs(Index);
-        }
-    }
-
     protected override void ReturnObject()
     {
         gameObject.SetActive(false);
