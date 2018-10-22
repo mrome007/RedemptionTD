@@ -61,7 +61,7 @@ public class EnemyLite : LiteUnit
 
     protected virtual void OnTriggerEnter2D(Collider2D col)
     {
-        var weaponBehavior = col.GetComponent<WeaponBehavior>();
+        var weaponBehavior = col.GetComponentInParent<WeaponBehavior>();
         if(weaponBehavior != null)
         {
             var damage = weaponBehavior.DamageEnemy(enemy.Color);
@@ -83,7 +83,7 @@ public class EnemyLite : LiteUnit
         {
             var position = new Vector3(transform.position.x + UnityEngine.Random.Range(-0.1f, 0.1f), 
                                        transform.position.y + UnityEngine.Random.Range(-0.1f, 0.1f), 
-                                       -0.1f);
+                                       0f);
             resourceDrop.SpawnObject(count, position);
             count++;
         }

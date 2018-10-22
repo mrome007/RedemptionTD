@@ -51,7 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1016f2fdad98493eb3538af35cad761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pool: {fileID: 0}
   color: 1
   type: 5
   totalResource: 1000

@@ -15,7 +15,7 @@ public class WeaponRange : MonoBehaviour
 
     protected virtual void OnTriggerEnter2D(Collider2D col)
     {
-        var enemy = col.GetComponent<EnemyLite>();
+        var enemy = col.GetComponentInParent<EnemyLite>();
         if(enemy.HeavyReference.Color == weaponLite.HeavyReference.Color && !weaponActive)
         {
             StartCoroutine(ActivateWeaponBehavior());
