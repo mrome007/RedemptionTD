@@ -56,3 +56,4 @@ MonoBehaviour:
   speed: 0.3
   health: 25
   maxResourceDrops: 10
+  damageToBase: 5

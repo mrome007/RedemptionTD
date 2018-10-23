@@ -262,7 +262,12 @@ public enum RedemptionTDType
     BLACK_RESOURCE_DROP,
     IRON_RESOURCE_DROP,
     LEAD_RESOURCE_DROP,
-    MAGNESIUM_RESOURCE_DROP
+    MAGNESIUM_RESOURCE_DROP,
+
+    BLACK_BASE,
+    IRON_BASE,
+    LEAD_BASE,
+    MAGNESIUM_BASE
 }
 
 public enum RedemptionTDHeavyType

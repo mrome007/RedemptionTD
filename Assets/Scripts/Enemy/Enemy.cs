@@ -15,9 +15,13 @@ public class Enemy : HeavyUnit
     [SerializeField]
     private int maxResourceDrops;
 
+    [SerializeField]
+    private float damageToBase;
+
     #endregion
 
     public float Speed { get { return speed; } }
     public float Health { get { return health; } }
     public int MaxResourceDrops { get { return maxResourceDrops; } }
+    public float DamageToBases { get { return damageToBase; } } 
 }

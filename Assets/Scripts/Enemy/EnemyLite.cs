@@ -72,6 +72,13 @@ public class EnemyLite : LiteUnit
                 ReturnObject();
             }
         }
+
+        var colorBase = col.GetComponentInParent<RedemptionBase>();
+        if(colorBase != null)
+        {
+            colorBase.DamageBase(enemy.Color, enemy.DamageToBases);
+            ReturnObject();
+        }
     }
 
     public void SpawnResourceDrops()
