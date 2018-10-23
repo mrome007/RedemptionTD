@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class RedemptionBase : MonoBehaviour 
 {
-    public event EventHandler BaseDestroyed;
+    public event EventHandler<RedemptionBaseDestroyedEventArgs> BaseDestroyed;
     
     [SerializeField]
     private float health;
@@ -16,11 +16,16 @@ public class RedemptionBase : MonoBehaviour
     [SerializeField]
     private RedemptionTDType type;
 
+    [SerializeField]
+    private int baseIndex;
+
     private float currentHealth;
+    private RedemptionBaseDestroyedEventArgs destroyedArgs;
 
     private void Awake()
     {
         currentHealth = health;
+        destroyedArgs = new RedemptionBaseDestroyedEventArgs(baseIndex);
     }
 
     public void DamageBase(RedemptionTDColor enemyColor, float damage)
@@ -47,7 +52,7 @@ public class RedemptionBase : MonoBehaviour
         var handler = BaseDestroyed;
         if(handler != null)
         {
-            handler(this, null);
+            handler(this, destroyedArgs);
         }
     }
 }

@@ -25,10 +25,7 @@ public class ResourcesOverseer : MonoBehaviour
         {
             instance = GameObject.FindObjectOfType<ResourcesOverseer>();
         }
-        else
-        {
-            Debug.LogError("Only one instance.");
-        }
+
         DontDestroyOnLoad(instance);
 
         resourceCountStatic = resourceCount;
