@@ -358,6 +358,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114257544161815138, guid: c5934850425b54074929e84886e6e27f,
+        type: 2}
+      propertyPath: maxResourceDrops
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c5934850425b54074929e84886e6e27f, type: 2}
   m_IsPrefabParent: 0
@@ -7477,6 +7482,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114068143281241186, guid: 7a5ed3a99a1704c0985538e8ddeed152,
+        type: 2}
+      propertyPath: maxResourceDrops
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a5ed3a99a1704c0985538e8ddeed152, type: 2}
   m_IsPrefabParent: 0
@@ -13576,6 +13586,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114535837180249154, guid: db719cbcec38a4d6eba380aa161d9d40,
+        type: 2}
+      propertyPath: maxResourceDrops
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db719cbcec38a4d6eba380aa161d9d40, type: 2}
   m_IsPrefabParent: 0
@@ -15761,15 +15776,15 @@ MonoBehaviour:
       type: 2}
     PoolAmount: 100
   - Type: 6
-    LiteObject: {fileID: 114422166483630568, guid: c62a7c8b583424ce7b5437c756fbb49e,
+    LiteObject: {fileID: 114571265334894244, guid: c62a7c8b583424ce7b5437c756fbb49e,
       type: 2}
     PoolAmount: 100
   - Type: 7
-    LiteObject: {fileID: 114277601551710224, guid: df7611a0bdd524cf2a0b33710d141eb3,
+    LiteObject: {fileID: 114840752035307298, guid: df7611a0bdd524cf2a0b33710d141eb3,
       type: 2}
     PoolAmount: 100
   - Type: 8
-    LiteObject: {fileID: 114685423822574496, guid: 9005c05739ae548008830a713969ff35,
+    LiteObject: {fileID: 114207681085242964, guid: 390b13ef2789844638196987578a0845,
       type: 2}
     PoolAmount: 100
   - Type: 13

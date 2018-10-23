@@ -23,19 +23,19 @@ public class ResourceDropHeavyReferences : HeavyReferences
         var resourceDrop = Black;
         switch(type)
         {
-            case RedemptionTDType.BLACK_ENEMY:
+            case RedemptionTDType.BLACK_RESOURCE_DROP:
                 resourceDrop = Black;
                 break;
 
-            case RedemptionTDType.IRON_ENEMY:
+            case RedemptionTDType.IRON_RESOURCE_DROP:
                 resourceDrop = Iron;
                 break;
 
-            case RedemptionTDType.LEAD_ENEMY:
+            case RedemptionTDType.LEAD_RESOURCE_DROP:
                 resourceDrop = Lead;
                 break;
 
-            case RedemptionTDType.MAGNESIUM_ENEMY:
+            case RedemptionTDType.MAGNESIUM_RESOURCE_DROP:
                 resourceDrop = Magnesium;
                 break;
 
