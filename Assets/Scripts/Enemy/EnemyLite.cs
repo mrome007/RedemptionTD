@@ -20,9 +20,9 @@ public class EnemyLite : LiteUnit
     /// Initialize the enemy's Heavy Reference.
     /// </summary>
     /// <param name="obj">Object.</param>
-    public override void Initialize(object obj, RedemptionTDObjectPool pool)
+    public override void Initialize(object obj)
     {
-        base.Initialize(obj, pool);
+        base.Initialize(obj);
 
         enemy = obj as Enemy;
 
@@ -68,8 +68,10 @@ public class EnemyLite : LiteUnit
             currentHealth -= damage;
             if(currentHealth <= 0f)
             {
-                SpawnResourceDrops();
+                PoolArgs.Dead = true;
+                PoolArgs.LastPosition = transform.position;
                 ReturnObject();
+                return;
             }
         }
 
@@ -77,49 +79,9 @@ public class EnemyLite : LiteUnit
         if(colorBase != null)
         {
             colorBase.DamageBase(enemy.Color, enemy.DamageToBases);
+            PoolArgs.Dead = false;
             ReturnObject();
+            return;
         }
-    }
-
-    public void SpawnResourceDrops()
-    {
-        var numToSpawn = UnityEngine.Random.Range(0, enemy.MaxResourceDrops);
-        var units = objectPool.GetUnits(GetResourceDropType(), numToSpawn);
-        var count = 0;
-        foreach(var resourceDrop in units)
-        {
-            var position = new Vector3(transform.position.x + UnityEngine.Random.Range(-0.1f, 0.1f), 
-                                       transform.position.y + UnityEngine.Random.Range(-0.1f, 0.1f), 
-                                       0f);
-            resourceDrop.SpawnObject(count, position);
-            count++;
-        }
-    }
-
-    private RedemptionTDType GetResourceDropType()
-    {
-        var result = RedemptionTDType.BLACK_RESOURCE_DROP;
-        switch(enemy.Color)
-        {
-            case RedemptionTDColor.BLACK:
-                result = RedemptionTDType.BLACK_RESOURCE_DROP;
-                break;
-
-            case RedemptionTDColor.IRON:
-                result = RedemptionTDType.IRON_RESOURCE_DROP;
-                break;
-
-            case RedemptionTDColor.LEAD:
-                result = RedemptionTDType.LEAD_RESOURCE_DROP;
-                break;
-
-            case RedemptionTDColor.MAGNESIUM:
-                result = RedemptionTDType.MAGNESIUM_RESOURCE_DROP;
-                break;
-            default:
-                break;
-        }
-
-        return result;
     }
 }

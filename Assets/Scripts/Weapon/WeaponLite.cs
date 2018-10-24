@@ -32,9 +32,9 @@ public class WeaponLite : LiteUnit
     /// Initialize the weapon's Heavy Reference.
     /// </summary>
     /// <param name="obj">Object.</param>
-    public override void Initialize(object obj, RedemptionTDObjectPool pool)
+    public override void Initialize(object obj)
     {
-        base.Initialize(obj, pool);
+        base.Initialize(obj);
 
         weapon = obj as Weapon;
 
@@ -58,7 +58,7 @@ public class WeaponLite : LiteUnit
     {
         var resourceLayer = 1 << LayerMask.NameToLayer("Resource");
         var hit = Physics2D.OverlapCircle(transform.position, weapon.GatherRadius, resourceLayer);
-        if(hit != null && hit.GetComponent<LiteUnit>().Color == HeavyReference.Color)
+        if(hit != null && hit.GetComponent<LiteUnit>().HeavyReference.Color == HeavyReference.Color)
         {
             gatherState.enabled = true;
             blastState.enabled = false;

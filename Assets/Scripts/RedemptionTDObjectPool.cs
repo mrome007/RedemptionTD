@@ -59,7 +59,7 @@ public class RedemptionTDObjectPool : MonoBehaviour
             {
                 var unit = unitsPoolList[unitIndex];
                 var heavyReference = GetHeavyReference(type);
-                unit.Initialize(heavyReference.GetHeavyReference(type), this);
+                unit.Initialize(heavyReference.GetHeavyReference(type));
                 unitsPoolList[unitIndex] = null;
                 unitsPoolIndex[type]++;
                 unit.gameObject.SetActive(true);
@@ -73,7 +73,34 @@ public class RedemptionTDObjectPool : MonoBehaviour
         }
     }
 
-    public void ReturnUnit(RedemptionTDType type, LiteUnit unit)
+    public RedemptionTDType GetResourceDropType(RedemptionTDColor color)
+    {
+        var result = RedemptionTDType.BLACK_RESOURCE_DROP;
+        switch(color)
+        {
+            case RedemptionTDColor.BLACK:
+                result = RedemptionTDType.BLACK_RESOURCE_DROP;
+                break;
+
+            case RedemptionTDColor.IRON:
+                result = RedemptionTDType.IRON_RESOURCE_DROP;
+                break;
+
+            case RedemptionTDColor.LEAD:
+                result = RedemptionTDType.LEAD_RESOURCE_DROP;
+                break;
+
+            case RedemptionTDColor.MAGNESIUM:
+                result = RedemptionTDType.MAGNESIUM_RESOURCE_DROP;
+                break;
+            default:
+                break;
+        }
+
+        return result;
+    }
+
+    private void ReturnUnit(RedemptionTDType type, LiteUnit unit)
     {
         var unitsPoolList = unitsPool[type];
         var unitsIndex = unitsPoolIndex[type];
@@ -117,17 +144,27 @@ public class RedemptionTDObjectPool : MonoBehaviour
             {
                 var liteUnit = (LiteUnit)Instantiate(unitsDictionary[unit.Type], transform.position, Quaternion.identity);
                 var heavyReference = GetHeavyReference(unit.Type);
-                liteUnit.Initialize(heavyReference.GetHeavyReference(unit.Type), this);
+                liteUnit.Initialize(heavyReference.GetHeavyReference(unit.Type));
 
                 liteUnit.transform.parent = unitsPoolParent;
                 liteUnit.transform.position = Vector3.zero;
 
                 unitsPool[unit.Type].Add(liteUnit);
                 liteUnit.gameObject.SetActive(false);
+                liteUnit.ObjectReturned += HandleLiteUnitReturned;
             }
         }
             
         RaiseObjectPoolComplete();
+    }
+
+    private void HandleLiteUnitReturned(object sender, ToOrFromPoolEventArgs e)
+    {
+        var liteUnit = sender as LiteUnit;
+        if(liteUnit != null)
+        {
+            ReturnUnit(liteUnit.HeavyReference.Type, liteUnit);
+        }
     }
 
     private void InitializeObjectPoolDictionary()

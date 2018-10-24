@@ -30,7 +30,7 @@ public class ResourceLite : LiteUnit
     protected virtual void Start()
     {
         currentResourceCount = resource.TotalResource;
-        Initialize(null, null);
+        Initialize(null);
     }
 
     #endregion

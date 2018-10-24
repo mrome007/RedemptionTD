@@ -112,10 +112,37 @@ public class RedemptionTDWave : MonoBehaviour
         yield return new WaitForSeconds(spawnInfo.StopSpawnDelay);
     }
 
+    private void SpawnResourceDrops(LiteUnit liteUnit, Vector3 pos)
+    {
+        var enemy = liteUnit.HeavyReference as Enemy;
+        if(enemy == null)
+        {
+            return;
+        }
+
+        var numToSpawn = UnityEngine.Random.Range(0, enemy.MaxResourceDrops);
+        var units = objectPool.GetUnits(objectPool.GetResourceDropType(enemy.Color), numToSpawn);
+        var count = 0;
+        foreach(var resourceDrop in units)
+        {
+            var position = new Vector3(pos.x + UnityEngine.Random.Range(-0.1f, 0.1f), 
+                                       pos.y + UnityEngine.Random.Range(-0.1f, 0.1f), 
+                                       -1f);
+            resourceDrop.SpawnObject(count, position);
+            count++;
+        }
+    }
+
     private void HandleEnemyReturned(object sender, ToOrFromPoolEventArgs e)
     {
         currentSpawns[e.SpawnIndex].ObjectReturned -= HandleEnemyReturned;
         totalSpawnCount--;
+
+        var liteUnit = sender as LiteUnit;
+        if(e.Dead && liteUnit != null)
+        {
+            SpawnResourceDrops(liteUnit, e.LastPosition);
+        }
 
         if(totalSpawnCount <= 0)
         {

@@ -10,9 +10,9 @@ public class ResourceDropLite : LiteUnit
 
     public override HeavyUnit HeavyReference { get { return drop; } } 
 
-    public override void Initialize(object obj, RedemptionTDObjectPool pool)
+    public override void Initialize(object obj)
     {
-        base.Initialize(obj, pool);
+        base.Initialize(obj);
 
         drop = obj as ResourceDrop;
 

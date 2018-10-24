@@ -11,10 +11,8 @@ public abstract class LiteUnit : MonoBehaviour
 
     public event EventHandler<ToOrFromPoolEventArgs> ObjectReturned;
     public event EventHandler<ToOrFromPoolEventArgs> ObjectSpawned;
-    public RedemptionTDColor Color { get { return HeavyReference.Color; } }
     protected ToOrFromPoolEventArgs PoolArgs { get; set; }
     protected int Index { get; set; }
-    protected RedemptionTDObjectPool objectPool;
 
     protected virtual void RaiseOnReturn()
     {
@@ -29,7 +27,6 @@ public abstract class LiteUnit : MonoBehaviour
 
     protected virtual void ReturnObject()
     {
-        objectPool.ReturnUnit(HeavyReference.Type, this);
         RaiseOnReturn();
     }
 
@@ -51,19 +48,20 @@ public abstract class LiteUnit : MonoBehaviour
         RaiseOnSpawn();
     }
 
+    public virtual void Upgrade(int level)
+    {
+
+    }
+
     #endregion
 
     #region Override IInitializable
 
-    public virtual void Initialize(object obj, RedemptionTDObjectPool pool)
+    public virtual void Initialize(object obj)
     {
-        objectPool = pool;
-
-        Index = 0;
-
         if(PoolArgs == null)
         {
-            PoolArgs = new ToOrFromPoolEventArgs(Index);
+            PoolArgs = new ToOrFromPoolEventArgs(Index, Vector3.zero);
         }
     }
 
