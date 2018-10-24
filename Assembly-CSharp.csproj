@@ -55,14 +55,11 @@
      <Compile Include="Assets\Scripts\Base\RedemptionBase.cs" />
      <Compile Include="Assets\Scripts\Base\RedemptionBaseDestroyedEventArgs.cs" />
      <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
-     <Compile Include="Assets\Scripts\Enemy\EnemyHeavyReferences.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyLite.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\Environment\Resource\Resource.cs" />
      <Compile Include="Assets\Scripts\Environment\Resource\ResourceDrop.cs" />
-     <Compile Include="Assets\Scripts\Environment\Resource\ResourceDropHeavyReferences.cs" />
      <Compile Include="Assets\Scripts\Environment\Resource\ResourceDropLite.cs" />
-     <Compile Include="Assets\Scripts\Environment\Resource\ResourceHeavyReferences.cs" />
      <Compile Include="Assets\Scripts\Environment\Resource\ResourceLite.cs" />
      <Compile Include="Assets\Scripts\Environment\Resource\ResourcesEventArgs.cs" />
      <Compile Include="Assets\Scripts\Environment\Resource\ResourcesOverseer.cs" />
@@ -94,7 +91,6 @@
      <Compile Include="Assets\Scripts\Weapon\Weapon.cs" />
      <Compile Include="Assets\Scripts\Weapon\WeaponBehavior.cs" />
      <Compile Include="Assets\Scripts\Weapon\WeaponCycler.cs" />
-     <Compile Include="Assets\Scripts\Weapon\WeaponHeavyReferences.cs" />
      <Compile Include="Assets\Scripts\Weapon\WeaponLite.cs" />
      <Compile Include="Assets\Scripts\Weapon\WeaponRange.cs" />
      <Compile Include="Assets\Scripts\Weapon\WeaponState.cs" />

@@ -2046,13 +2046,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 159957677}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d4e6b336f58d4c2bb6bdce1918a1199, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e9795801d9aa4d9880dd711cabe8ac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  black: {fileID: 165695056}
-  iron: {fileID: 1596230386}
-  lead: {fileID: 51422521}
-  magnesium: {fileID: 796915709}
+  black:
+  - {fileID: 165695056}
+  iron:
+  - {fileID: 1596230386}
+  lead:
+  - {fileID: 51422521}
+  magnesium:
+  - {fileID: 796915709}
 --- !u!114 &165695056 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114916171798248932, guid: c892e1e6ec8404f2f9115063e333b762,
@@ -9717,13 +9721,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1104196281}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 903f080430dd54ce8afc24eeca35aa8d, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e9795801d9aa4d9880dd711cabe8ac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  black: {fileID: 1708145122}
-  iron: {fileID: 383840258}
-  lead: {fileID: 1082125699}
-  magnesium: {fileID: 1941587572}
+  black:
+  - {fileID: 1708145122}
+  iron:
+  - {fileID: 383840258}
+  lead:
+  - {fileID: 1082125699}
+  magnesium:
+  - {fileID: 1941587572}
 --- !u!4 &1104196283
 Transform:
   m_ObjectHideFlags: 0
@@ -15257,7 +15265,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1945012858}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6cf929841f1a4c51a55672ef4917b79, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e9795801d9aa4d9880dd711cabe8ac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   black:

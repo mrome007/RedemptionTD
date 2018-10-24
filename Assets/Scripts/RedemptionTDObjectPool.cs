@@ -58,6 +58,8 @@ public class RedemptionTDObjectPool : MonoBehaviour
             if(unitIndex < unitsPoolList.Count)
             {
                 var unit = unitsPoolList[unitIndex];
+                var heavyReference = GetHeavyReference(type);
+                unit.Initialize(heavyReference.GetHeavyReference(type), this);
                 unitsPoolList[unitIndex] = null;
                 unitsPoolIndex[type]++;
                 unit.gameObject.SetActive(true);
