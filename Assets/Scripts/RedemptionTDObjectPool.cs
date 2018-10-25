@@ -43,7 +43,7 @@ public class RedemptionTDObjectPool : MonoBehaviour
         CreateRedemptionObjectPool();
     }
 
-    public IEnumerable<LiteUnit> GetUnits(RedemptionTDType type, int numberToSpawn)
+    public IEnumerable<LiteUnit> GetUnits(RedemptionTDType type, int numberToSpawn, int level = 1)
     {
         for(int count = 0; count < numberToSpawn; count++)
         {
@@ -59,7 +59,7 @@ public class RedemptionTDObjectPool : MonoBehaviour
             {
                 var unit = unitsPoolList[unitIndex];
                 var heavyReference = GetHeavyReference(type);
-                unit.Initialize(heavyReference.GetHeavyReference(type));
+                unit.Initialize(heavyReference.GetHeavyReference(type, level));
                 unitsPoolList[unitIndex] = null;
                 unitsPoolIndex[type]++;
                 unit.gameObject.SetActive(true);

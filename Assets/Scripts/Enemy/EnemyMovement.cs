@@ -42,7 +42,7 @@ public class EnemyMovement : MonoBehaviour, IInitializable
 
     #endregion
 
-    public void Move()
+    public virtual void Move()
     {
         StartCoroutine(MoveEnemyRoutine());
     }
