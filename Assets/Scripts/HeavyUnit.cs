@@ -12,8 +12,16 @@ public class HeavyUnit : MonoBehaviour
     [SerializeField]
     private RedemptionTDType type;
 
+    [SerializeField]
+    private int level;
+
+    [SerializeField]
+    private int maxLevel;
+
     #endregion
 
     public RedemptionTDType Type { get { return type; } }
     public RedemptionTDColor Color { get { return color; } }
+    public int Level { get { return level; } }
+    public int MaxLevel { get { return maxLevel; } }
 }

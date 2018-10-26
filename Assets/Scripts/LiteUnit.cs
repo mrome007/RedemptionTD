@@ -48,9 +48,19 @@ public abstract class LiteUnit : MonoBehaviour
         RaiseOnSpawn();
     }
 
-    public virtual void Upgrade(int level)
+    public virtual void Upgrade(HeavyUnit newHeavyReference)
     {
+        if(!CanUpgrade())
+        {
+            return;
+        }
 
+        Initialize(newHeavyReference);
+    }
+
+    public virtual bool CanUpgrade()
+    {
+        return HeavyReference.Level < HeavyReference.MaxLevel;
     }
 
     #endregion

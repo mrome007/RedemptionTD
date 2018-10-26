@@ -207,6 +207,13 @@ public class RedemptionTDObjectPool : MonoBehaviour
         }
     }
 
+    public HeavyUnit GetHeavyUnit(RedemptionTDType type, int level = 1)
+    {
+        var heavyReferences = GetHeavyReference(type);
+        return heavyReferences.GetHeavyReference(type, level);
+    }
+
+
     private HeavyReferences GetHeavyReference(RedemptionTDType type)
     {
         HeavyReferences result = null;

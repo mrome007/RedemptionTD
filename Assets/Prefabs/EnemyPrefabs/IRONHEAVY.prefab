@@ -53,6 +53,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: 2
   type: 2
+  level: 1
+  maxLevel: 4
   speed: 0.2
   health: 50
   maxResourceDrops: 7

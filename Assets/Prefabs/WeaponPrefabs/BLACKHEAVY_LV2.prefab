@@ -51,10 +51,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2111da4bdbb664e7a8ecc021c2a0c59b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pool: {fileID: 0}
   color: 1
   type: 5
   level: 2
+  maxLevel: 5
   baseDamage: 20
   damageMultiplier: 1
   cost: 25
