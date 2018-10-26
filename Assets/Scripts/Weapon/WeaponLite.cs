@@ -26,6 +26,7 @@ public class WeaponLite : LiteUnit
 
     private Weapon weapon;
     private WeaponState currentWeaponState;
+    private const float upgradeSizeIncr = 0.15f;
 
     #region Overrides
 
@@ -40,6 +41,8 @@ public class WeaponLite : LiteUnit
         base.Initialize(obj);
 
         weapon = obj as Weapon;
+
+        ResizeWeapon();
 
         if(weapon == null)
         {
@@ -57,7 +60,7 @@ public class WeaponLite : LiteUnit
 
     #region Helpers
 
-    protected void InitializeWeaponState()
+    private void InitializeWeaponState()
     {
         var resourceLayer = 1 << LayerMask.NameToLayer("Resource");
         var hit = Physics2D.OverlapCircle(transform.position, weapon.GatherRadius, resourceLayer);
@@ -79,6 +82,17 @@ public class WeaponLite : LiteUnit
             gatherObject.SetActive(false);
             weaponObject.SetActive(true);
         }
+    }
+
+    private void ResizeWeapon()
+    {
+        var scaleWeapon = weaponObject.transform.localScale;
+        var scaleGather = gatherObject.transform.localScale;
+
+        var newScale = 1f + ((weapon.Level - 1) * upgradeSizeIncr);
+        scaleWeapon.x = scaleWeapon.y = scaleGather.x = scaleGather.y = newScale;
+        weaponObject.transform.localScale = scaleWeapon;
+        gatherObject.transform.localScale = scaleGather;
     }
 
     #endregion
