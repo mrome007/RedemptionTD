@@ -76,10 +76,9 @@ public class WeaponLite : LiteUnit
                 blastState.enabled = false;
                 currentWeaponState = gatherState;
                 currentWeaponState.EnterWeaponState(hit.GetComponent<ResourceLite>());
+                gatherObject.SetActive(true);
+                weaponObject.SetActive(false);
             }
-
-            gatherObject.SetActive(true);
-            weaponObject.SetActive(false);
         }
         else
         {
