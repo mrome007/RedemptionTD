@@ -459,6 +459,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons:
   - {fileID: 1668303212844066}
+  gathers:
+  - {fileID: 1224854993482678}
 --- !u!114 &114114463615917292
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -484,6 +486,7 @@ MonoBehaviour:
   blastState: {fileID: 114468251642498038}
   gatherState: {fileID: 114114463615917292}
   nullState: {fileID: 114275560567666536}
+  weaponCycler: {fileID: 114092698850174100}
   weaponObject: {fileID: 1626419548801474}
   gatherObject: {fileID: 1224854993482678}
 --- !u!114 &114275560567666536
@@ -520,7 +523,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ba55a58e3d62470684a8fa902f8e030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponCycler: {fileID: 114092698850174100}
 --- !u!212 &212024829939535864
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -6,7 +6,10 @@ using UnityEngine;
 public class SpawnButton : MonoBehaviour 
 {
     [SerializeField]
-    private Weapon spawnWeapon;
+    private Weapon weapon;
+
+    [SerializeField]
+    private WeaponMode weaponMode;
 
     public event EventHandler<SpawnWeaponInputArgs> SpawnButtonClicked;
 
@@ -20,7 +23,7 @@ public class SpawnButton : MonoBehaviour
         var handler = SpawnButtonClicked;
         if(handler != null)
         {
-            handler(this, new SpawnWeaponInputArgs(spawnWeapon));
+            handler(this, new SpawnWeaponInputArgs(weaponMode, weapon.Type, weapon.Cost));
         }
     }
 }

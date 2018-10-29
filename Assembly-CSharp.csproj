@@ -82,6 +82,7 @@
      <Compile Include="Assets\Scripts\RedemptionTDObjectPool.cs" />
      <Compile Include="Assets\Scripts\RedemptionTDTypeEventArgs.cs" />
      <Compile Include="Assets\Scripts\ReturnToPoolEventArgs.cs" />
+     <Compile Include="Assets\Scripts\UnitMode.cs" />
      <Compile Include="Assets\Scripts\Waves\RedemptionTDRound.cs" />
      <Compile Include="Assets\Scripts\Waves\RedemptionTDSpawnInfo.cs" />
      <Compile Include="Assets\Scripts\Waves\RedemptionTDWave.cs" />

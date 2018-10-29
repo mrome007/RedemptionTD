@@ -14,7 +14,7 @@ public class SpawnInputState : InputState
     [SerializeField]
     private SpawnCursor spawnCursor;
 
-    private Weapon currentWeapon;
+    private SpawnWeaponInputArgs currentWeapon;
     private int spawnIntLayer;
     private int blockIntLayer;
     private Vector2 spawnPosition;
@@ -27,7 +27,7 @@ public class SpawnInputState : InputState
     
     public override void EnterInputState(InputStateChangeArgs args = null)
     {
-        currentWeapon = (args as SpawnWeaponInputArgs).Weapon;
+        currentWeapon = args as SpawnWeaponInputArgs;
         RegisterSpawnButtonsClick();
     }
     
@@ -68,15 +68,16 @@ public class SpawnInputState : InputState
 
     private void SpawnWeapon(Vector2 position)
     {
-        if(!ResourcesOverseer.DecreaseResourceEvent(currentWeapon.Cost))
+        if(!ResourcesOverseer.DecreaseResourceEvent(currentWeapon.WeaponCost))
         {
             return;
         }
 
-        var weapons = objectPool.GetUnits(currentWeapon.Type, 1);
+        var weapons = objectPool.GetUnits(currentWeapon.WeaponType, 1);
+        var weaponMode = UnitMode.CreateUnitMode(currentWeapon.WeaponMode);
         foreach(var weapon in weapons)
         {
-            weapon.SpawnObject(0, position);
+            weapon.SpawnObject(0, position, weaponMode);
         }
     }
 
@@ -98,6 +99,6 @@ public class SpawnInputState : InputState
 
     private void HandleSpawnButtonClicked(object sender, SpawnWeaponInputArgs e)
     {
-        currentWeapon = e.Weapon;
+        currentWeapon = e;
     }
 }

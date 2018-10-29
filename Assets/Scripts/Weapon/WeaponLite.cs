@@ -17,6 +17,9 @@ public class WeaponLite : LiteUnit
     private NullWeaponState nullState;
 
     [SerializeField]
+    private WeaponCycler weaponCycler;
+
+    [SerializeField]
     private GameObject weaponObject;
 
     [SerializeField]
@@ -50,26 +53,31 @@ public class WeaponLite : LiteUnit
         }
     }
 
-    public override void SpawnObject(int index, Vector3 position)
+    public override void SpawnObject(int index, Vector3 position, UnitMode mode)
     {
-        base.SpawnObject(index, position);
-        InitializeWeaponState();
+        base.SpawnObject(index, position, mode);
+        InitializeWeaponState(mode.WeaponMode);
     }
 
     #endregion
 
     #region Helpers
 
-    private void InitializeWeaponState()
+    private void InitializeWeaponState(WeaponMode mode)
     {
-        var resourceLayer = 1 << LayerMask.NameToLayer("Resource");
-        var hit = Physics2D.OverlapCircle(transform.position, weapon.GatherRadius, resourceLayer);
-        if(hit != null && hit.GetComponent<LiteUnit>().HeavyReference.Color == HeavyReference.Color)
+        if(mode == WeaponMode.GATHER)
         {
-            gatherState.enabled = true;
-            blastState.enabled = false;
-            currentWeaponState = gatherState;
-            currentWeaponState.EnterWeaponState(hit.GetComponent<ResourceLite>());
+            var resourceLayer = 1 << LayerMask.NameToLayer("Resource");
+            var hit = Physics2D.OverlapCircle(transform.position, weapon.GatherRadius, resourceLayer);
+
+            if(hit != null && hit.GetComponent<LiteUnit>().HeavyReference.Color == HeavyReference.Color)
+            {
+                gatherState.enabled = true;
+                blastState.enabled = false;
+                currentWeaponState = gatherState;
+                currentWeaponState.EnterWeaponState(hit.GetComponent<ResourceLite>());
+            }
+
             gatherObject.SetActive(true);
             weaponObject.SetActive(false);
         }
@@ -82,6 +90,8 @@ public class WeaponLite : LiteUnit
             gatherObject.SetActive(false);
             weaponObject.SetActive(true);
         }
+
+        weaponCycler.ShowCurrentWeapon(mode);
     }
 
     private void ResizeWeapon()

@@ -41,7 +41,7 @@ public abstract class LiteUnit : MonoBehaviour
         }
     }
 
-    public virtual void SpawnObject(int index, Vector3 position)
+    public virtual void SpawnObject(int index, Vector3 position, UnitMode mode)
     {
         Index = index;
         transform.position = position;

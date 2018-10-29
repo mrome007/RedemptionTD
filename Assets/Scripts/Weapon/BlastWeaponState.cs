@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class BlastWeaponState : WeaponState
 {
-    [SerializeField]
-    private WeaponCycler weaponCycler;
-
     public override void UpdateWeapon()
     {
         
@@ -14,6 +11,5 @@ public class BlastWeaponState : WeaponState
 
     public override void EnterWeaponState(object obj = null)
     {
-        weaponCycler.ShowCurrentWeapon();
     }
 }

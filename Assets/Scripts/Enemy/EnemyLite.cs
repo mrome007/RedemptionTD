@@ -32,9 +32,9 @@ public class EnemyLite : LiteUnit
         }
     }
 
-    public override void SpawnObject(int index, Vector3 position)
+    public override void SpawnObject(int index, Vector3 position, UnitMode mode)
     {
-        base.SpawnObject(index, position);
+        base.SpawnObject(index, position, mode);
         enemyMovement.Speed = enemy.Speed;
         enemyMovement.MoveEnded += HandleMoveEnded;
         currentHealth = enemy.Health;

@@ -87,7 +87,8 @@ public class RedemptionTDWave : MonoBehaviour
         var enemies = objectPool.GetUnits(spawnInfo.EnemyType, spawnInfo.NumberToSpawn);
         foreach(var enemy in enemies)
         {
-            enemy.SpawnObject(currentSpawnCount, spawnInfo.SpawnPosition.transform.position);
+            var enemyMode = UnitMode.CreateUnitMode();
+            enemy.SpawnObject(currentSpawnCount, spawnInfo.SpawnPosition.transform.position, enemyMode);
             enemy.ObjectReturned += HandleEnemyReturned;
 
             var movement = enemy.GetComponent<EnemyMovement>();
@@ -123,12 +124,13 @@ public class RedemptionTDWave : MonoBehaviour
         var numToSpawn = UnityEngine.Random.Range(0, enemy.MaxResourceDrops);
         var units = objectPool.GetUnits(objectPool.GetResourceDropType(enemy.Color), numToSpawn);
         var count = 0;
+        var resourceMode = UnitMode.CreateUnitMode();
         foreach(var resourceDrop in units)
         {
             var position = new Vector3(pos.x + UnityEngine.Random.Range(-0.1f, 0.1f), 
                                        pos.y + UnityEngine.Random.Range(-0.1f, 0.1f), 
                                        -1f);
-            resourceDrop.SpawnObject(count, position);
+            resourceDrop.SpawnObject(count, position, resourceMode);
             count++;
         }
     }

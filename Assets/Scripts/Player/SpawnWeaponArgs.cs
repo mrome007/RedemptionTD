@@ -5,10 +5,14 @@ using UnityEngine;
 
 public class SpawnWeaponInputArgs : InputStateChangeArgs
 {
-    public Weapon Weapon { get; private set; }
+    public WeaponMode WeaponMode { get; private set; }
+    public RedemptionTDType WeaponType { get; private set; }
+    public int WeaponCost { get; private set;}
 
-    public SpawnWeaponInputArgs(Weapon weapon)
+    public SpawnWeaponInputArgs(WeaponMode weaponMode, RedemptionTDType type, int cost)
     {
-        Weapon = weapon;
+        WeaponMode = weaponMode;
+        WeaponType = type;
+        WeaponCost = cost;
     }
 }
