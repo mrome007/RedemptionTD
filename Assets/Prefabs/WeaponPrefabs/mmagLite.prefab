@@ -155,6 +155,8 @@ GameObject:
   - component: {fileID: 114114463615917292}
   - component: {fileID: 114275560567666536}
   - component: {fileID: 114092698850174100}
+  - component: {fileID: 114123042192834214}
+  - component: {fileID: 114378218765371128}
   m_Layer: 0
   m_Name: mmagLite
   m_TagString: Untagged
@@ -489,6 +491,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons:
   - {fileID: 1668303212844066}
+  weaponObject: {fileID: 1026500199047706}
+  gatherObject: {fileID: 1224854993482678}
 --- !u!114 &114114463615917292
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -500,6 +504,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc9b9d14032aa4ed0be39b8ce387e75b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114123042192834214
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1697257554472682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d2792ec6d30c4216afd95304553fc90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponObject: {fileID: 1026500199047706}
+  gatherObject: {fileID: 1224854993482678}
 --- !u!114 &114207681085242964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -511,12 +528,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2a88b307d32b411eb90bc3ce7cdd162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blastState: {fileID: 114468251642498038}
-  gatherState: {fileID: 114114463615917292}
-  nullState: {fileID: 114275560567666536}
   weaponCycler: {fileID: 114092698850174100}
-  weaponObject: {fileID: 1026500199047706}
-  gatherObject: {fileID: 1224854993482678}
+  weaponResizer: {fileID: 114123042192834214}
+  weaponStateCycler: {fileID: 114378218765371128}
 --- !u!114 &114275560567666536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -528,6 +542,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6024168825daa48f6a102f93748ccbab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114378218765371128
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1697257554472682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca85aedefa794979b865aa2d688aea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blastState: {fileID: 114468251642498038}
+  gatherState: {fileID: 114114463615917292}
+  nullState: {fileID: 114275560567666536}
 --- !u!114 &114428719038948486
 MonoBehaviour:
   m_ObjectHideFlags: 1

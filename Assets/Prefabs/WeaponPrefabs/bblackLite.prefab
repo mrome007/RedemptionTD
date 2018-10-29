@@ -122,6 +122,8 @@ GameObject:
   - component: {fileID: 114635148033230756}
   - component: {fileID: 114268396846814552}
   - component: {fileID: 114294909901195682}
+  - component: {fileID: 114552540435742766}
+  - component: {fileID: 114426205116114546}
   m_Layer: 0
   m_Name: bblackLite
   m_TagString: Untagged
@@ -480,6 +482,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons:
   - {fileID: 1911562820385552}
+  weaponObject: {fileID: 1940791761081768}
+  gatherObject: {fileID: 1267280408697088}
+--- !u!114 &114426205116114546
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1680804611388582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca85aedefa794979b865aa2d688aea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blastState: {fileID: 114624160267348300}
+  gatherState: {fileID: 114635148033230756}
+  nullState: {fileID: 114268396846814552}
 --- !u!114 &114432194301884824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -491,12 +509,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2a88b307d32b411eb90bc3ce7cdd162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blastState: {fileID: 114624160267348300}
-  gatherState: {fileID: 114635148033230756}
-  nullState: {fileID: 114268396846814552}
   weaponCycler: {fileID: 114294909901195682}
-  weaponObject: {fileID: 1940791761081768}
-  gatherObject: {fileID: 1267280408697088}
+  weaponResizer: {fileID: 114552540435742766}
+  weaponStateCycler: {fileID: 114426205116114546}
 --- !u!114 &114493926378430688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -510,6 +525,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponLite: {fileID: 114432194301884824}
   weaponBehavior: {fileID: 114167737504457550}
+--- !u!114 &114552540435742766
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1680804611388582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d2792ec6d30c4216afd95304553fc90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponObject: {fileID: 1940791761081768}
+  gatherObject: {fileID: 1267280408697088}
 --- !u!114 &114624160267348300
 MonoBehaviour:
   m_ObjectHideFlags: 1

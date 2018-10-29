@@ -120,6 +120,8 @@ GameObject:
   - component: {fileID: 114685212923780944}
   - component: {fileID: 114231357595801680}
   - component: {fileID: 114517493271839190}
+  - component: {fileID: 114115267611944784}
+  - component: {fileID: 114074904428516860}
   m_Layer: 0
   m_Name: iironLite
   m_TagString: Untagged
@@ -444,6 +446,33 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114074904428516860
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1498100365848180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca85aedefa794979b865aa2d688aea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blastState: {fileID: 114787308670833914}
+  gatherState: {fileID: 114685212923780944}
+  nullState: {fileID: 114231357595801680}
+--- !u!114 &114115267611944784
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1498100365848180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d2792ec6d30c4216afd95304553fc90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponObject: {fileID: 1388313533199248}
+  gatherObject: {fileID: 1402913949262500}
 --- !u!114 &114231357595801680
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -493,6 +522,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons:
   - {fileID: 1065785291877484}
+  weaponObject: {fileID: 1388313533199248}
+  gatherObject: {fileID: 1402913949262500}
 --- !u!114 &114571265334894244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -504,12 +535,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2a88b307d32b411eb90bc3ce7cdd162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blastState: {fileID: 114787308670833914}
-  gatherState: {fileID: 114685212923780944}
-  nullState: {fileID: 114231357595801680}
   weaponCycler: {fileID: 114517493271839190}
-  weaponObject: {fileID: 1388313533199248}
-  gatherObject: {fileID: 1402913949262500}
+  weaponResizer: {fileID: 114115267611944784}
+  weaponStateCycler: {fileID: 114074904428516860}
 --- !u!114 &114685212923780944
 MonoBehaviour:
   m_ObjectHideFlags: 1

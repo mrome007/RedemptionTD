@@ -94,7 +94,9 @@
      <Compile Include="Assets\Scripts\Weapon\WeaponCycler.cs" />
      <Compile Include="Assets\Scripts\Weapon\WeaponLite.cs" />
      <Compile Include="Assets\Scripts\Weapon\WeaponRange.cs" />
+     <Compile Include="Assets\Scripts\Weapon\WeaponResizer.cs" />
      <Compile Include="Assets\Scripts\Weapon\WeaponState.cs" />
+     <Compile Include="Assets\Scripts\Weapon\WeaponStateCycler.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

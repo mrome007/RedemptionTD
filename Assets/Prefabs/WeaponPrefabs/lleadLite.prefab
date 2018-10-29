@@ -108,6 +108,8 @@ GameObject:
   - component: {fileID: 114352690405426362}
   - component: {fileID: 114532135068970992}
   - component: {fileID: 114176796555159758}
+  - component: {fileID: 114558065054665516}
+  - component: {fileID: 114234256587454904}
   m_Layer: 0
   m_Name: lleadLite
   m_TagString: Untagged
@@ -457,6 +459,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons:
   - {fileID: 1593483214162436}
+  weaponObject: {fileID: 1208365799244796}
+  gatherObject: {fileID: 1659369159554848}
+--- !u!114 &114234256587454904
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1509726080333688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca85aedefa794979b865aa2d688aea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blastState: {fileID: 114655262760840666}
+  gatherState: {fileID: 114352690405426362}
+  nullState: {fileID: 114532135068970992}
 --- !u!114 &114314309870692492
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -491,6 +509,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6024168825daa48f6a102f93748ccbab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114558065054665516
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1509726080333688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d2792ec6d30c4216afd95304553fc90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponObject: {fileID: 1208365799244796}
+  gatherObject: {fileID: 1659369159554848}
 --- !u!114 &114655262760840666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -513,12 +544,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2a88b307d32b411eb90bc3ce7cdd162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blastState: {fileID: 114655262760840666}
-  gatherState: {fileID: 114352690405426362}
-  nullState: {fileID: 114532135068970992}
   weaponCycler: {fileID: 114176796555159758}
-  weaponObject: {fileID: 1208365799244796}
-  gatherObject: {fileID: 1018007749444078}
+  weaponResizer: {fileID: 114558065054665516}
+  weaponStateCycler: {fileID: 114234256587454904}
 --- !u!114 &114983771003476196
 MonoBehaviour:
   m_ObjectHideFlags: 1

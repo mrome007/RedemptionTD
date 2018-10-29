@@ -8,28 +8,17 @@ public class WeaponLite : LiteUnit
     #region Inspector Data
 
     [SerializeField]
-    private BlastWeaponState blastState;
-
-    [SerializeField]
-    private GatherWeaponState gatherState;
-
-    [SerializeField]
-    private NullWeaponState nullState;
-
-    [SerializeField]
     private WeaponCycler weaponCycler;
 
     [SerializeField]
-    private GameObject weaponObject;
+    private WeaponResizer weaponResizer;
 
     [SerializeField]
-    private GameObject gatherObject;
+    private WeaponStateCycler weaponStateCycler;
 
     #endregion
 
     private Weapon weapon;
-    private WeaponState currentWeaponState;
-    private const float upgradeSizeIncr = 0.15f;
 
     #region Overrides
 
@@ -45,7 +34,7 @@ public class WeaponLite : LiteUnit
 
         weapon = obj as Weapon;
 
-        ResizeWeapon();
+        weaponResizer.ResizeWeapon(weapon.Level);
 
         if(weapon == null)
         {
@@ -65,58 +54,17 @@ public class WeaponLite : LiteUnit
 
     private void InitializeWeaponState(WeaponMode mode)
     {
-        if(mode == WeaponMode.GATHER)
-        {
-            var resourceLayer = 1 << LayerMask.NameToLayer("Resource");
-            var hit = Physics2D.OverlapCircle(transform.position, weapon.GatherRadius, resourceLayer);
-
-            if(hit != null && hit.GetComponent<LiteUnit>().HeavyReference.Color == HeavyReference.Color)
-            {
-                gatherState.enabled = true;
-                blastState.enabled = false;
-                currentWeaponState = gatherState;
-                currentWeaponState.EnterWeaponState(hit.GetComponent<ResourceLite>());
-                gatherObject.SetActive(true);
-                weaponObject.SetActive(false);
-            }
-        }
-        else
-        {
-            gatherState.enabled = false;
-            blastState.enabled = true;
-            currentWeaponState = blastState;
-            currentWeaponState.EnterWeaponState();
-            gatherObject.SetActive(false);
-            weaponObject.SetActive(true);
-        }
-
-        weaponCycler.ShowCurrentWeapon(mode);
-    }
-
-    private void ResizeWeapon()
-    {
-        var scaleWeapon = weaponObject.transform.localScale;
-        var scaleGather = gatherObject.transform.localScale;
-
-        var newScale = 1f + ((weapon.Level - 1) * upgradeSizeIncr);
-        scaleWeapon.x = scaleWeapon.y = scaleGather.x = scaleGather.y = newScale;
-        weaponObject.transform.localScale = scaleWeapon;
-        gatherObject.transform.localScale = scaleGather;
+        var state = weaponStateCycler.InitializeWeaponState(mode, weapon.GatherRadius, weapon.Color);
+        weaponCycler.ShowCurrentWeapon(mode, state == WeaponMode.GATHER);
     }
 
     #endregion
 
     #region Monobehavior
 
-    protected virtual void OnEnable()
-    {
-        currentWeaponState = nullState;
-        currentWeaponState.EnterWeaponState();
-    }
-
     protected virtual void Update()
     {
-        currentWeaponState.UpdateWeapon();
+        weaponStateCycler.CurrentWeaponState.UpdateWeapon();
     }
 
     #endregion
