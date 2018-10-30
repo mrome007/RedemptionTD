@@ -10,7 +10,7 @@ public class WeaponResizer : MonoBehaviour
     [SerializeField]
     private GameObject gatherObject;
 
-    public const float upgradeSizeIncr = 0.15f;
+    public const float upgradeSizeIncr = 0.2f;
     
     public void ResizeWeapon(int level)
     {

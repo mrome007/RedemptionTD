@@ -48,8 +48,10 @@ public class SpawnInputState : InputState
         var weapon = hit.collider.GetComponentInParent<WeaponLite>();
         if(weapon != null)
         {
-            transform.position = hit.transform.position;
+            transform.position = hit.collider.transform.position;
             ShowUpgrade(weapon);
+
+
             return;
         }
 
@@ -59,6 +61,7 @@ public class SpawnInputState : InputState
         if(Input.GetMouseButtonDown(0) && okToSpawn)
         {
             SpawnWeapon(spawnPosition);
+            return;
         }
 
         if(Input.GetMouseButtonDown(1))
@@ -78,9 +81,22 @@ public class SpawnInputState : InputState
     {
         var heavy = objectPool.GetHeavyUnit(weapon.HeavyReference.Type, weapon.HeavyReference.Level + 1) as Weapon;
         var cost = heavy.Cost;
-        var okToUpgrade = ResourcesOverseer.CanChangeResourceCount(false, cost);
-        var resize = 1f + weapon.HeavyReference.Level * WeaponResizer.upgradeSizeIncr;
+        var okToUpgrade = weapon.CanUpgrade() && ResourcesOverseer.CanChangeResourceCount(false, cost);
+        var resize = 2.5f;
         spawnCursor.ToggleOkSpawn(okToUpgrade, resize);
+
+        if(Input.GetMouseButtonDown(0) && okToUpgrade)
+        {
+            ResourcesOverseer.DecreaseResourceEvent(cost);
+            weapon.Upgrade(objectPool.GetHeavyUnit(weapon.HeavyReference.Type, weapon.HeavyReference.Level + 1));
+            return;
+        }
+
+        if(Input.GetMouseButtonDown(1))
+        {
+            //Sell
+            ExitState();
+        }
     }
 
     private void SpawnWeapon(Vector2 position)
