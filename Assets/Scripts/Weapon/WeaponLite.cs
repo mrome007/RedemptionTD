@@ -52,6 +52,11 @@ public class WeaponLite : LiteUnit
 
     #region Helpers
 
+    public void Sell()
+    {
+        ReturnObject();
+    }
+
     private void InitializeWeaponState(WeaponMode mode)
     {
         var state = weaponStateCycler.InitializeWeaponState(mode, weapon.GatherRadius, weapon.Color);

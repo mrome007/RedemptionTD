@@ -94,8 +94,9 @@ public class SpawnInputState : InputState
 
         if(Input.GetMouseButtonDown(1))
         {
-            //Sell
-            ExitState();
+            ResourcesOverseer.IncreaseResourceEvent((weapon.HeavyReference as Weapon).Cost / 5);
+            weapon.Sell();
+            return;
         }
     }
 
