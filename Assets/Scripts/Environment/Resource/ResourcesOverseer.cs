@@ -81,7 +81,7 @@ public class ResourcesOverseer : MonoBehaviour
         }
     }
 
-    private static bool CanChangeResourceCount(bool increase, int count)
+    public static bool CanChangeResourceCount(bool increase, int count)
     {
         count *= increase ? 1 : -1;
         var result = resourceCountStatic + count;

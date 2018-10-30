@@ -33,14 +33,40 @@ public class SpawnCursor : MonoBehaviour
 
     public void ToggleOkSpawn(bool ok)
     {
+        ResizeOkSpawn(1f);
         okSpawn.gameObject.SetActive(ok);
         notOkSpawn.gameObject.SetActive(!ok);
     }
 
     public void ShowOkSpawn(bool show)
     {
+        ResizeOkSpawn(1f);
         okSpawn.gameObject.SetActive(show);
         notOkSpawn.gameObject.SetActive(show);
+    }
+
+    public void ToggleOkSpawn(bool ok, float resize)
+    {
+        ResizeOkSpawn(resize);
+        okSpawn.gameObject.SetActive(ok);
+        notOkSpawn.gameObject.SetActive(!ok);
+    }
+
+    public void ShowOkSpawn(bool show, float resize)
+    {
+        ResizeOkSpawn(resize);
+        okSpawn.gameObject.SetActive(show);
+        notOkSpawn.gameObject.SetActive(show);
+    }
+
+    private void ResizeOkSpawn(float size)
+    {
+        var scaleOk = okSpawn.transform.localScale;
+        var scaleNotOk = notOkSpawn.transform.localScale;
+
+        scaleOk.x = scaleOk.y = scaleNotOk.x = scaleNotOk.y = size;
+        okSpawn.transform.localScale = scaleOk;
+        notOkSpawn.transform.localScale = scaleNotOk;
     }
 
     private void SetOkSpawnSprite(RedemptionTDType currentType)
