@@ -22,6 +22,7 @@ public class RedemptionTDWaveEditor : Editor
         }
 
         redemptionWave.StaggeredSpawning = EditorGUILayout.Toggle("Staggered Spawn: ", redemptionWave.StaggeredSpawning);
+        redemptionWave.Indicator = EditorGUILayout.ObjectField("Indicator Object: ", redemptionWave.Indicator, typeof(GameObject), true) as GameObject;
 
         DrawnSpawnInfos();
         DrawAddSpawnButton();

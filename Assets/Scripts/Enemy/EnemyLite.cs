@@ -59,7 +59,7 @@ public class EnemyLite : LiteUnit
         ReturnObject();
     }
 
-    protected virtual void OnTriggerEnter2D(Collider2D col)
+    private void EnemyCollision(GameObject col)
     {
         var weaponBehavior = col.GetComponentInParent<WeaponBehavior>();
         if(weaponBehavior != null)
@@ -83,5 +83,16 @@ public class EnemyLite : LiteUnit
             ReturnObject();
             return;
         }
+    }
+
+    protected virtual void OnTriggerEnter2D(Collider2D col)
+    {
+        EnemyCollision(col.gameObject);
+    }
+
+
+    protected virtual void OnTriggerStay2D(Collider2D col)
+    {
+        EnemyCollision(col.gameObject);
     }
 }

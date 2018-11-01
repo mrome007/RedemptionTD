@@ -9909,13 +9909,14 @@ GameObject:
   - component: {fileID: 1063873874}
   - component: {fileID: 1063873875}
   - component: {fileID: 1063873876}
+  - component: {fileID: 1063873877}
   m_Layer: 0
   m_Name: EnemyIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1063873874
 Transform:
   m_ObjectHideFlags: 0
@@ -9923,11 +9924,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1063873873}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.73, y: -3.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 1962761135}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1063873875
 SpriteRenderer:
@@ -9984,6 +9985,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 372c92690d59d419ab4292d47833689e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1063873877
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1063873873}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eeae93eb2a8af439a8640bc0eb13e165, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1065149573
 GameObject:
   m_ObjectHideFlags: 0
@@ -12332,6 +12350,7 @@ MonoBehaviour:
   - {fileID: 323860236}
   - {fileID: 592543953}
   StaggeredSpawning: 0
+  Indicator: {fileID: 1063873873}
 --- !u!4 &1419035428
 Transform:
   m_ObjectHideFlags: 0
@@ -16231,7 +16250,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1063873874}
   m_Father: {fileID: 1763335161}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

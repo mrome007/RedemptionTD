@@ -20,6 +20,9 @@ public class RedemptionTDWave : MonoBehaviour
     [SerializeField]
     public bool StaggeredSpawning;
 
+    [SerializeField]
+    public GameObject Indicator;
+
     private RedemptionTDObjectPool objectPool;
     private int currentSpawnCount;
     private int totalSpawnCount;
@@ -27,6 +30,8 @@ public class RedemptionTDWave : MonoBehaviour
 
     public void StartWave(RedemptionTDObjectPool pool)
     {
+        Indicator.SetActive(true);
+        
         if(currentSpawns == null)
         {
             currentSpawns = new List<LiteUnit>();
@@ -148,6 +153,7 @@ public class RedemptionTDWave : MonoBehaviour
 
         if(totalSpawnCount <= 0)
         {
+            Indicator.SetActive(false);
             RaiseWaveEnd();
         }
     }
