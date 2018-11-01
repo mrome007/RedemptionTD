@@ -13,9 +13,9 @@ public class WeaponRange : MonoBehaviour
     private bool weaponActive = false;
     private WaitForSeconds activeTimeWait = null;
 
-    protected virtual void OnTriggerEnter2D(Collider2D col)
+    private void EnemyDetected(GameObject en)
     {
-        var enemy = col.GetComponentInParent<EnemyLite>();
+        var enemy = en.GetComponentInParent<EnemyLite>();
         if(enemy == null)
         {
             return;
@@ -25,6 +25,16 @@ public class WeaponRange : MonoBehaviour
         {
             StartCoroutine(ActivateWeaponBehavior());
         }
+    }
+
+    protected virtual void OnTriggerEnter2D(Collider2D col)
+    {
+        EnemyDetected(col.gameObject);
+    }
+
+    protected virtual void OnTriggerStay2D(Collider2D col)
+    {
+        EnemyDetected(col.gameObject);
     }
 
     private IEnumerator ActivateWeaponBehavior()

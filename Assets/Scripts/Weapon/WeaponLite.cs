@@ -48,6 +48,16 @@ public class WeaponLite : LiteUnit
         InitializeWeaponState(mode.WeaponMode);
     }
 
+    public override bool CanUpgrade()
+    {
+        if(weaponStateCycler.CurrentWeaponState.GetType() == typeof(BlastWeaponState))
+        {
+            return base.CanUpgrade();
+        }
+
+        return false;
+    }
+
     #endregion
 
     #region Helpers
