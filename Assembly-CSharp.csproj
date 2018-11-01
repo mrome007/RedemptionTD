@@ -79,6 +79,7 @@
      <Compile Include="Assets\Scripts\Player\SpawnCursor.cs" />
      <Compile Include="Assets\Scripts\Player\SpawnInputState.cs" />
      <Compile Include="Assets\Scripts\Player\SpawnWeaponArgs.cs" />
+     <Compile Include="Assets\Scripts\RedemptionTDIndicator.cs" />
      <Compile Include="Assets\Scripts\RedemptionTDObjectPool.cs" />
      <Compile Include="Assets\Scripts\RedemptionTDTypeEventArgs.cs" />
      <Compile Include="Assets\Scripts\ReturnToPoolEventArgs.cs" />
