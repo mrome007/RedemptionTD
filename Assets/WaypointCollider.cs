@@ -20,15 +20,17 @@ public class WaypointCollider : MonoBehaviour
 
     private void CreateBoxCollider()
     {
+        if(wayPointCollider != null)
+        {
+            return;
+        }
+
         if(position1.position.x != position2.position.x && position1.position.y != position2.position.y)
         {
             return;
         }
 
-        if(wayPointCollider == null)
-        {
-            wayPointCollider = gameObject.AddComponent<BoxCollider2D>();
-        }
+        wayPointCollider = gameObject.AddComponent<BoxCollider2D>();
 
         var horizontal = position1.position.y == position2.position.y;
         var xDifference = Mathf.Abs(position1.position.x - position2.position.x) + sizeOffset;
