@@ -53,6 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Base\BasesOverseer.cs" />
      <Compile Include="Assets\Scripts\Base\RedemptionBase.cs" />
+     <Compile Include="Assets\Scripts\Base\RedemptionBaseDamagedEventArgs.cs" />
      <Compile Include="Assets\Scripts\Base\RedemptionBaseDestroyedEventArgs.cs" />
      <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyLite.cs" />

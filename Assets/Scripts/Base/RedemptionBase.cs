@@ -6,6 +6,7 @@ using UnityEngine;
 public class RedemptionBase : MonoBehaviour 
 {
     public event EventHandler<RedemptionBaseDestroyedEventArgs> BaseDestroyed;
+    public event EventHandler<RedemptionBaseDamagedEventArgs> BaseDamaged;
     
     [SerializeField]
     private float health;
@@ -21,11 +22,14 @@ public class RedemptionBase : MonoBehaviour
 
     private float currentHealth;
     private RedemptionBaseDestroyedEventArgs destroyedArgs;
+    private RedemptionBaseDamagedEventArgs damagedArgs;
+    public float Health { get{ return health; } }
 
     private void Awake()
     {
         currentHealth = health;
         destroyedArgs = new RedemptionBaseDestroyedEventArgs(baseIndex);
+        damagedArgs = new RedemptionBaseDamagedEventArgs(0f);
     }
 
     public void DamageBase(RedemptionTDColor enemyColor, float damage)
@@ -33,11 +37,13 @@ public class RedemptionBase : MonoBehaviour
         if(enemyColor == color)
         {
             currentHealth -= damage;
+            PostBaseDamaged(damage);
         }
         else
         {
             damage /= 2f;
             currentHealth -= damage;
+            PostBaseDamaged(damage);
         }
 
         if(currentHealth <= 0)
@@ -53,6 +59,16 @@ public class RedemptionBase : MonoBehaviour
         if(handler != null)
         {
             handler(this, destroyedArgs);
+        }
+    }
+
+    private void PostBaseDamaged(float damage)
+    {
+        var handler = BaseDamaged;
+        if(handler != null)
+        {
+            damagedArgs.Damage = damage;
+            handler(this, damagedArgs);
         }
     }
 }

@@ -74,6 +74,11 @@ public class EnemyLite : LiteUnit
                 return;
             }
         }
+    }
+
+    protected virtual void OnTriggerEnter2D(Collider2D col)
+    {
+        EnemyCollision(col.gameObject);
 
         var colorBase = col.GetComponentInParent<RedemptionBase>();
         if(colorBase != null)
@@ -83,11 +88,6 @@ public class EnemyLite : LiteUnit
             ReturnObject();
             return;
         }
-    }
-
-    protected virtual void OnTriggerEnter2D(Collider2D col)
-    {
-        EnemyCollision(col.gameObject);
     }
 
 
