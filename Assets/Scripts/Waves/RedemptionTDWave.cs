@@ -21,7 +21,7 @@ public class RedemptionTDWave : MonoBehaviour
     public bool StaggeredSpawning;
 
     [SerializeField]
-    public GameObject Indicator;
+    public GameObject EnemyIndicatorPrefab;
 
     private RedemptionTDObjectPool objectPool;
     private int currentSpawnCount;
@@ -29,9 +29,7 @@ public class RedemptionTDWave : MonoBehaviour
     private List<LiteUnit> currentSpawns;
 
     public void StartWave(RedemptionTDObjectPool pool)
-    {
-        Indicator.SetActive(true);
-        
+    {        
         if(currentSpawns == null)
         {
             currentSpawns = new List<LiteUnit>();
@@ -44,7 +42,9 @@ public class RedemptionTDWave : MonoBehaviour
         {
             objectPool = pool;
         }
-        
+
+        AddEnemyIndicators();
+        ShowEnemyIndicators(true);
         if(StaggeredSpawning)
         {
             StaggeredSpawn();
@@ -140,6 +140,32 @@ public class RedemptionTDWave : MonoBehaviour
         }
     }
 
+    private void AddEnemyIndicators()
+    {
+        foreach(var spawnInfo in SpawnInformation)
+        {
+            if(spawnInfo.SpawnPosition.EnemyIndicator == null)
+            {
+                var enemyIndicator = Instantiate(EnemyIndicatorPrefab, Vector3.zero, Quaternion.identity);
+                spawnInfo.SpawnPosition.EnemyIndicator = enemyIndicator;
+                enemyIndicator.transform.parent = spawnInfo.SpawnPosition.transform;
+                enemyIndicator.transform.localPosition = Vector3.zero;
+            }
+        }
+    }
+
+    private void ShowEnemyIndicators(bool show)
+    {
+        foreach(var spawnInfo in SpawnInformation)
+        {
+            if(spawnInfo.SpawnPosition.EnemyIndicator == null)
+            {
+                continue;
+            }
+            spawnInfo.SpawnPosition.EnemyIndicator.SetActive(show);
+        }
+    }
+
     private void HandleEnemyReturned(object sender, ToOrFromPoolEventArgs e)
     {
         currentSpawns[e.SpawnIndex].ObjectReturned -= HandleEnemyReturned;
@@ -153,7 +179,7 @@ public class RedemptionTDWave : MonoBehaviour
 
         if(totalSpawnCount <= 0)
         {
-            Indicator.SetActive(false);
+            ShowEnemyIndicators(false);
             RaiseWaveEnd();
         }
     }

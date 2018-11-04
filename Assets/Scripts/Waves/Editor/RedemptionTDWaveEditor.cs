@@ -22,7 +22,7 @@ public class RedemptionTDWaveEditor : Editor
         }
 
         redemptionWave.StaggeredSpawning = EditorGUILayout.Toggle("Staggered Spawn: ", redemptionWave.StaggeredSpawning);
-        redemptionWave.Indicator = EditorGUILayout.ObjectField("Indicator Object: ", redemptionWave.Indicator, typeof(GameObject), true) as GameObject;
+        redemptionWave.EnemyIndicatorPrefab = EditorGUILayout.ObjectField("Indicator Object: ", redemptionWave.EnemyIndicatorPrefab, typeof(GameObject), true) as GameObject;
 
         DrawnSpawnInfos();
         DrawAddSpawnButton();

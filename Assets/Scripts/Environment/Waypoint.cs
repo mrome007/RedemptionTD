@@ -13,4 +13,21 @@ public class Waypoint : MonoBehaviour
     #endregion
 
     public Waypoint NextWaypoint { get { return nextWaypoint; } }
+
+    private GameObject enemyIndicator = null;
+    public GameObject EnemyIndicator 
+    { 
+        get 
+        { 
+            return enemyIndicator; 
+        } 
+        set
+        { 
+            if(enemyIndicator != null)
+            {
+                return;
+            }
+            enemyIndicator = value; 
+        } 
+    }
 }
