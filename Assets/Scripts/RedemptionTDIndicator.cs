@@ -6,7 +6,8 @@ public class RedemptionTDIndicator : MonoBehaviour
 {
     private Vector3 originalPosition;
 
-    private float offset = 0.1f;
+    [SerializeField]
+    private float offset;
 
     private void Awake()
     {
