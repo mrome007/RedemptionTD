@@ -94,12 +94,6 @@ public class RedemptionTDWave : MonoBehaviour
         {
             var enemyMode = UnitMode.CreateUnitMode();
             enemy.SpawnObject(currentSpawnCount, spawnInfo.SpawnPosition.transform.position, enemyMode);
-            enemy.ObjectReturned += HandleEnemyReturned;
-
-            var movement = enemy.GetComponent<EnemyMovement>();
-
-            movement.Initialize(spawnInfo.SpawnPosition);
-            movement.Move();
 
             if(currentSpawnCount < currentSpawns.Count)
             {
@@ -111,6 +105,13 @@ public class RedemptionTDWave : MonoBehaviour
             }
 
             currentSpawnCount++;
+
+            enemy.ObjectReturned += HandleEnemyReturned;
+
+            var movement = enemy.GetComponent<EnemyMovement>();
+
+            movement.Initialize(spawnInfo.SpawnPosition);
+            movement.Move();
 
             yield return new WaitForSeconds(spawnInfo.TimeBetweenSpawns);
         }
