@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 
 [CustomEditor(typeof(RedemptionTDWave))]
 public class RedemptionTDWaveEditor : Editor
@@ -29,7 +30,7 @@ public class RedemptionTDWaveEditor : Editor
 
         if(GUI.changed)
         {
-            EditorUtility.SetDirty(target);
+            EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
         }
     }
 
@@ -67,6 +68,7 @@ public class RedemptionTDWaveEditor : Editor
                 {
                     Object.DestroyImmediate(spawn.gameObject);
                     InitializeSpawnInfos(true);
+                    GUI.changed = true;
                     return;
                 }
             }
@@ -105,16 +107,19 @@ public class RedemptionTDWaveEditor : Editor
 
     private void InitializeSpawnInfos(bool clear = false)
     {
-        if(redemptionWave.SpawnInformation != null)
+        if(redemptionWave.SpawnInformation == null)
+        {
+            redemptionWave.SpawnInformation = new List<RedemptionTDSpawnInfo>();
+            return;
+
+        }
+
+        if(!clear)
         {
             return;
         }
-        
-        if(clear)
-        {
-            redemptionWave.SpawnInformation.Clear();
-        }
 
+        redemptionWave.SpawnInformation.Clear();
         var children = redemptionWave.GetComponentsInChildren<RedemptionTDSpawnInfo>();
         foreach(var child in children)
         {
