@@ -39,7 +39,7 @@ public class WaypointCollider : MonoBehaviour
 
         var xMidPoint = (position1.position.x + position2.position.x) / 2f;
         var yMidPoint = (position1.position.y + position2.position.y) / 2f;
-        var position = transform.position;
+        var position = position1.position;
         if(horizontal)
         {
             position.x = xMidPoint;
