@@ -43,11 +43,18 @@ public class WaypointCollider : MonoBehaviour
         if(horizontal)
         {
             position.x = xMidPoint;
+            ScaleWayPointImage(xDifference * 20f, 5f);
         }
         else
         {
             position.y = yMidPoint;
+            ScaleWayPointImage(5f, yDifference * 20f);
         }
         transform.position = position;
+    }
+
+    private void ScaleWayPointImage(float x, float y)
+    {
+        transform.GetChild(0).transform.localScale = new Vector3(x, y, 1f);
     }
 }
