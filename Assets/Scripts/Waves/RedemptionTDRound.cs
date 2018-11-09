@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RedemptionTDRound : MonoBehaviour 
 {
@@ -22,18 +23,41 @@ public class RedemptionTDRound : MonoBehaviour
     [SerializeField]
     private List<RedemptionTDWave> waves;
 
+    [SerializeField]
+    private BasesOverseer basesOverseer;
+
+    [SerializeField]
+    private RedemptionTDTimer timer;
+
     private int currentWaveIndex;
 
     private void Awake()
     {
         currentWaveIndex = 0;
         objectPool.ObjectPoolComplete += HandleObjectPoolComplete;
+        basesOverseer.BasesDestroyed += HandleBasesDestroyed;
     }
 
     private void HandleObjectPoolComplete (object sender, EventArgs e)
     {
         objectPool.ObjectPoolComplete -= HandleObjectPoolComplete;
+        timer.StartTimer();
         StartRound();
+    }
+
+    private void HandleBasesDestroyed()
+    {
+        EndRound();
+    }
+
+    private void EndRound()
+    {
+        basesOverseer.BasesDestroyed -= HandleBasesDestroyed;
+        objectPool.ObjectPoolComplete -= HandleObjectPoolComplete;
+
+        timer.StopTimer();
+        Debug.Log("^^ " + timer.CurrentTime);
+        SceneManager.LoadScene(0);
     }
 
     private void StartRound()
@@ -65,6 +89,7 @@ public class RedemptionTDRound : MonoBehaviour
         {
             currentWaveIndex = 0;
             RaiseRoundEnd();
+            EndRound();
         }
     }
 

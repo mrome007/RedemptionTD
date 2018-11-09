@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class BasesOverseer : MonoBehaviour 
 {
+    public System.Action BasesDestroyed;
+
     [SerializeField]
     private Text hitPointsText;
     
@@ -73,7 +74,7 @@ public class BasesOverseer : MonoBehaviour
 
         if(currentBasesCount <= 0)
         {
-            SceneManager.LoadScene(0);
+            BasesDestroyed.Invoke();
         }
     }
 

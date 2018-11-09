@@ -19,11 +19,6 @@ public class RedemptionTDTimer : MonoBehaviour
         timerBuffer = new StringBuilder();
     }
 
-    private void Start()
-    {
-        StartTimer();
-    }
-
     public void StartTimer()
     {
         timerStarted = true;
