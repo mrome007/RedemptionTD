@@ -39,9 +39,7 @@ public class RedemptionTDTimer : MonoBehaviour
 
         timerBuffer.Length = 0;
         currentTime += Time.deltaTime;
-        timerBuffer.AppendFormat(timerFormat, Mathf.Floor(currentTime / 60f).ToString("00"), 
-                                (Mathf.Floor(currentTime) % 60).ToString("00"), 
-                                ((currentTime % 1f) * 100f).ToString("00"));
+        timerBuffer.AppendFormat(timerFormat, Mathf.Floor(currentTime / 60f).ToString("00"), (Mathf.Floor(currentTime) % 60).ToString("00"), ((currentTime % 1f) * 100f).ToString("00"));
         timerText.text = timerBuffer.ToString();
     }
 }

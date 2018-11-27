@@ -8,9 +8,6 @@ public class WeaponCycler : MonoBehaviour
     private List<GameObject> weapons;
 
     [SerializeField]
-    private GameObject weaponObject;
-
-    [SerializeField]
     private GameObject gatherObject;
 
     private void HideAllWeapons()
@@ -29,15 +26,13 @@ public class WeaponCycler : MonoBehaviour
         //TODO 0 index for now, will change when weapons increase.
         if(mode == WeaponMode.GATHER)
         {
-            weaponObject.SetActive(false);
             gatherObject.SetActive(canGather);
             HideAllWeapons();
         }
         else
         {
-            weaponObject.SetActive(true);
             gatherObject.SetActive(false);
-            ShowCurrentWeapon(0);
+            ShowCurrentWeapon((int)mode);
         }
     }
 }

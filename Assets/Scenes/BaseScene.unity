@@ -6129,7 +6129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 1165456416}
-  weaponMode: 1
+  weaponMode: 0
 --- !u!114 &571619209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7106,7 +7106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 918477600}
-  weaponMode: 2
+  weaponMode: 1
 --- !u!1001 &673720773
 Prefab:
   m_ObjectHideFlags: 0
@@ -10330,7 +10330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 1165456416}
-  weaponMode: 2
+  weaponMode: 1
 --- !u!1001 &866537713
 Prefab:
   m_ObjectHideFlags: 0
@@ -12708,7 +12708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 1114048127}
-  weaponMode: 2
+  weaponMode: 1
 --- !u!4 &1197473137 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4451886040350014, guid: 1e7b55b434a2749bdab6fda2926c55fe,
@@ -13994,7 +13994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 918477600}
-  weaponMode: 1
+  weaponMode: 0
 --- !u!114 &1359107794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16695,7 +16695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 1114048127}
-  weaponMode: 1
+  weaponMode: 0
 --- !u!114 &1589877181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18007,7 +18007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 418548269}
-  weaponMode: 1
+  weaponMode: 0
 --- !u!114 &1756209784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21278,7 +21278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 418548269}
-  weaponMode: 2
+  weaponMode: 1
 --- !u!1001 &2093208267
 Prefab:
   m_ObjectHideFlags: 0
