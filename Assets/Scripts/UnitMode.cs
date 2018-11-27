@@ -24,8 +24,8 @@ public struct UnitMode
 public enum WeaponMode
 {
     WAVE = 0,
-    GATHER = 1,
-    BURST = 2,
+    BURST = 1,
+    GATHER = 2,
     NONE = 3
 }
 

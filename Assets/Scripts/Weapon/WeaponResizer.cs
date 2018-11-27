@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class WeaponResizer : MonoBehaviour 
 {
     [SerializeField]
-    private GameObject weaponObject;
+    private List<GameObject> weaponObjects;
 
     [SerializeField]
     private GameObject gatherObject;
@@ -14,12 +15,12 @@ public class WeaponResizer : MonoBehaviour
     
     public void ResizeWeapon(int level)
     {
-        var scaleWeapon = weaponObject.transform.localScale;
+        var scaleWeapon = weaponObjects.FirstOrDefault().transform.localScale;
         var scaleGather = gatherObject.transform.localScale;
 
         var newScale = 1f + ((level - 1) * upgradeSizeIncr);
         scaleWeapon.x = scaleWeapon.y = scaleGather.x = scaleGather.y = newScale;
-        weaponObject.transform.localScale = scaleWeapon;
+        weaponObjects.ForEach(weaponObject => weaponObject.transform.localScale = scaleWeapon);
         gatherObject.transform.localScale = scaleGather;
     }
 }
