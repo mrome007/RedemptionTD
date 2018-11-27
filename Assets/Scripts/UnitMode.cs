@@ -25,6 +25,7 @@ public enum WeaponMode
 {
     WAVE = 0,
     GATHER = 1,
+    BURST = 2,
     NONE = 3
 }
 
