@@ -41,7 +41,7 @@ public class WeaponRange : MonoBehaviour
     {
         if(activeTimeWait == null)
         {
-            activeTimeWait = new WaitForSeconds((weaponLite.HeavyReference as Weapon).WaveActiveTime);
+            activeTimeWait = new WaitForSeconds((weaponLite.HeavyReference as Weapon).ActiveTime);
         }
         
         weaponActive = true;

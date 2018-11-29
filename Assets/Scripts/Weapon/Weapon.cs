@@ -19,7 +19,10 @@ public class Weapon : HeavyUnit
     private float gatherRadius;
 
     [SerializeField]
-    private float waveActiveTime;
+    private float activeTime;
+
+    [SerializeField]
+    private float weaponSpeed;
 
     #endregion
 
@@ -27,5 +30,6 @@ public class Weapon : HeavyUnit
     public float DamageMultiplier { get { return damageMultiplier; } } 
     public int Cost { get { return cost; } }
     public float GatherRadius { get { return gatherRadius; } }
-    public float WaveActiveTime { get { return waveActiveTime; } }
+    public float ActiveTime { get { return activeTime; } }
+    public float WeaponSpeed { get { return weaponSpeed; } }
 }

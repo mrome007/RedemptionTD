@@ -5,21 +5,21 @@ using UnityEngine;
 public class WeaponBehavior : MonoBehaviour 
 {
     [SerializeField]
-    private WeaponLite weaponLite;
+    protected WeaponLite weaponLite;
 
-    public float DamageMultiplier { get; private set; }
+    public float DamageMultiplier { get; protected set; }
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         weaponLite.ObjectReturned += HandleObjectReturned;
     }
 
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
         weaponLite.ObjectReturned -= HandleObjectReturned;
     }
 
-    public float DamageEnemy(RedemptionTDColor enemyColor)
+    public virtual float DamageEnemy(RedemptionTDColor enemyColor)
     {
         if(weaponLite.HeavyReference.Color != enemyColor)
         {
@@ -31,7 +31,7 @@ public class WeaponBehavior : MonoBehaviour
         return currentDamage * DamageMultiplier;
     }
 
-    private void HandleObjectReturned(object sender, ToOrFromPoolEventArgs e)
+    protected virtual void HandleObjectReturned(object sender, ToOrFromPoolEventArgs e)
     {
         weaponLite.ObjectReturned -= HandleObjectReturned;
         gameObject.SetActive(false);
