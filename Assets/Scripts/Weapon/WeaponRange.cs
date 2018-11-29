@@ -5,15 +5,15 @@ using UnityEngine;
 public class WeaponRange : MonoBehaviour 
 {
     [SerializeField]
-    private WeaponLite weaponLite;
+    protected WeaponLite weaponLite;
     
     [SerializeField]
-    private WeaponBehavior weaponBehavior;
+    protected List<WeaponBehavior> weaponBehaviors;
 
-    private bool weaponActive = false;
-    private WaitForSeconds activeTimeWait = null;
+    protected bool weaponActive = false;
+    protected WaitForSeconds activeTimeWait = null;
 
-    private void EnemyDetected(GameObject en)
+    protected virtual void EnemyDetected(GameObject en)
     {
         var enemy = en.GetComponentInParent<EnemyLite>();
         if(enemy == null)
@@ -37,7 +37,7 @@ public class WeaponRange : MonoBehaviour
         EnemyDetected(col.gameObject);
     }
 
-    private IEnumerator ActivateWeaponBehavior()
+    protected IEnumerator ActivateWeaponBehavior()
     {
         if(activeTimeWait == null)
         {
@@ -45,11 +45,11 @@ public class WeaponRange : MonoBehaviour
         }
         
         weaponActive = true;
-        weaponBehavior.gameObject.SetActive(weaponActive);
+        weaponBehaviors.ForEach(weaponBehavior => weaponBehavior.gameObject.SetActive(true));
 
         yield return activeTimeWait;
 
         weaponActive = false;
-        weaponBehavior.gameObject.SetActive(weaponActive);
+        weaponBehaviors.ForEach(weaponBehavior => weaponBehavior.gameObject.SetActive(false));
     }
 }
