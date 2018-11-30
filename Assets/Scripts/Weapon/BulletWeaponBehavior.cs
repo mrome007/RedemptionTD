@@ -1,9 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletWeaponBehavior : WeaponBehavior
 {
+    public Action BulletReturned;
+    
     private Transform bulletParent;
     private Coroutine fireBulletCoroutine = null;
     private float bulletLimit = 0.45f;
@@ -49,6 +52,7 @@ public class BulletWeaponBehavior : WeaponBehavior
         }
         while(distance < bulletLimit);
 
+        PostBulletReturned();
         ResetBullet();
     }
 
@@ -57,5 +61,13 @@ public class BulletWeaponBehavior : WeaponBehavior
         transform.parent = bulletParent;
         transform.localPosition = Vector3.zero;
         gameObject.SetActive(false);
+    }
+
+    private void PostBulletReturned()
+    {
+        if(BulletReturned != null)
+        {
+            BulletReturned.Invoke();
+        }
     }
 }

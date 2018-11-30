@@ -37,7 +37,7 @@ public class WeaponRange : MonoBehaviour
         EnemyDetected(col.gameObject);
     }
 
-    protected IEnumerator ActivateWeaponBehavior()
+    protected virtual IEnumerator ActivateWeaponBehavior()
     {
         if(activeTimeWait == null)
         {

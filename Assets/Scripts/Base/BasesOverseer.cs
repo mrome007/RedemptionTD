@@ -74,7 +74,7 @@ public class BasesOverseer : MonoBehaviour
 
         if(currentBasesCount <= 0)
         {
-            BasesDestroyed.Invoke();
+            PostBasesDestroyed();
         }
     }
 
@@ -100,5 +100,13 @@ public class BasesOverseer : MonoBehaviour
         }
         hitPointsbuffer.AppendFormat(hitPointsFormat, overallHealth, overallHealth);
         hitPointsText.text = hitPointsbuffer.ToString();
+    }
+
+    private void PostBasesDestroyed()
+    {
+        if(BasesDestroyed != null)
+        {
+            BasesDestroyed.Invoke();
+        }
     }
 }
