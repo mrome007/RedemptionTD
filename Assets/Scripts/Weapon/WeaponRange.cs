@@ -12,6 +12,7 @@ public class WeaponRange : MonoBehaviour
 
     protected bool weaponActive = false;
     protected WaitForSeconds activeTimeWait = null;
+    protected Coroutine ActivateWeaponCoroutine = null;
 
     protected virtual void EnemyDetected(GameObject en)
     {
@@ -23,7 +24,7 @@ public class WeaponRange : MonoBehaviour
 
         if(enemy.HeavyReference.Color == weaponLite.HeavyReference.Color && !weaponActive)
         {
-            StartCoroutine(ActivateWeaponBehavior());
+            ActivateWeaponCoroutine = StartCoroutine(ActivateWeaponBehavior());
         }
     }
 
@@ -51,5 +52,11 @@ public class WeaponRange : MonoBehaviour
 
         weaponActive = false;
         weaponBehaviors.ForEach(weaponBehavior => weaponBehavior.gameObject.SetActive(false));
+    }
+
+    protected virtual void OnDisable()
+    {
+        StopCoroutine(ActivateWeaponCoroutine);
+        weaponActive = false;
     }
 }

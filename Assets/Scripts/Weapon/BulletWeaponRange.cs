@@ -22,8 +22,10 @@ public class BulletWeaponRange : WeaponRange
             weaponBehaviors[index++].gameObject.SetActive(true);
             yield return timeBetweenBullets;
             weaponBehaviors[index++].gameObject.SetActive(true);
-            yield return activeTimeWait;
+            yield return timeBetweenBullets;
         }
+
+        yield return activeTimeWait;
 
         foreach(var weaponBehavior in weaponBehaviors)
         {

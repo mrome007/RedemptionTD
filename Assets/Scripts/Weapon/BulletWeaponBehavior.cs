@@ -9,7 +9,7 @@ public class BulletWeaponBehavior : WeaponBehavior
     
     private Transform bulletParent;
     private Coroutine fireBulletCoroutine = null;
-    private float bulletLimit = 0.45f;
+    private const float bulletLimit = 0.55f;
     private Vector3 originalPosition;
 
     private void Awake()
@@ -28,17 +28,13 @@ public class BulletWeaponBehavior : WeaponBehavior
     {
         base.OnDisable();
         StopCoroutine(fireBulletCoroutine);
-        ResetBullet();
-    }
-
-    protected override void HandleObjectReturned(object sender, ToOrFromPoolEventArgs e)
-    {
-        base.HandleObjectReturned(sender, e);
-        ResetBullet();
     }
 
     private IEnumerator FireBulletRoutine()
     {
+        transform.parent = bulletParent;
+        transform.localPosition = Vector3.zero;
+        
         transform.parent = null;
         originalPosition = transform.position;
         var speed = (weaponLite.HeavyReference as Weapon).WeaponSpeed;
