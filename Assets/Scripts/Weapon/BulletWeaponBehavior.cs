@@ -7,7 +7,6 @@ public class BulletWeaponBehavior : WeaponBehavior
 {
     public Action BulletReturned;
     
-    private Transform bulletParent;
     private Coroutine fireBulletCoroutine = null;
     private const float bulletLimit = 0.55f;
     private Vector3 originalPosition;
@@ -15,7 +14,6 @@ public class BulletWeaponBehavior : WeaponBehavior
     private void Awake()
     {
         DamageMultiplier = 1f;
-        bulletParent = transform.parent;
     }
 
     protected override void OnEnable()
@@ -32,10 +30,8 @@ public class BulletWeaponBehavior : WeaponBehavior
 
     private IEnumerator FireBulletRoutine()
     {
-        transform.parent = bulletParent;
         transform.localPosition = Vector3.zero;
         
-        transform.parent = null;
         originalPosition = transform.position;
         var speed = (weaponLite.HeavyReference as Weapon).WeaponSpeed;
 
@@ -54,7 +50,6 @@ public class BulletWeaponBehavior : WeaponBehavior
 
     private void ResetBullet()
     {
-        transform.parent = bulletParent;
         transform.localPosition = Vector3.zero;
         gameObject.SetActive(false);
     }
