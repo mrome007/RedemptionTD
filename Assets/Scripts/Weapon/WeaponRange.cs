@@ -54,6 +54,11 @@ public class WeaponRange : MonoBehaviour
         weaponBehaviors.ForEach(weaponBehavior => weaponBehavior.gameObject.SetActive(false));
     }
 
+    protected virtual void OnEnable()
+    {
+        weaponBehaviors.ForEach(weaponBehavior => weaponBehavior.gameObject.SetActive(false));
+    }
+
     protected virtual void OnDisable()
     {
         StopCoroutine(ActivateWeaponCoroutine);

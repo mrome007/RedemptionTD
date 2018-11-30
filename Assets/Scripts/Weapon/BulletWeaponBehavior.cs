@@ -11,9 +11,13 @@ public class BulletWeaponBehavior : WeaponBehavior
     private const float bulletLimit = 0.55f;
     private Vector3 originalPosition;
 
+    [SerializeField]
+    private Vector2 direction;
+
     private void Awake()
     {
         DamageMultiplier = 1f;
+        direction.Normalize();
     }
 
     protected override void OnEnable()
@@ -39,7 +43,7 @@ public class BulletWeaponBehavior : WeaponBehavior
         do
         {
             distance = Vector3.Distance(transform.position, originalPosition);
-            transform.Translate(Vector2.up * speed * Time.deltaTime);
+            transform.Translate(direction * speed * Time.deltaTime);
             yield return null;
         }
         while(distance < bulletLimit);
