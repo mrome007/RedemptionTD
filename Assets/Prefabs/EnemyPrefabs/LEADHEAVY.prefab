@@ -57,5 +57,5 @@ MonoBehaviour:
   maxLevel: 4
   speed: 0.3
   health: 25
-  maxResourceDrops: 10
-  damageToBase: 5
+  maxResourceDrops: 5
+  damageToBase: 15

@@ -313,7 +313,23 @@ public enum RedemptionTDType
     BLACK_BASE,
     IRON_BASE,
     LEAD_BASE,
-    MAGNESIUM_BASE
+    MAGNESIUM_BASE,
+
+    BLACK_ENEMY_MID,
+    BLACK_ENEMY_LARGE,
+    BLACK_ENEMY_BOSS,
+
+    IRON_ENEMY_MID,
+    IRON_ENEMY_LARGE,
+    IRON_ENEMY_BOSS,
+
+    LEAD_ENEMY_MID,
+    LEAD_ENEMY_LARGE,
+    LEAD_ENEMY_BOSS,
+
+    MAG_ENEMY_MID,
+    MAG_ENEMY_LARGE,
+    MAG_ENEMY_BOSS
 }
 
 public enum RedemptionTDHeavyType
