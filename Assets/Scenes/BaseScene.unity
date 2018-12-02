@@ -7386,48 +7386,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 918477600}
   weaponMode: 2
---- !u!1001 &673452772
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4467049311798418, guid: 8b9258623a9784221b2755a1ad1d5f54, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4467049311798418, guid: 8b9258623a9784221b2755a1ad1d5f54, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4467049311798418, guid: 8b9258623a9784221b2755a1ad1d5f54, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4467049311798418, guid: 8b9258623a9784221b2755a1ad1d5f54, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4467049311798418, guid: 8b9258623a9784221b2755a1ad1d5f54, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4467049311798418, guid: 8b9258623a9784221b2755a1ad1d5f54, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4467049311798418, guid: 8b9258623a9784221b2755a1ad1d5f54, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4467049311798418, guid: 8b9258623a9784221b2755a1ad1d5f54, type: 2}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 8b9258623a9784221b2755a1ad1d5f54, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &673720773
 Prefab:
   m_ObjectHideFlags: 0
