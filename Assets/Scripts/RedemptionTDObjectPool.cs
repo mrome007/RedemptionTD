@@ -59,7 +59,9 @@ public class RedemptionTDObjectPool : MonoBehaviour
             {
                 var unit = unitsPoolList[unitIndex];
                 var heavyReference = GetHeavyReference(type);
-                unit.Initialize(heavyReference.GetHeavyReference(type, level));
+                var enemy = (EnemyLite)unit;
+                var currentLevel = enemy != null ? enemy.HeavyReference.Level : level;
+                unit.Initialize(heavyReference.GetHeavyReference(type, currentLevel));
                 unitsPoolList[unitIndex] = null;
                 unitsPoolIndex[type]++;
                 unit.gameObject.SetActive(true);
@@ -223,6 +225,18 @@ public class RedemptionTDObjectPool : MonoBehaviour
             case RedemptionTDType.IRON_ENEMY:
             case RedemptionTDType.LEAD_ENEMY:
             case RedemptionTDType.MAGNESIUM_ENEMY:
+            case RedemptionTDType.BLACK_ENEMY_MID:
+            case RedemptionTDType.BLACK_ENEMY_LARGE:
+            case RedemptionTDType.BLACK_ENEMY_BOSS:
+            case RedemptionTDType.IRON_ENEMY_MID:
+            case RedemptionTDType.IRON_ENEMY_LARGE:
+            case RedemptionTDType.IRON_ENEMY_BOSS:
+            case RedemptionTDType.LEAD_ENEMY_MID:
+            case RedemptionTDType.LEAD_ENEMY_LARGE:
+            case RedemptionTDType.LEAD_ENEMY_BOSS:
+            case RedemptionTDType.MAG_ENEMY_MID:
+            case RedemptionTDType.MAG_ENEMY_LARGE:
+            case RedemptionTDType.MAG_ENEMY_BOSS:
                 result = heavyDictionary[RedemptionTDHeavyType.ENEMY];
                 break;
 

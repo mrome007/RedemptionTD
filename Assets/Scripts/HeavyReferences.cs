@@ -41,6 +41,9 @@ public class HeavyReferences : MonoBehaviour
             case RedemptionTDType.BLACK_RESOURCE:
             case RedemptionTDType.BLACK_RESOURCE_DROP:
             case RedemptionTDType.BLACK_BASE:
+            case RedemptionTDType.BLACK_ENEMY_MID:
+            case RedemptionTDType.BLACK_ENEMY_LARGE:
+            case RedemptionTDType.BLACK_ENEMY_BOSS:
                 result = black[level];
                 break;
 
@@ -49,6 +52,9 @@ public class HeavyReferences : MonoBehaviour
             case RedemptionTDType.IRON_RESOURCE:
             case RedemptionTDType.IRON_RESOURCE_DROP:
             case RedemptionTDType.IRON_BASE:
+            case RedemptionTDType.IRON_ENEMY_MID:
+            case RedemptionTDType.IRON_ENEMY_LARGE:
+            case RedemptionTDType.IRON_ENEMY_BOSS:
                 result = iron[level];
                 break;
 
@@ -57,6 +63,9 @@ public class HeavyReferences : MonoBehaviour
             case RedemptionTDType.LEAD_RESOURCE:
             case RedemptionTDType.LEAD_RESOURCE_DROP:
             case RedemptionTDType.LEAD_BASE:
+            case RedemptionTDType.LEAD_ENEMY_MID:
+            case RedemptionTDType.LEAD_ENEMY_LARGE:
+            case RedemptionTDType.LEAD_ENEMY_BOSS:
                 result = lead[level];
                 break;
 
@@ -65,6 +74,9 @@ public class HeavyReferences : MonoBehaviour
             case RedemptionTDType.MAGNESIUM_RESOURCE:
             case RedemptionTDType.MAGNESIUM_RESOURCE_DROP:
             case RedemptionTDType.MAGNESIUM_BASE:
+            case RedemptionTDType.MAG_ENEMY_MID:
+            case RedemptionTDType.MAG_ENEMY_LARGE:
+            case RedemptionTDType.MAG_ENEMY_BOSS:
                 result = magnesium[level];
                 break;
 
