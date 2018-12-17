@@ -144,7 +144,7 @@ public class RedemptionTDObjectPool : MonoBehaviour
             {
                 var liteUnit = (LiteUnit)Instantiate(unitsDictionary[unit.Type], transform.position, Quaternion.identity);
                 var heavyReference = GetHeavyReference(unit.Type);
-                liteUnit.Initialize(heavyReference.GetHeavyReference(unit.Type));
+                liteUnit.Initialize(heavyReference.GetHeavyReference(unit.Type, unit.Level));
 
                 liteUnit.transform.parent = unitsPoolParent;
                 liteUnit.transform.position = Vector3.zero;
@@ -278,6 +278,7 @@ public class RedemptionTDUnit
     public RedemptionTDType Type;
     public LiteUnit LiteObject;
     public int PoolAmount;
+    public int Level = 1;
 }
 
 [Serializable]

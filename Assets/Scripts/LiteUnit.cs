@@ -6,8 +6,6 @@ using UnityEngine;
 public abstract class LiteUnit : MonoBehaviour
 {
     public virtual HeavyUnit HeavyReference { get; }
-    
-    #region Override IReturnable
 
     public event EventHandler<ToOrFromPoolEventArgs> ObjectReturned;
     public event EventHandler<ToOrFromPoolEventArgs> ObjectSpawned;
@@ -63,10 +61,6 @@ public abstract class LiteUnit : MonoBehaviour
         return HeavyReference.Level < HeavyReference.MaxLevel;
     }
 
-    #endregion
-
-    #region Override IInitializable
-
     public virtual void Initialize(object obj)
     {
         if(PoolArgs == null)
@@ -74,6 +68,4 @@ public abstract class LiteUnit : MonoBehaviour
             PoolArgs = new ToOrFromPoolEventArgs(Index, Vector3.zero);
         }
     }
-
-    #endregion
 }
