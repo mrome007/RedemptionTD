@@ -59,7 +59,7 @@ public class RedemptionTDObjectPool : MonoBehaviour
             {
                 var unit = unitsPoolList[unitIndex];
                 var heavyReference = GetHeavyReference(type);
-                var enemy = (EnemyLite)unit;
+                var enemy = unit as EnemyLite;
                 var currentLevel = enemy != null ? enemy.HeavyReference.Level : level;
                 unit.Initialize(heavyReference.GetHeavyReference(type, currentLevel));
                 unitsPoolList[unitIndex] = null;
