@@ -61,7 +61,10 @@ public class WeaponRange : MonoBehaviour
 
     protected virtual void OnDisable()
     {
-        StopCoroutine(ActivateWeaponCoroutine);
+        if(ActivateWeaponCoroutine != null)
+        {
+            StopCoroutine (ActivateWeaponCoroutine);
+        }
         weaponActive = false;
     }
 }
